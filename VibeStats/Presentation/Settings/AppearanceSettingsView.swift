@@ -33,6 +33,12 @@ struct AppearanceSettingsView: View {
                 }
 
                 Toggle("Show the affected-component count", isOn: $preferences.showBadgeCount)
+
+                Picker("Text beside the icon", selection: $preferences.menuBarTextMode) {
+                    Text("None").tag(MenuBarTextMode.none)
+                    Text("Status").tag(MenuBarTextMode.shortLabel)
+                    Text("Affected count").tag(MenuBarTextMode.affectedCount)
+                }
             }
 
             Section {
@@ -65,6 +71,7 @@ struct AppearanceSettingsView: View {
         .onChange(of: preferences.iconRenderMode) { _, _ in refreshIcon() }
         .onChange(of: preferences.showBadgeCount) { _, _ in refreshIcon() }
         .onChange(of: preferences.motionLevel) { _, _ in refreshIcon() }
+        .onChange(of: preferences.menuBarTextMode) { _, _ in refreshIcon() }
     }
 
     /// Nudges the coordinator so the status item re-renders immediately rather

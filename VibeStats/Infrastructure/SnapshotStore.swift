@@ -56,8 +56,4 @@ actor SnapshotStore {
             Log.store.error("failed to persist snapshot: \(error.localizedDescription)")
         }
     }
-
-    func clear() {
-        try? FileManager.default.removeItem(at: fileURL)
-    }
 }

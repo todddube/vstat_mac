@@ -21,6 +21,9 @@ make test       # unit tests
 make run        # build, kill any running copy, launch
 make fixtures   # re-capture live vendor payloads into VibeStatsTests/Fixtures
 make release    # Release archive
+make icon       # redraw the app icon at every size
+make dmg        # package a DMG into dist/
+make notarize   # export, notarize and staple (needs a Developer ID)
 ```
 
 `make` sets `DEVELOPER_DIR`, so no `xcode-select` is needed. DerivedData is deliberately kept outside the repo — see docs/ARCHITECTURE.md §2.
@@ -36,8 +39,8 @@ make release    # Release archive
 | 4 — Menu bar glyph | ✅ |
 | 5 — Popover UI | ✅ |
 | 6a — Settings panel (General · Services · Appearance) | ✅ |
-| 6b — Transition notifications | ⬜ |
-| 7 — App icon and polish | ⬜ |
+| 6b — Transition notifications | ✅ |
+| 7 — App icon, About window, DMG | ✅ |
 
 ## Documentation
 

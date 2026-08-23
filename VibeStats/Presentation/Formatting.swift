@@ -17,12 +17,6 @@ enum Format {
         return date.formatted(style)
     }
 
-    /// "Aug 20, 2:14 PM" — an incident's own timestamp, spelled out.
-    static func incidentDate(_ date: Date?) -> String {
-        guard let date else { return "" }
-        return date.formatted(.dateTime.month(.abbreviated).day().hour().minute())
-    }
-
     static func truncate(_ text: String, to limit: Int) -> String {
         guard text.count > limit else { return text }
         return text.prefix(limit).trimmingCharacters(in: .whitespacesAndNewlines) + "…"

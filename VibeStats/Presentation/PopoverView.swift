@@ -10,9 +10,15 @@ struct PopoverView: View {
     @Bindable var session: PopoverSession
 
     @State private var history: [ServiceID: [HistorySample]] = [:]
+    @State private var hasAppeared = false
     @Environment(\.openURL) private var openURL
 
     private var motion: MotionLevel { Motion.effectiveLevel(preferences.motionLevel) }
+
+    private var scale: CGFloat {
+        if session.isDismissing { return 0.94 }
+        return hasAppeared ? 1 : 0.97
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -34,16 +40,20 @@ struct PopoverView: View {
         }
         .frame(width: 420)
         .frame(minHeight: 300, maxHeight: 620)
-        // The exit animation. Scale from the top edge so it collapses back
-        // toward the menu bar item it came from rather than shrinking to the
-        // middle of nowhere.
-        .scaleEffect(session.isDismissing ? 0.94 : 1, anchor: .top)
-        .opacity(session.isDismissing ? 0 : 1)
+        // Entrance and exit, both anchored at the top edge so the panel grows
+        // out of, and collapses back toward, the menu bar item it belongs to.
+        // AppKit's own popover animation is switched off precisely so these are
+        // the only two on screen.
+        .scaleEffect(scale, anchor: .top)
+        .opacity(session.isDismissing ? 0 : (hasAppeared ? 1 : 0))
         .blur(radius: session.isDismissing ? 6 : 0)
         .animation(
             motion == .off ? nil : .easeIn(duration: 0.26),
             value: session.isDismissing
         )
+        .onAppear {
+            withAnimation(Motion.animation(.appear, level: motion)) { hasAppeared = true }
+        }
         // Any pointer inside the panel means the user is still reading.
         .onHover { inside in
             if inside { session.pause() } else { session.resume() }

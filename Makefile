@@ -14,7 +14,7 @@ SCHEME  := VibeStats
 DERIVED := $(HOME)/Library/Developer/Xcode/DerivedData/VibeStats-build
 APP     := $(DERIVED)/Build/Products/Debug/VibeStats.app
 
-.PHONY: all generate build test run clean fixtures release icon
+.PHONY: all generate build test run clean fixtures release icon dmg notarize
 
 all: build
 
@@ -51,6 +51,18 @@ icon:
 # Re-capture live vendor payloads so schema drift shows up as a diff.
 fixtures:
 	@./Scripts/capture-fixtures.sh
+
+# Developer ID signed, notarized, stapled — the only distribution that opens on
+# a clean machine without a Gatekeeper fight.
+notarize: release
+	xcodebuild -exportArchive -archivePath build/VibeStats.xcarchive \
+		-exportPath build/export -exportOptionsPlist Scripts/ExportOptions.plist
+	ditto -c -k --keepParent build/export/VibeStats.app build/VibeStats.zip
+	xcrun notarytool submit build/VibeStats.zip --keychain-profile "AC_PASSWORD" --wait
+	xcrun stapler staple build/export/VibeStats.app
+
+dmg:
+	@./Scripts/make-dmg.sh
 
 clean:
 	rm -rf build $(PROJECT) $(DERIVED)

@@ -96,7 +96,7 @@ Every behaviour of the extension, and its macOS disposition. `PARITY` = must beh
 | "View Issues" disclosure, incidents sorted `affectsWatched` first, top 5 | PARITY |
 | Auto-refresh of the *view* every 120 s; stale-check (>30 s) on visibility | ADAPT — the store is observable, so the view updates on change; a stale check runs on popover open |
 | Manual refresh button, ⌃R / F5 | ADAPT — ⌘R, and a refresh affordance in the popover header |
-| About modal | ADAPT — native About window |
+| About modal | ADAPT — a native About window that also carries the repository, the browser-extension repo, and the privacy policy, so the popover menu needs one item instead of four |
 | Escape closes modal | PARITY |
 | No `innerHTML`, all `textContent` (vendor text can never be markup) | PARITY by construction — SwiftUI `Text` never interprets markup from these fields |
 
@@ -223,7 +223,7 @@ All settings live in `UserDefaults` under the app's suite and are exposed in a n
 | Minimum severity to notify | minor / major / critical | minor |
 | Only notify for primary components | Bool | on |
 | Play sound | Bool | off |
-| Quiet hours | time range | off |
+| Quiet hours | time range (may wrap midnight) | off, 22:00–08:00 |
 | Notification cooldown per component | 5 / 15 / 60 min | 15 min |
 
 **Appearance**
@@ -259,7 +259,9 @@ All settings live in `UserDefaults` under the app's suite and are exposed in a n
 
 - **FR-22** After each successful check, the coordinator diffs the new per-component indicators against the previous snapshot and emits notifications per the rules in §5.2, subject to per-component cooldown and quiet hours.
 - **FR-23** The first check after launch never notifies — there is no prior state to diff against.
-- **FR-24** A notification's action opens the popover focused on the relevant service.
+- **FR-24** A notification's action opens the popover.
+- **FR-25a** Three or more transitions within one service are announced as a single grouped notification rather than a burst.
+- **FR-25b** Transitions into or out of `unknown` are never announced.
 
 ### 5.6 Data & privacy
 

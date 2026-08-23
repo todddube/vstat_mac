@@ -5,7 +5,7 @@ import AppKit
 import SwiftUI
 
 @MainActor
-final class PopoverController {
+final class PopoverController: NSObject {
     private let popover = NSPopover()
     private let coordinator: MonitorCoordinator
     private let preferences: Preferences
@@ -25,7 +25,9 @@ final class PopoverController {
     ) {
         self.coordinator = coordinator
         self.preferences = preferences
+        super.init()
 
+        popover.delegate = self
         popover.behavior = behavior
         // Our content animates itself out; AppKit's default fade on top of that
         // reads as two competing animations.
@@ -99,4 +101,13 @@ final class PopoverController {
         popover.behavior = .applicationDefined
     }
     #endif
+}
+
+extension PopoverController: NSPopoverDelegate {
+    /// The popover can also be dismissed by AppKit — a click outside closes a
+    /// transient one. Without this the countdown would keep running against a
+    /// window that no longer exists.
+    func popoverDidClose(_ notification: Notification) {
+        session.end()
+    }
 }

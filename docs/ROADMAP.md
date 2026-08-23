@@ -36,12 +36,12 @@ Target: **macOS 26.0+**, Swift 6.2+ (Xcode 26 toolchain), language mode 6, stric
 
 **Done when:** every state in DESIGN.md §4.5 has a working preview, both appearances are correct, and the divergence chip and unresolved footnote appear on the right fixtures.
 
-### M6 — Settings & notifications (2 days)
+### M6 — Settings & notifications ✅
 Four settings tabs, `SMAppService` launch-at-login, `NotificationDispatcher` with cooldown and quiet hours, global hotkey.
 
 **Done when:** a fixture-driven transition emits exactly one notification, a second inside the cooldown emits none, and the first snapshot after launch emits none.
 
-### M7 — App icon & polish (1 day)
+### M7 — App icon & polish ✅
 `VibeStats.icon` authored in Icon Composer from the layers in ICONS.md §4, About window, DMG background, accessibility pass.
 
 **Done when:** the icon renders correctly in all four macOS 26 appearances at every Dock size, and a full VoiceOver pass reads every surface.

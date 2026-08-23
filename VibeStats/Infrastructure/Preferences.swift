@@ -125,7 +125,6 @@ final class Preferences {
         Key.refreshInterval: RefreshInterval.fiveMinutes.rawValue,
         Key.checkOnWake: true,
         Key.popoverAutoClose: PopoverAutoClose.fifteenSeconds.rawValue,
-        Key.launchAtLogin: false,
         Key.showInDock: false,
         Key.disabledServices: [String](),
         Key.iconStyle: MenuBarIconStyle.hub.rawValue,
@@ -148,7 +147,6 @@ final class Preferences {
         static let refreshInterval = "refreshInterval"
         static let checkOnWake = "checkOnWake"
         static let popoverAutoClose = "popoverAutoClose"
-        static let launchAtLogin = "launchAtLogin"
         static let showInDock = "showInDock"
         static let disabledServices = "disabledServices"
         static let iconStyle = "iconStyle"
@@ -182,21 +180,6 @@ final class Preferences {
     var popoverAutoClose: PopoverAutoClose {
         get { PopoverAutoClose(rawValue: defaults.integer(forKey: Key.popoverAutoClose)) ?? .fifteenSeconds }
         set { defaults.set(newValue.rawValue, forKey: Key.popoverAutoClose) }
-    }
-
-    /// Mirrors the real SMAppService state rather than trusting the stored
-    /// value: the user can revoke login items in System Settings behind our
-    /// back, and a checkbox that lies is worse than no checkbox.
-    var launchAtLogin: Bool {
-        get { LaunchAtLogin.isEnabled }
-        set {
-            do {
-                try LaunchAtLogin.set(newValue)
-                defaults.set(newValue, forKey: Key.launchAtLogin)
-            } catch {
-                Log.app.error("launch at login \(newValue ? "register" : "unregister") failed: \(error.localizedDescription)")
-            }
-        }
     }
 
     var showInDock: Bool {

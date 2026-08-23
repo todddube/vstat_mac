@@ -49,8 +49,4 @@ enum VibeHubGeometry {
         let radius = nodeRingRadius * rect.width * diagonal
         return CGPoint(x: rect.midX + offset.x * radius, y: rect.midY + offset.y * radius)
     }
-
-    /// The visible span of the mark, as a fraction of the canvas. Useful for
-    /// centring the glyph inside a larger image (a badge widens the canvas).
-    static var extent: CGFloat { 2 * (nodeRingRadius + nodeRadius) }
 }

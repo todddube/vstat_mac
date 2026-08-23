@@ -18,6 +18,8 @@ final class StatusItemController {
     private var currentState = IconState()
     private var phase: CGFloat = 0
     private var ticker: Timer?
+    private var displayAsleep = false
+    private var sleepObservers: [any NSObjectProtocol] = []
     /// Frames for the handful of static states, so a steady app draws nothing.
     private var staticFrames: [IconState: NSImage] = [:]
 
@@ -32,7 +34,23 @@ final class StatusItemController {
         button.target = self
         button.action = #selector(handleClick)
         button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        observeDisplaySleep()
         render()
+    }
+
+    /// 30 fps of an 18-point redraw is cheap, but not while nobody can see it.
+    private func observeDisplaySleep() {
+        let centre = NSWorkspace.shared.notificationCenter
+        sleepObservers = [
+            centre.addObserver(forName: NSWorkspace.screensDidSleepNotification,
+                               object: nil, queue: .main) { _ in
+                MainActor.assumeIsolated { self.displayAsleep = true }
+            },
+            centre.addObserver(forName: NSWorkspace.screensDidWakeNotification,
+                               object: nil, queue: .main) { _ in
+                MainActor.assumeIsolated { self.displayAsleep = false }
+            }
+        ]
     }
 
     func render() {
@@ -66,7 +84,20 @@ final class StatusItemController {
         state.renderMode = preferences.iconRenderMode
         state.showBadge = preferences.showBadgeCount
         state.motion = Motion.effectiveLevel(preferences.motionLevel)
+        state.titleText = titleText(for: state)
         return state
+    }
+
+    /// Optional compact text beside the glyph.
+    private func titleText(for state: IconState) -> String? {
+        switch preferences.menuBarTextMode {
+        case .none:
+            return nil
+        case .shortLabel:
+            return state.isOffline ? String(localized: "Offline") : state.indicator.compactTitle
+        case .affectedCount:
+            return state.affectedCount > 0 ? String(state.affectedCount) : nil
+        }
     }
 
     /// Static states are cached; animated ones are drawn per frame.
@@ -99,9 +130,11 @@ final class StatusItemController {
         let timer = Timer(timeInterval: 1 / Self.framesPerSecond, repeats: true) { [weak self] _ in
             MainActor.assumeIsolated {
                 guard let self, let button = self.statusItem.button else { return }
-                // Never animate into a dark screen or a hidden app: the frames
-                // would be drawn and thrown away.
-                guard NSApp.occlusionState.contains(.visible) else { return }
+                // Deliberately NOT gated on NSApp.occlusionState: that reflects
+                // whether the app's *windows* are visible, and a menu-bar-only
+                // app has none — the glyph would freeze permanently. Display
+                // sleep is handled by suspending the ticker outright.
+                guard !self.displayAsleep else { return }
 
                 self.phase = (self.phase + CGFloat(1 / (Self.framesPerSecond * period)))
                     .truncatingRemainder(dividingBy: 1)
@@ -155,10 +188,6 @@ final class StatusItemController {
             popoverController = PopoverController(coordinator: coordinator, preferences: preferences)
         }
         popoverController?.toggle(relativeTo: button)
-    }
-
-    func closePopover() {
-        popoverController?.close()
     }
 
     /// Opens the popover programmatically — used when a notification is

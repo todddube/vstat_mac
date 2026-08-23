@@ -58,6 +58,16 @@ let spokeOuter: CGFloat = 193.0 / 1024
 let angles: [CGFloat] = [150, 30, 330, 210, 90, 270]   // degrees, y-up
 let nodeColours: [NSColor] = accents + [cyan, cyan]
 
+/// A radial gradient from `alpha` at the centre to fully transparent.
+func softGlow(_ colour: NSColor, at centre: CGPoint, radius: CGFloat, alpha: CGFloat) {
+    guard let gradient = NSGradient(colorsAndLocations:
+        (colour.withAlphaComponent(alpha), 0.0),
+        (colour.withAlphaComponent(alpha * 0.45), 0.35),
+        (colour.withAlphaComponent(0.0), 1.0)
+    ) else { return }
+    gradient.draw(fromCenter: centre, radius: 0, toCenter: centre, radius: radius, options: [])
+}
+
 func point(_ degrees: CGFloat, radius: CGFloat, centre: CGPoint) -> CGPoint {
     let radians = degrees * .pi / 180
     return CGPoint(x: centre.x + cos(radians) * radius, y: centre.y + sin(radians) * radius)
@@ -159,9 +169,10 @@ func drawIcon(size: CGFloat) -> NSBitmapImageRep {
         let colour = nodeColours[index]
 
         if !simplified {
-            colour.withAlphaComponent(0.35).setFill()
-            NSBezierPath(ovalIn: CGRect(x: centrePoint.x - radius * 1.7, y: centrePoint.y - radius * 1.7,
-                                        width: radius * 3.4, height: radius * 3.4)).fill()
+            // A radial falloff, not a flat disc at partial alpha: the flat
+            // version reads as a hard ring around each node, which is the
+            // opposite of a glow.
+            softGlow(colour, at: centrePoint, radius: radius * 2.6, alpha: 0.5)
         }
         colour.setFill()
         NSBezierPath(ovalIn: CGRect(x: centrePoint.x - radius, y: centrePoint.y - radius,
@@ -171,9 +182,7 @@ func drawIcon(size: CGFloat) -> NSBitmapImageRep {
     // --- core
     let core = coreRadius * size
     if !simplified {
-        cyan.withAlphaComponent(0.45).setFill()
-        NSBezierPath(ovalIn: CGRect(x: centre.x - core * 1.9, y: centre.y - core * 1.9,
-                                    width: core * 3.8, height: core * 3.8)).fill()
+        softGlow(cyan, at: centre, radius: core * 3.1, alpha: 0.6)
 
         let coreGradient = NSGradient(colorsAndLocations:
             (cyanPale, 0.0), (cyanLight, 0.55), (cyan, 1.0)
