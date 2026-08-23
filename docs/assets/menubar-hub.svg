@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 76" width="280" height="76">
+  <title>Vibe Stats — menu bar glyph states (drawn at 2× for review)</title>
+  <rect width="100%" height="100%" fill="#0E1420"/>
+  <g transform="translate(8.0,6) scale(2.0)" opacity="1">
+    <g stroke="#22D3A5" stroke-width="0.68" stroke-linecap="round" opacity="1.00">
+      <line x1="7.66" y1="7.66" x2="6.14" y2="6.14"/>
+      <line x1="10.34" y1="7.66" x2="11.86" y2="6.14"/>
+      <line x1="10.34" y1="10.34" x2="11.86" y2="11.86"/>
+      <line x1="7.66" y1="10.34" x2="6.14" y2="11.86"/>
+    </g>
+      <circle cx="5.18" cy="5.18" r="0.99" fill="#22D3A5"/>
+      <circle cx="12.82" cy="5.18" r="0.99" fill="#22D3A5"/>
+      <circle cx="12.82" cy="12.82" r="0.99" fill="#22D3A5"/>
+      <circle cx="5.18" cy="12.82" r="0.99" fill="#22D3A5"/>
+    <circle cx="9" cy="9" r="1.53" fill="#22D3A5"/>
+  </g>
+  <text x="26.0" y="66" font-family="SF Mono, Menlo, monospace" font-size="7" fill="#9AA9BF" text-anchor="middle">OPERATIONAL</text>
+  <g transform="translate(52.0,6) scale(2.0)" opacity="1">
+    <g stroke="#22D3A5" stroke-width="0.68" stroke-linecap="round" opacity="1.00">
+      <line x1="7.66" y1="7.66" x2="6.14" y2="6.14"/>
+      <line x1="10.34" y1="7.66" x2="11.86" y2="6.14"/>
+      <line x1="10.34" y1="10.34" x2="11.86" y2="11.86"/>
+      <line x1="7.66" y1="10.34" x2="6.14" y2="11.86"/>
+    </g>
+      <circle cx="5.18" cy="5.18" r="0.99" fill="#22D3A5"/>
+      <circle cx="12.82" cy="5.18" r="0.99" fill="#F5B23B"/>
+      <circle cx="12.82" cy="12.82" r="0.99" fill="#22D3A5"/>
+      <circle cx="5.18" cy="12.82" r="0.99" fill="#22D3A5"/>
+    <circle cx="9" cy="9" r="1.53" fill="#F5B23B"/>
+  </g>
+  <text x="70.0" y="66" font-family="SF Mono, Menlo, monospace" font-size="7" fill="#9AA9BF" text-anchor="middle">MINOR</text>
+  <g transform="translate(96.0,6) scale(2.0)" opacity="1">
+    <g stroke="#22D3A5" stroke-width="0.68" stroke-linecap="round" opacity="1.00">
+      <line x1="7.66" y1="7.66" x2="6.14" y2="6.14"/>
+      <line x1="10.34" y1="7.66" x2="11.86" y2="6.14"/>
+      <line x1="10.34" y1="10.34" x2="11.86" y2="11.86"/>
+      <line x1="7.66" y1="10.34" x2="6.14" y2="11.86"/>
+    </g>
+      <circle cx="5.18" cy="5.18" r="0.99" fill="#22D3A5"/>
+      <circle cx="12.82" cy="5.18" r="0.99" fill="#FB7A3C"/>
+      <circle cx="12.82" cy="12.82" r="0.99" fill="#22D3A5"/>
+      <circle cx="5.18" cy="12.82" r="0.99" fill="#22D3A5"/>
+    <circle cx="9" cy="9" r="1.53" fill="#FB7A3C"/>
+  </g>
+  <text x="114.0" y="66" font-family="SF Mono, Menlo, monospace" font-size="7" fill="#9AA9BF" text-anchor="middle">MAJOR</text>
+  <g transform="translate(140.0,6) scale(2.0)" opacity="1">
+    <circle cx="9" cy="9" r="4.2" fill="none" stroke="#F2545B" stroke-width="0.5" opacity="0.35"/>
+    <circle cx="9" cy="9" r="6.0" fill="none" stroke="#F2545B" stroke-width="0.4" opacity="0.15"/>
+    <g stroke="#22D3A5" stroke-width="0.68" stroke-linecap="round" opacity="1.00">
+      <line x1="7.66" y1="7.66" x2="6.14" y2="6.14"/>
+      <line x1="10.34" y1="7.66" x2="11.86" y2="6.14"/>
+      <line x1="10.34" y1="10.34" x2="11.86" y2="11.86"/>
+      <line x1="7.66" y1="10.34" x2="6.14" y2="11.86"/>
+    </g>
+      <circle cx="5.18" cy="5.18" r="0.99" fill="#22D3A5"/>
+      <circle cx="12.82" cy="5.18" r="0.99" fill="#F2545B"/>
+      <circle cx="12.82" cy="12.82" r="0.99" fill="#22D3A5"/>
+      <circle cx="5.18" cy="12.82" r="0.99" fill="#22D3A5"/>
+    <circle cx="9" cy="9" r="1.53" fill="#F2545B"/>
+  </g>
+  <text x="158.0" y="66" font-family="SF Mono, Menlo, monospace" font-size="7" fill="#9AA9BF" text-anchor="middle">CRITICAL</text>
+  <g transform="translate(184.0,6) scale(2.0)" opacity="1">
+    <g stroke="#6B7A8F" stroke-width="0.68" stroke-linecap="round" opacity="1.00">
+      <line x1="7.66" y1="7.66" x2="6.14" y2="6.14"/>
+      <line x1="10.34" y1="7.66" x2="11.86" y2="6.14"/>
+      <line x1="10.34" y1="10.34" x2="11.86" y2="11.86"/>
+      <line x1="7.66" y1="10.34" x2="6.14" y2="11.86"/>
+    </g>
+      <circle cx="5.18" cy="5.18" r="0.99" fill="none" stroke="#6B7A8F" stroke-width="0.42" opacity="1.00"/>
+      <circle cx="12.82" cy="5.18" r="0.99" fill="none" stroke="#6B7A8F" stroke-width="0.42" opacity="1.00"/>
+      <circle cx="12.82" cy="12.82" r="0.99" fill="none" stroke="#6B7A8F" stroke-width="0.42" opacity="1.00"/>
+      <circle cx="5.18" cy="12.82" r="0.99" fill="none" stroke="#6B7A8F" stroke-width="0.42" opacity="1.00"/>
+    <circle cx="9" cy="9" r="1.53" fill="none" stroke="#6B7A8F" stroke-width="0.55" opacity="1.00"/>
+  </g>
+  <text x="202.0" y="66" font-family="SF Mono, Menlo, monospace" font-size="7" fill="#9AA9BF" text-anchor="middle">UNKNOWN</text>
+  <g transform="translate(228.0,6) scale(2.0)" opacity="1">
+    <g stroke="#4A5568" stroke-width="0.68" stroke-linecap="round" opacity="0.40">
+      <line x1="7.66" y1="7.66" x2="6.14" y2="6.14"/>
+      <line x1="10.34" y1="7.66" x2="11.86" y2="6.14"/>
+      <line x1="10.34" y1="10.34" x2="11.86" y2="11.86"/>
+      <line x1="7.66" y1="10.34" x2="6.14" y2="11.86"/>
+    </g>
+      <circle cx="5.18" cy="5.18" r="0.99" fill="none" stroke="#4A5568" stroke-width="0.42" opacity="0.40"/>
+      <circle cx="12.82" cy="5.18" r="0.99" fill="none" stroke="#4A5568" stroke-width="0.42" opacity="0.40"/>
+      <circle cx="12.82" cy="12.82" r="0.99" fill="none" stroke="#4A5568" stroke-width="0.42" opacity="0.40"/>
+      <circle cx="5.18" cy="12.82" r="0.99" fill="none" stroke="#4A5568" stroke-width="0.42" opacity="0.40"/>
+    <circle cx="9" cy="9" r="1.53" fill="none" stroke="#4A5568" stroke-width="0.55" opacity="0.40"/>
+  </g>
+  <text x="246.0" y="66" font-family="SF Mono, Menlo, monospace" font-size="7" fill="#9AA9BF" text-anchor="middle">OFFLINE</text>
+</svg>

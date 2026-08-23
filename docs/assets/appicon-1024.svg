@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Vibe Stats — macOS app icon</title>
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="30%" r="85%">
+      <stop offset="0%"  stop-color="#1B2740"/>
+      <stop offset="55%" stop-color="#111A2B"/>
+      <stop offset="100%" stop-color="#0A0F18"/>
+    </radialGradient>
+    <linearGradient id="spoke" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#0E7490"/>
+    </linearGradient>
+    <radialGradient id="coreFill" cx="38%" cy="34%" r="72%">
+      <stop offset="0%"   stop-color="#A5F3FC"/>
+      <stop offset="55%"  stop-color="#67E8F9"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </radialGradient>
+    <filter id="glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="34" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="nodeGlow" x="-160%" y="-160%" width="420%" height="420%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="dots" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.2" fill="#FFFFFF" opacity="0.035"/>
+    </pattern>
+    <radialGradient id="dotMask" cx="50%" cy="50%" r="62%">
+      <stop offset="0%"   stop-color="#000000"/>
+      <stop offset="55%"  stop-color="#555555"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </radialGradient>
+    <mask id="fieldMask">
+      <rect x="100" y="100" width="824" height="824" rx="185.4" fill="url(#dotMask)"/>
+    </mask>
+    <clipPath id="squircle">
+      <rect x="100" y="100" width="824" height="824" rx="185.4"/>
+    </clipPath>
+  </defs>
+
+  <!-- substrate -->
+  <g clip-path="url(#squircle)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#bg)"/>
+    <rect x="100" y="100" width="824" height="824" fill="url(#dots)" mask="url(#fieldMask)"/>
+
+    <!-- orbit rings -->
+    <circle cx="512" cy="512" r="346" fill="none" stroke="#22D3EE" stroke-width="3" opacity="0.12"/>
+    <circle cx="512" cy="512" r="387" fill="none" stroke="#22D3EE" stroke-width="2.5"
+            opacity="0.06" stroke-dasharray="18 26"/>
+
+    <!-- hub: six spokes -->
+    <g stroke="url(#spoke)" stroke-width="14" stroke-linecap="round" opacity="0.95">
+      <line x1="512"   y1="434"   x2="512"   y2="319"/>
+      <line x1="579.5" y1="473"   x2="679.1" y2="415.5"/>
+      <line x1="579.5" y1="551"   x2="679.1" y2="608.5"/>
+      <line x1="512"   y1="590"   x2="512"   y2="705"/>
+      <line x1="444.5" y1="551"   x2="344.9" y2="608.5"/>
+      <line x1="444.5" y1="473"   x2="344.9" y2="415.5"/>
+    </g>
+
+    <!-- six nodes: four vendor accents on the diagonals, cyan on the vertical axis -->
+    <g filter="url(#nodeGlow)">
+      <circle cx="512"   cy="265"   r="38" fill="#22D3EE"/>              <!-- axis -->
+      <circle cx="725.9" cy="388.5" r="38" fill="#A78BFA"/>              <!-- GitHub -->
+      <circle cx="725.9" cy="635.5" r="38" fill="#34D399"/>              <!-- OpenAI -->
+      <circle cx="512"   cy="759"   r="38" fill="#22D3EE"/>              <!-- axis -->
+      <circle cx="298.1" cy="635.5" r="38" fill="#60A5FA"/>              <!-- Gemini -->
+      <circle cx="298.1" cy="388.5" r="38" fill="#E08C3C"/>              <!-- Claude -->
+    </g>
+
+    <!-- core -->
+    <g filter="url(#glow)">
+      <circle cx="512" cy="512" r="62" fill="url(#coreFill)"/>
+    </g>
+    <circle cx="494" cy="494" r="16" fill="#FFFFFF" opacity="0.55"/>
+
+    <!-- lighting -->
+    <rect x="100" y="100" width="824" height="10" fill="#FFFFFF" opacity="0.10"/>
+    <rect x="100" y="914" width="824" height="10" fill="#000000" opacity="0.25"/>
+  </g>
+  <rect x="100" y="100" width="824" height="824" rx="185.4"
+        fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.07"/>
+</svg>

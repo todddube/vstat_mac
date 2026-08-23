@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		079A3DE7ECA88351D605415B /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D67CA5C8485CA3FE31652 /* Snapshot.swift */; };
+		082764DB727EF54728863E24 /* StubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40E1CDF9B06B4FB66329C /* StubAPIClient.swift */; };
+		0A215740E81D7EDA078562EE /* RegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8555F942CCD48D0306CBF /* RegistryTests.swift */; };
+		10D5940C71FF609F38F93B9C /* StatusIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6285BFFA5C3FD993E3CF5 /* StatusIndicatorTests.swift */; };
+		1EAC911887C4D1472D0292F3 /* JSONDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ED8EF5F1BDBB62BEE02B26 /* JSONDecoding.swift */; };
+		20928E430A2A5CE0A1E42DE7 /* StatusEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D502541D594E39A2DAF34 /* StatusEngine.swift */; };
+		344B427481995C696DDB4FBE /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EC7FE2D39B3F4953B61B4 /* Formatting.swift */; };
+		351CA80CD1147A767C848F82 /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFA368F2B2BA99FF99638D /* StatusIndicator.swift */; };
+		35CCBD06C3971EE571AD9C4C /* GoogleCloudAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1EC5E88D91DDBD48006FB /* GoogleCloudAdapter.swift */; };
+		3BA9AF76378F967792FF027E /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645300BDD7076917B874177 /* Palette.swift */; };
+		3E739F7F91E6085CFDDABB3A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2743C1F90F5E05D466C0E095 /* Preferences.swift */; };
+		3F79F474BCA14F037E801C50 /* SnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2379FE267C23ECFA66607A0B /* SnapshotStore.swift */; };
+		434AC1DC0DB285AB32C036D7 /* FixtureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC282DD49F207DFE711862 /* FixtureLoader.swift */; };
+		44530946B228835967701AD4 /* SystemObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF848874AF77B88F06623 /* SystemObservers.swift */; };
+		4F8016796F5CA99B955DF27A /* IncidentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AC73BF231FA8A62B9C99B1 /* IncidentListView.swift */; };
+		54C0BCCE6E426CB987B45477 /* VibeHubGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DCD66E66584B151009E40B /* VibeHubGeometry.swift */; };
+		558C4F758820389ED024ED96 /* HistoryLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F89446938FA04F9CF37364 /* HistoryLog.swift */; };
+		5770F0FF8ABE657301575B08 /* CombinedStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5884B21338F1B7C17050942 /* CombinedStatusTests.swift */; };
+		59BCAAA9BFB92FC6AE294EAE /* IncidentPruner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738789FFC97D3C4311423F83 /* IncidentPruner.swift */; };
+		5BD8AAFDD87CC50649E4FC18 /* EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6CA530D0D177AA43EBC16 /* EngineTests.swift */; };
+		6C84D486C4E79BB6C500E4C3 /* StubURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F461919F319825380B099D56 /* StubURLProtocol.swift */; };
+		7108F6AEC5B1A1973EABEAA4 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EFF411396568332017E32 /* PopoverView.swift */; };
+		7201DAE91AD19E1B1C73EE7F /* PopoverSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB37ED9ACE655129C603A9C7 /* PopoverSnapshotTests.swift */; };
+		7686EFD2BCE46F75B7CE8EB7 /* MonitorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69136AC7FE3874902DA0D91 /* MonitorCoordinator.swift */; };
+		7D1C4244D396B32EA8A7988A /* SparklineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46993283F3221D8F6E6DA769 /* SparklineView.swift */; };
+		803FB7508C99C9C7FDC7979D /* RollUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4634B197A31226F04146D78F /* RollUpTests.swift */; };
+		81315D1EFDB38406C0954D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582D3D8C7D9B37F9752FB0D0 /* Assets.xcassets */; };
+		89661F357339E399853C011A /* ComponentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B6E4AF3C4FF4C531BE78D /* ComponentRowView.swift */; };
+		8AAE28798C6882B169841491 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B934E8251D39B15E8436746 /* StatusItemController.swift */; };
+		8E75E6C6CA007068C2A6F16B /* ServiceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D899F3BD8FB238DF47B8790 /* ServiceCardView.swift */; };
+		8E8408F191DA99E653747A0F /* ComponentMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A62C95E6C5EB0BB05F9AB /* ComponentMatcher.swift */; };
+		A9703A77C6579EBA7768DB91 /* StatusAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38897D291264C3C5D0314337 /* StatusAPIClient.swift */; };
+		A99A91FE40177545C094687A /* StatuspageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC8B817EE65F2BFF856B75 /* StatuspageDTO.swift */; };
+		AA66175EAC5E5CB4607AE9A7 /* VibeStatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F291D7ACFFE5C39A99AD0DF /* VibeStatsApp.swift */; };
+		AF40DBDA66C5165933CDFBD6 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CD1BE2C3224E33D9BCC32 /* CoordinatorTests.swift */; };
+		AFB7480E4C2EA6924673B432 /* StatuspageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E5FAB905DAB346086132A /* StatuspageAdapter.swift */; };
+		C0D1C06AD39DA63B6F68D988 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4191C9876BD2BEC30D3722 /* ServiceRegistry.swift */; };
+		C4575086AB9AF00C8F1D4192 /* StatusChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F805E247C7797E777960D64B /* StatusChip.swift */; };
+		C551765E82D3084EF23EE843 /* IconState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64C7EB53C0A7F68C49260C /* IconState.swift */; };
+		D4403F8DA627DB7320A4402F /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1875324298A16B7D02A66C4 /* Motion.swift */; };
+		D8D21A7DEDCC322AB1C946E8 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508410CE65890EAB890B7915 /* PersistenceTests.swift */; };
+		DC2DD80470F3946BF5CC5649 /* ComponentMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D23336C66D0269104DFB04 /* ComponentMatcherTests.swift */; };
+		DEE3206824A62071F7A24A84 /* RollUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB097A84BF350898432991E /* RollUp.swift */; };
+		E19729BD9E9CF06F97BB1296 /* VibeIconRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A245EC235B90F743E2B9B0 /* VibeIconRenderer.swift */; };
+		E50537EFE9CBA40CF08CA653 /* IconRenderingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38241624C31B188FA3466295 /* IconRenderingTests.swift */; };
+		E57C929DC64DE966D282039C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39860D4BC0C262F2E97081BB /* Log.swift */; };
+		E84E0A58E8F68AA34DE5D972 /* GoogleCloudDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E944DFDE1967EA033AE4B /* GoogleCloudDTO.swift */; };
+		E8E43347E3D527CB11C5D18B /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = F3669508A29DC5FDD28FF48C /* Fixtures */; };
+		F2581DB78E3236BE96644AD5 /* RetryPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426E38FEA2B24CBEC78915D /* RetryPolicyTests.swift */; };
+		F70F6BF08FC3B865E64CE99B /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811F4D37D055671A5A593A2 /* PopoverController.swift */; };
+		FC5A17DC13C33876343D627F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC918DD4F9818D4B3A8D89D1 /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F5022B3009AA9528C464A50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA1927DD714E106742D4FA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FDC460B813ED980F2FF6570;
+			remoteInfo = VibeStats;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CB097A84BF350898432991E /* RollUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollUp.swift; sourceTree = "<group>"; };
+		0FF38DEAECB8A86CDC1F094B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1426E38FEA2B24CBEC78915D /* RetryPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryPolicyTests.swift; sourceTree = "<group>"; };
+		1A0E5FAB905DAB346086132A /* StatuspageAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatuspageAdapter.swift; sourceTree = "<group>"; };
+		1E7A62C95E6C5EB0BB05F9AB /* ComponentMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentMatcher.swift; sourceTree = "<group>"; };
+		22D23336C66D0269104DFB04 /* ComponentMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentMatcherTests.swift; sourceTree = "<group>"; };
+		2379FE267C23ECFA66607A0B /* SnapshotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotStore.swift; sourceTree = "<group>"; };
+		25ED8EF5F1BDBB62BEE02B26 /* JSONDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoding.swift; sourceTree = "<group>"; };
+		2743C1F90F5E05D466C0E095 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		2D9CD1BE2C3224E33D9BCC32 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		326E944DFDE1967EA033AE4B /* GoogleCloudDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudDTO.swift; sourceTree = "<group>"; };
+		36AC73BF231FA8A62B9C99B1 /* IncidentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentListView.swift; sourceTree = "<group>"; };
+		38241624C31B188FA3466295 /* IconRenderingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRenderingTests.swift; sourceTree = "<group>"; };
+		38897D291264C3C5D0314337 /* StatusAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAPIClient.swift; sourceTree = "<group>"; };
+		39860D4BC0C262F2E97081BB /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		40AC8B817EE65F2BFF856B75 /* StatuspageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatuspageDTO.swift; sourceTree = "<group>"; };
+		44B6CA530D0D177AA43EBC16 /* EngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineTests.swift; sourceTree = "<group>"; };
+		4634B197A31226F04146D78F /* RollUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollUpTests.swift; sourceTree = "<group>"; };
+		46993283F3221D8F6E6DA769 /* SparklineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklineView.swift; sourceTree = "<group>"; };
+		4811F4D37D055671A5A593A2 /* PopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
+		508410CE65890EAB890B7915 /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
+		512CF848874AF77B88F06623 /* SystemObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemObservers.swift; sourceTree = "<group>"; };
+		5569370F2ED59151ECEE2312 /* VibeStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibeStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		582D3D8C7D9B37F9752FB0D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D899F3BD8FB238DF47B8790 /* ServiceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCardView.swift; sourceTree = "<group>"; };
+		63B48AA99BDA1ABE8E8410AA /* VibeStats.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VibeStats.entitlements; sourceTree = "<group>"; };
+		63DCD66E66584B151009E40B /* VibeHubGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeHubGeometry.swift; sourceTree = "<group>"; };
+		69F89446938FA04F9CF37364 /* HistoryLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryLog.swift; sourceTree = "<group>"; };
+		738789FFC97D3C4311423F83 /* IncidentPruner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentPruner.swift; sourceTree = "<group>"; };
+		7C0EFF411396568332017E32 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		7C4191C9876BD2BEC30D3722 /* ServiceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistry.swift; sourceTree = "<group>"; };
+		82A245EC235B90F743E2B9B0 /* VibeIconRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeIconRenderer.swift; sourceTree = "<group>"; };
+		8C64C7EB53C0A7F68C49260C /* IconState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconState.swift; sourceTree = "<group>"; };
+		8F291D7ACFFE5C39A99AD0DF /* VibeStatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeStatsApp.swift; sourceTree = "<group>"; };
+		939D67CA5C8485CA3FE31652 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
+		9B934E8251D39B15E8436746 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		A1BC282DD49F207DFE711862 /* FixtureLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureLoader.swift; sourceTree = "<group>"; };
+		A69136AC7FE3874902DA0D91 /* MonitorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorCoordinator.swift; sourceTree = "<group>"; };
+		A8B1EC5E88D91DDBD48006FB /* GoogleCloudAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudAdapter.swift; sourceTree = "<group>"; };
+		A95D502541D594E39A2DAF34 /* StatusEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEngine.swift; sourceTree = "<group>"; };
+		C5884B21338F1B7C17050942 /* CombinedStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedStatusTests.swift; sourceTree = "<group>"; };
+		C645300BDD7076917B874177 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		CA1EC7FE2D39B3F4953B61B4 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
+		CC896FE66322D07446ADB98D /* VibeStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibeStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1D40E1CDF9B06B4FB66329C /* StubAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAPIClient.swift; sourceTree = "<group>"; };
+		D3CFA368F2B2BA99FF99638D /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
+		DB37ED9ACE655129C603A9C7 /* PopoverSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSnapshotTests.swift; sourceTree = "<group>"; };
+		DC918DD4F9818D4B3A8D89D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1875324298A16B7D02A66C4 /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
+		E88B6E4AF3C4FF4C531BE78D /* ComponentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentRowView.swift; sourceTree = "<group>"; };
+		EDA6285BFFA5C3FD993E3CF5 /* StatusIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicatorTests.swift; sourceTree = "<group>"; };
+		F3669508A29DC5FDD28FF48C /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fixtures; path = VibeStatsTests/Fixtures; sourceTree = SOURCE_ROOT; };
+		F461919F319825380B099D56 /* StubURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubURLProtocol.swift; sourceTree = "<group>"; };
+		F805E247C7797E777960D64B /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
+		FCB8555F942CCD48D0306CBF /* RegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		16065783FEEE0F235D014AAE /* Coordination */ = {
+			isa = PBXGroup;
+			children = (
+				A69136AC7FE3874902DA0D91 /* MonitorCoordinator.swift */,
+				512CF848874AF77B88F06623 /* SystemObservers.swift */,
+			);
+			path = Coordination;
+			sourceTree = "<group>";
+		};
+		244E877B3C4FA9862F1B476C /* VibeStats */ = {
+			isa = PBXGroup;
+			children = (
+				FFF1485EEFB71DB5198C1437 /* App */,
+				16065783FEEE0F235D014AAE /* Coordination */,
+				3EAD029064DBD67AEB14FF2E /* Domain */,
+				8F9E72A3527E5395F107A694 /* Engine */,
+				609CFB88D0CC662BCFCAA9B6 /* Infrastructure */,
+				37DC1BF4F58901EDB8BC6999 /* Presentation */,
+				E8C1EA5289A2ACDDF56DFD1C /* Resources */,
+			);
+			path = VibeStats;
+			sourceTree = "<group>";
+		};
+		37DC1BF4F58901EDB8BC6999 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E88B6E4AF3C4FF4C531BE78D /* ComponentRowView.swift */,
+				CA1EC7FE2D39B3F4953B61B4 /* Formatting.swift */,
+				8C64C7EB53C0A7F68C49260C /* IconState.swift */,
+				36AC73BF231FA8A62B9C99B1 /* IncidentListView.swift */,
+				E1875324298A16B7D02A66C4 /* Motion.swift */,
+				C645300BDD7076917B874177 /* Palette.swift */,
+				7C0EFF411396568332017E32 /* PopoverView.swift */,
+				5D899F3BD8FB238DF47B8790 /* ServiceCardView.swift */,
+				46993283F3221D8F6E6DA769 /* SparklineView.swift */,
+				F805E247C7797E777960D64B /* StatusChip.swift */,
+				63DCD66E66584B151009E40B /* VibeHubGeometry.swift */,
+				82A245EC235B90F743E2B9B0 /* VibeIconRenderer.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3EAD029064DBD67AEB14FF2E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1E7A62C95E6C5EB0BB05F9AB /* ComponentMatcher.swift */,
+				0CB097A84BF350898432991E /* RollUp.swift */,
+				7C4191C9876BD2BEC30D3722 /* ServiceRegistry.swift */,
+				939D67CA5C8485CA3FE31652 /* Snapshot.swift */,
+				D3CFA368F2B2BA99FF99638D /* StatusIndicator.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		609CFB88D0CC662BCFCAA9B6 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				69F89446938FA04F9CF37364 /* HistoryLog.swift */,
+				25ED8EF5F1BDBB62BEE02B26 /* JSONDecoding.swift */,
+				39860D4BC0C262F2E97081BB /* Log.swift */,
+				2743C1F90F5E05D466C0E095 /* Preferences.swift */,
+				2379FE267C23ECFA66607A0B /* SnapshotStore.swift */,
+				38897D291264C3C5D0314337 /* StatusAPIClient.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		73E2EB96CDBE791C8BD2E26A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC896FE66322D07446ADB98D /* VibeStats.app */,
+				5569370F2ED59151ECEE2312 /* VibeStatsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F9E72A3527E5395F107A694 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				A8B1EC5E88D91DDBD48006FB /* GoogleCloudAdapter.swift */,
+				326E944DFDE1967EA033AE4B /* GoogleCloudDTO.swift */,
+				738789FFC97D3C4311423F83 /* IncidentPruner.swift */,
+				A95D502541D594E39A2DAF34 /* StatusEngine.swift */,
+				1A0E5FAB905DAB346086132A /* StatuspageAdapter.swift */,
+				40AC8B817EE65F2BFF856B75 /* StatuspageDTO.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		A584DE05CD064A3765992297 /* VibeStatsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A86E09DF0A8ED7DDE099B6A0 /* Support */,
+				C5884B21338F1B7C17050942 /* CombinedStatusTests.swift */,
+				22D23336C66D0269104DFB04 /* ComponentMatcherTests.swift */,
+				2D9CD1BE2C3224E33D9BCC32 /* CoordinatorTests.swift */,
+				44B6CA530D0D177AA43EBC16 /* EngineTests.swift */,
+				F3669508A29DC5FDD28FF48C /* Fixtures */,
+				38241624C31B188FA3466295 /* IconRenderingTests.swift */,
+				508410CE65890EAB890B7915 /* PersistenceTests.swift */,
+				DB37ED9ACE655129C603A9C7 /* PopoverSnapshotTests.swift */,
+				FCB8555F942CCD48D0306CBF /* RegistryTests.swift */,
+				1426E38FEA2B24CBEC78915D /* RetryPolicyTests.swift */,
+				4634B197A31226F04146D78F /* RollUpTests.swift */,
+				EDA6285BFFA5C3FD993E3CF5 /* StatusIndicatorTests.swift */,
+			);
+			path = VibeStatsTests;
+			sourceTree = "<group>";
+		};
+		A86E09DF0A8ED7DDE099B6A0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A1BC282DD49F207DFE711862 /* FixtureLoader.swift */,
+				D1D40E1CDF9B06B4FB66329C /* StubAPIClient.swift */,
+				F461919F319825380B099D56 /* StubURLProtocol.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		E8C1EA5289A2ACDDF56DFD1C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				582D3D8C7D9B37F9752FB0D0 /* Assets.xcassets */,
+				0FF38DEAECB8A86CDC1F094B /* Info.plist */,
+				63B48AA99BDA1ABE8E8410AA /* VibeStats.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F91825EED35FA000A192191E = {
+			isa = PBXGroup;
+			children = (
+				244E877B3C4FA9862F1B476C /* VibeStats */,
+				A584DE05CD064A3765992297 /* VibeStatsTests */,
+				73E2EB96CDBE791C8BD2E26A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFF1485EEFB71DB5198C1437 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DC918DD4F9818D4B3A8D89D1 /* AppDelegate.swift */,
+				4811F4D37D055671A5A593A2 /* PopoverController.swift */,
+				9B934E8251D39B15E8436746 /* StatusItemController.swift */,
+				8F291D7ACFFE5C39A99AD0DF /* VibeStatsApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FDC460B813ED980F2FF6570 /* VibeStats */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1C7D144DEF252003802A4B8 /* Build configuration list for PBXNativeTarget "VibeStats" */;
+			buildPhases = (
+				C046CC4092F0E7D2A14123F6 /* Sources */,
+				EC924740CD1B46C9593807B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VibeStats;
+			packageProductDependencies = (
+			);
+			productName = VibeStats;
+			productReference = CC896FE66322D07446ADB98D /* VibeStats.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F05C5DBE65BA0B04E0B1A7C4 /* VibeStatsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D8DFE78A7DE71F09E65AC62 /* Build configuration list for PBXNativeTarget "VibeStatsTests" */;
+			buildPhases = (
+				D89541E020BDEBBB1976FA05 /* Sources */,
+				E073C94BA0269B90734A3444 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B30A43DA8A33D392AB319F2E /* PBXTargetDependency */,
+			);
+			name = VibeStatsTests;
+			packageProductDependencies = (
+			);
+			productName = VibeStatsTests;
+			productReference = 5569370F2ED59151ECEE2312 /* VibeStatsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDA1927DD714E106742D4FA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = BC2A20C4F9688A5CF88DEE1E /* Build configuration list for PBXProject "VibeStats" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F91825EED35FA000A192191E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 73E2EB96CDBE791C8BD2E26A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FDC460B813ED980F2FF6570 /* VibeStats */,
+				F05C5DBE65BA0B04E0B1A7C4 /* VibeStatsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E073C94BA0269B90734A3444 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8E43347E3D527CB11C5D18B /* Fixtures in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC924740CD1B46C9593807B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81315D1EFDB38406C0954D3E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C046CC4092F0E7D2A14123F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5A17DC13C33876343D627F /* AppDelegate.swift in Sources */,
+				8E8408F191DA99E653747A0F /* ComponentMatcher.swift in Sources */,
+				89661F357339E399853C011A /* ComponentRowView.swift in Sources */,
+				344B427481995C696DDB4FBE /* Formatting.swift in Sources */,
+				35CCBD06C3971EE571AD9C4C /* GoogleCloudAdapter.swift in Sources */,
+				E84E0A58E8F68AA34DE5D972 /* GoogleCloudDTO.swift in Sources */,
+				558C4F758820389ED024ED96 /* HistoryLog.swift in Sources */,
+				C551765E82D3084EF23EE843 /* IconState.swift in Sources */,
+				4F8016796F5CA99B955DF27A /* IncidentListView.swift in Sources */,
+				59BCAAA9BFB92FC6AE294EAE /* IncidentPruner.swift in Sources */,
+				1EAC911887C4D1472D0292F3 /* JSONDecoding.swift in Sources */,
+				E57C929DC64DE966D282039C /* Log.swift in Sources */,
+				7686EFD2BCE46F75B7CE8EB7 /* MonitorCoordinator.swift in Sources */,
+				D4403F8DA627DB7320A4402F /* Motion.swift in Sources */,
+				3BA9AF76378F967792FF027E /* Palette.swift in Sources */,
+				F70F6BF08FC3B865E64CE99B /* PopoverController.swift in Sources */,
+				7108F6AEC5B1A1973EABEAA4 /* PopoverView.swift in Sources */,
+				3E739F7F91E6085CFDDABB3A /* Preferences.swift in Sources */,
+				DEE3206824A62071F7A24A84 /* RollUp.swift in Sources */,
+				8E75E6C6CA007068C2A6F16B /* ServiceCardView.swift in Sources */,
+				C0D1C06AD39DA63B6F68D988 /* ServiceRegistry.swift in Sources */,
+				079A3DE7ECA88351D605415B /* Snapshot.swift in Sources */,
+				3F79F474BCA14F037E801C50 /* SnapshotStore.swift in Sources */,
+				7D1C4244D396B32EA8A7988A /* SparklineView.swift in Sources */,
+				A9703A77C6579EBA7768DB91 /* StatusAPIClient.swift in Sources */,
+				C4575086AB9AF00C8F1D4192 /* StatusChip.swift in Sources */,
+				20928E430A2A5CE0A1E42DE7 /* StatusEngine.swift in Sources */,
+				351CA80CD1147A767C848F82 /* StatusIndicator.swift in Sources */,
+				8AAE28798C6882B169841491 /* StatusItemController.swift in Sources */,
+				AFB7480E4C2EA6924673B432 /* StatuspageAdapter.swift in Sources */,
+				A99A91FE40177545C094687A /* StatuspageDTO.swift in Sources */,
+				44530946B228835967701AD4 /* SystemObservers.swift in Sources */,
+				54C0BCCE6E426CB987B45477 /* VibeHubGeometry.swift in Sources */,
+				E19729BD9E9CF06F97BB1296 /* VibeIconRenderer.swift in Sources */,
+				AA66175EAC5E5CB4607AE9A7 /* VibeStatsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D89541E020BDEBBB1976FA05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5770F0FF8ABE657301575B08 /* CombinedStatusTests.swift in Sources */,
+				DC2DD80470F3946BF5CC5649 /* ComponentMatcherTests.swift in Sources */,
+				AF40DBDA66C5165933CDFBD6 /* CoordinatorTests.swift in Sources */,
+				5BD8AAFDD87CC50649E4FC18 /* EngineTests.swift in Sources */,
+				434AC1DC0DB285AB32C036D7 /* FixtureLoader.swift in Sources */,
+				E50537EFE9CBA40CF08CA653 /* IconRenderingTests.swift in Sources */,
+				D8D21A7DEDCC322AB1C946E8 /* PersistenceTests.swift in Sources */,
+				7201DAE91AD19E1B1C73EE7F /* PopoverSnapshotTests.swift in Sources */,
+				0A215740E81D7EDA078562EE /* RegistryTests.swift in Sources */,
+				F2581DB78E3236BE96644AD5 /* RetryPolicyTests.swift in Sources */,
+				803FB7508C99C9C7FDC7979D /* RollUpTests.swift in Sources */,
+				10D5940C71FF609F38F93B9C /* StatusIndicatorTests.swift in Sources */,
+				082764DB727EF54728863E24 /* StubAPIClient.swift in Sources */,
+				6C84D486C4E79BB6C500E4C3 /* StubURLProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B30A43DA8A33D392AB319F2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FDC460B813ED980F2FF6570 /* VibeStats */;
+			targetProxy = 0F5022B3009AA9528C464A50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6687C6CE6FBFB5F1977E07CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.todddube.VibeStatsTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VibeStats.app/Contents/MacOS/VibeStats";
+			};
+			name = Release;
+		};
+		8EEF84979A7D27A957DBD928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VibeStats/Resources/VibeStats.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = VibeStats/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.todddube.VibeStats;
+				PRODUCT_NAME = VibeStats;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BC987BB2D08E13FD71D58983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.todddube.VibeStatsTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VibeStats.app/Contents/MacOS/VibeStats";
+			};
+			name = Debug;
+		};
+		D000BBF70969B7ED197F7E5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
+				SWIFT_UPCOMING_FEATURE_INTERNAL_IMPORTS_BY_DEFAULT = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		E0BB4DD6DC2345F1AC3E18C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
+				SWIFT_UPCOMING_FEATURE_INTERNAL_IMPORTS_BY_DEFAULT = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		EDB8C0F7BB190380B4C8472D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VibeStats/Resources/VibeStats.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = VibeStats/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.todddube.VibeStats;
+				PRODUCT_NAME = VibeStats;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D8DFE78A7DE71F09E65AC62 /* Build configuration list for PBXNativeTarget "VibeStatsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC987BB2D08E13FD71D58983 /* Debug */,
+				6687C6CE6FBFB5F1977E07CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B1C7D144DEF252003802A4B8 /* Build configuration list for PBXNativeTarget "VibeStats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB8C0F7BB190380B4C8472D /* Debug */,
+				8EEF84979A7D27A957DBD928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BC2A20C4F9688A5CF88DEE1E /* Build configuration list for PBXProject "VibeStats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0BB4DD6DC2345F1AC3E18C8 /* Debug */,
+				D000BBF70969B7ED197F7E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDA1927DD714E106742D4FA3 /* Project object */;
+}

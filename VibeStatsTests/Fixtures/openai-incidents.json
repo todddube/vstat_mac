@@ -1,0 +1,1102 @@
+{
+  "page": {
+    "id": "01JMDK9XYNY6RXSED6SDWW50WY",
+    "name": "OpenAI",
+    "url": "https://status.openai.com/",
+    "updated_at": "2026-08-21T23:15:09Z"
+  },
+  "incidents": [
+    {
+      "id": "01M0JXWD740S0Y50DWJZS7SH75",
+      "name": "Unexpected logouts for some ChatGPT web users",
+      "status": "resolved",
+      "created_at": "2026-08-21T19:48:34Z",
+      "updated_at": "2026-08-21T23:15:09Z",
+      "resolved_at": "2026-08-21T23:15:09Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01M0K9PNJ3R7AV3C53C7JQ2B86",
+          "body": "The issue causing some ChatGPT web users to be unexpectedly logged out when refreshing the page has been resolved.",
+          "created_at": "2026-08-21T23:15:09Z",
+          "display_at": "2026-08-21T23:15:09Z",
+          "incident_id": "01M0JXWD740S0Y50DWJZS7SH75",
+          "status": "resolved",
+          "updated_at": "2026-08-21T23:15:09Z"
+        },
+        {
+          "id": "01M0K0M8P5GTEWA72BJRKC1XVX",
+          "body": "We have applied a mitigation and are seeing recovery from the issue causing some ChatGPT web users to be unexpectedly logged out when refreshing the page. We\u2019ll continue monitoring closely to confirm the recovery is sustained.",
+          "created_at": "2026-08-21T20:36:33Z",
+          "display_at": "2026-08-21T20:36:33Z",
+          "incident_id": "01M0JXWD740S0Y50DWJZS7SH75",
+          "status": "monitoring",
+          "updated_at": "2026-08-21T20:36:33Z"
+        },
+        {
+          "id": "01M0JXWD74Q6EHRNX9TJQQTVPK",
+          "body": "We\u2019re investigating an issue causing some ChatGPT web users to be unexpectedly logged out when refreshing the page.",
+          "created_at": "2026-08-21T19:48:34Z",
+          "display_at": "2026-08-21T19:48:34Z",
+          "incident_id": "01M0JXWD740S0Y50DWJZS7SH75",
+          "status": "investigating",
+          "updated_at": "2026-08-21T19:48:34Z"
+        }
+      ]
+    },
+    {
+      "id": "01M0G1RZER839AZXWMYKSZF3GR",
+      "name": "Elevated Codex API authentication errors",
+      "status": "resolved",
+      "created_at": "2026-08-20T16:58:53Z",
+      "updated_at": "2026-08-20T17:52:16Z",
+      "resolved_at": "2026-08-20T17:52:16Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01M0G4TQGTCW81V0HCVDVFNMZE",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-20T17:52:16Z",
+          "display_at": "2026-08-20T17:52:16Z",
+          "incident_id": "01M0G1RZER839AZXWMYKSZF3GR",
+          "status": "resolved",
+          "updated_at": "2026-08-20T17:52:16Z"
+        },
+        {
+          "id": "01M0G2R20Y78TC1YCH8SZ1TC9G",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-20T17:15:51Z",
+          "display_at": "2026-08-20T17:15:51Z",
+          "incident_id": "01M0G1RZER839AZXWMYKSZF3GR",
+          "status": "monitoring",
+          "updated_at": "2026-08-20T17:15:51Z"
+        },
+        {
+          "id": "01M0G1RZERM19PBWFV956PENSZ",
+          "body": "Some users may encounter errors when using Codex with API authentication.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-20T16:58:53Z",
+          "display_at": "2026-08-20T16:58:53Z",
+          "incident_id": "01M0G1RZER839AZXWMYKSZF3GR",
+          "status": "identified",
+          "updated_at": "2026-08-20T16:58:53Z"
+        }
+      ]
+    },
+    {
+      "id": "01M0FQAR3NNH3ANVTQMBRD47DC",
+      "name": "Elevated Errors for Thinking mode in ChatGPT ",
+      "status": "resolved",
+      "created_at": "2026-08-20T13:56:21Z",
+      "updated_at": "2026-08-20T16:51:51Z",
+      "resolved_at": "2026-08-20T16:51:51Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01M0G1C3YRF83WTBTMT27YB3V8",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-20T16:51:51Z",
+          "display_at": "2026-08-20T16:51:51Z",
+          "incident_id": "01M0FQAR3NNH3ANVTQMBRD47DC",
+          "status": "resolved",
+          "updated_at": "2026-08-20T16:51:51Z"
+        },
+        {
+          "id": "01M0FTM7Q09D6S3CM0SDPTKRSQ",
+          "body": "We have implemented a mitigation for the issue for elevated errors for Thinking Mode and Image Generation in ChatGPT/ChatGPT Work ",
+          "created_at": "2026-08-20T14:53:57Z",
+          "display_at": "2026-08-20T14:53:57Z",
+          "incident_id": "01M0FQAR3NNH3ANVTQMBRD47DC",
+          "status": "monitoring",
+          "updated_at": "2026-08-20T14:53:57Z"
+        },
+        {
+          "id": "01M0FR84MEC6AHK3WAXWXX4VSJ",
+          "body": "We are investigating an issue causing some users to experience errors when using Thinking mode and Image Generation in ChatGPT.",
+          "created_at": "2026-08-20T14:12:24Z",
+          "display_at": "2026-08-20T14:12:24Z",
+          "incident_id": "01M0FQAR3NNH3ANVTQMBRD47DC",
+          "status": "investigating",
+          "updated_at": "2026-08-20T14:12:24Z"
+        },
+        {
+          "id": "01M0FQAR3NVWW4F5SSTY6504WP",
+          "body": "We are investigating an issue causing some users to experience errors when using Thinking in ChatGPT.",
+          "created_at": "2026-08-20T13:56:21Z",
+          "display_at": "2026-08-20T13:56:21Z",
+          "incident_id": "01M0FQAR3NNH3ANVTQMBRD47DC",
+          "status": "investigating",
+          "updated_at": "2026-08-20T13:56:21Z"
+        }
+      ]
+    },
+    {
+      "id": "01M0E7K87VJNMGW0QTMHPEQQ39",
+      "name": "Chatgpt.com is down - all signups and logins are down as of right now",
+      "status": "resolved",
+      "created_at": "2026-08-20T00:02:08Z",
+      "updated_at": "2026-08-20T00:54:17Z",
+      "resolved_at": "2026-08-20T00:54:17Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01M0EAJQMT8TZNPV9Y2F4YT41R",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-20T00:54:17Z",
+          "display_at": "2026-08-20T00:54:17Z",
+          "incident_id": "01M0E7K87VJNMGW0QTMHPEQQ39",
+          "status": "resolved",
+          "updated_at": "2026-08-20T00:54:17Z"
+        },
+        {
+          "id": "01M0E9FH4DMXCK0XMKNBNNT2MF",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-20T00:35:03Z",
+          "display_at": "2026-08-20T00:35:03Z",
+          "incident_id": "01M0E7K87VJNMGW0QTMHPEQQ39",
+          "status": "monitoring",
+          "updated_at": "2026-08-20T00:35:03Z"
+        },
+        {
+          "id": "01M0E8YC1B920Q17W536FGXTKX",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-20T00:25:41Z",
+          "display_at": "2026-08-20T00:25:41Z",
+          "incident_id": "01M0E7K87VJNMGW0QTMHPEQQ39",
+          "status": "monitoring",
+          "updated_at": "2026-08-20T00:25:41Z"
+        },
+        {
+          "id": "01M0E7NNB766VV0DJBQ1DJH13R",
+          "body": "We have identified that users are experiencing login issues for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-20T00:03:27Z",
+          "display_at": "2026-08-20T00:03:27Z",
+          "incident_id": "01M0E7K87VJNMGW0QTMHPEQQ39",
+          "status": "identified",
+          "updated_at": "2026-08-20T00:03:27Z"
+        },
+        {
+          "id": "01M0E7K87VCPG07GC72KGEMXBJ",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-20T00:02:08Z",
+          "display_at": "2026-08-20T00:02:08Z",
+          "incident_id": "01M0E7K87VJNMGW0QTMHPEQQ39",
+          "status": "identified",
+          "updated_at": "2026-08-20T00:02:08Z"
+        }
+      ]
+    },
+    {
+      "id": "01M0B4WSV41BCFZ9VDWKSMQVSP",
+      "name": "Elevated errors deploying Sites",
+      "status": "resolved",
+      "created_at": "2026-08-18T19:17:12Z",
+      "updated_at": "2026-08-18T19:37:24Z",
+      "resolved_at": "2026-08-18T19:37:24Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01M0B61SDT7EBXA8YYE2MPTK2K",
+          "body": "The issue affecting site deployments has been resolved.",
+          "created_at": "2026-08-18T19:37:24Z",
+          "display_at": "2026-08-18T19:37:24Z",
+          "incident_id": "01M0B4WSV41BCFZ9VDWKSMQVSP",
+          "status": "resolved",
+          "updated_at": "2026-08-18T19:37:24Z"
+        },
+        {
+          "id": "01M0B5E2HM5QHV10Z8SCHTX2D8",
+          "body": "We have implemented a mitigation for the issue affecting site deployments and are monitoring the results.",
+          "created_at": "2026-08-18T19:26:38Z",
+          "display_at": "2026-08-18T19:26:38Z",
+          "incident_id": "01M0B4WSV41BCFZ9VDWKSMQVSP",
+          "status": "monitoring",
+          "updated_at": "2026-08-18T19:26:38Z"
+        },
+        {
+          "id": "01M0B4WSV43RKFFBBCVGYCYVRG",
+          "body": "We have identified an issue causing elevated errors when deploying Sites. We are working to implement a mitigation.",
+          "created_at": "2026-08-18T19:17:12Z",
+          "display_at": "2026-08-18T19:17:12Z",
+          "incident_id": "01M0B4WSV41BCFZ9VDWKSMQVSP",
+          "status": "identified",
+          "updated_at": "2026-08-18T19:17:12Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZXVAJQ5XFH7PTM43XVPQWGJ",
+      "name": "Elevated errors in ChatGPT conversations for Free users",
+      "status": "resolved",
+      "created_at": "2026-08-13T15:19:50Z",
+      "updated_at": "2026-08-13T23:58:22Z",
+      "resolved_at": "2026-08-13T23:58:22Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZYS01ASAPPR4D1PXDGHAR3J",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-13T23:58:22Z",
+          "display_at": "2026-08-13T23:58:22Z",
+          "incident_id": "01KZXVAJQ5XFH7PTM43XVPQWGJ",
+          "status": "resolved",
+          "updated_at": "2026-08-13T23:58:22Z"
+        },
+        {
+          "id": "01KZYJNSQNF3JRRXBHXP5JE8CD",
+          "body": "We\u2019ve applied a mitigation and are monitoring recovery following an issue with a downstream provider.",
+          "created_at": "2026-08-13T22:07:55Z",
+          "display_at": "2026-08-13T22:07:55Z",
+          "incident_id": "01KZXVAJQ5XFH7PTM43XVPQWGJ",
+          "status": "monitoring",
+          "updated_at": "2026-08-13T22:07:55Z"
+        },
+        {
+          "id": "01KZY0QRFB4VGDQNY80YEWXMT2",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-13T16:54:25Z",
+          "display_at": "2026-08-13T16:54:25Z",
+          "incident_id": "01KZXVAJQ5XFH7PTM43XVPQWGJ",
+          "status": "monitoring",
+          "updated_at": "2026-08-13T16:54:25Z"
+        },
+        {
+          "id": "01KZXWYSDEB9ZHCVM7GHTM5F8S",
+          "body": "We are still implementing the mitigation.",
+          "created_at": "2026-08-13T15:48:21Z",
+          "display_at": "2026-08-13T15:48:21Z",
+          "incident_id": "01KZXVAJQ5XFH7PTM43XVPQWGJ",
+          "status": "identified",
+          "updated_at": "2026-08-13T15:48:21Z"
+        },
+        {
+          "id": "01KZXVAJQ5BB2WR6EFYQNCTHK8",
+          "body": "We are investigating the issue for the listed services.",
+          "created_at": "2026-08-13T15:19:50Z",
+          "display_at": "2026-08-13T15:19:50Z",
+          "incident_id": "01KZXVAJQ5XFH7PTM43XVPQWGJ",
+          "status": "investigating",
+          "updated_at": "2026-08-13T15:19:50Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+      "name": "Error while creating custom RBAC roles for Enterprise users",
+      "status": "resolved",
+      "created_at": "2026-08-13T14:03:49Z",
+      "updated_at": "2026-08-13T22:26:53Z",
+      "resolved_at": "2026-08-13T22:26:53Z",
+      "impact": "none",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZYKRHT1CB8ARKCR7X8SKM7K",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-13T22:26:53Z",
+          "display_at": "2026-08-13T22:26:53Z",
+          "incident_id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+          "status": "resolved",
+          "updated_at": "2026-08-13T22:26:53Z"
+        },
+        {
+          "id": "01KZYG82JHEVFR4K51N2AVJZ64",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-13T21:25:28Z",
+          "display_at": "2026-08-13T21:25:28Z",
+          "incident_id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+          "status": "monitoring",
+          "updated_at": "2026-08-13T21:25:28Z"
+        },
+        {
+          "id": "01KZY793H4PF2PH7HD8F8VWJRC",
+          "body": "We are continuing to implement the mitigation",
+          "created_at": "2026-08-13T18:48:44Z",
+          "display_at": "2026-08-13T18:48:44Z",
+          "incident_id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+          "status": "identified",
+          "updated_at": "2026-08-13T18:48:44Z"
+        },
+        {
+          "id": "01KZXWPW8DGYW3W4C7ZRT7DGGP",
+          "body": "We are still implementing the mitigation.",
+          "created_at": "2026-08-13T15:44:01Z",
+          "display_at": "2026-08-13T15:44:01Z",
+          "incident_id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+          "status": "identified",
+          "updated_at": "2026-08-13T15:44:01Z"
+        },
+        {
+          "id": "01KZXSKM79A5F5D66YYWXCAP3D",
+          "body": "We are still implementing the mitigation.",
+          "created_at": "2026-08-13T14:49:49Z",
+          "display_at": "2026-08-13T14:49:49Z",
+          "incident_id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+          "status": "identified",
+          "updated_at": "2026-08-13T14:49:49Z"
+        },
+        {
+          "id": "01KZXRDS1WQRPCF99E78ZTATCD",
+          "body": "We are still implementing the mitigation.",
+          "created_at": "2026-08-13T14:29:09Z",
+          "display_at": "2026-08-13T14:29:09Z",
+          "incident_id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+          "status": "identified",
+          "updated_at": "2026-08-13T14:29:09Z"
+        },
+        {
+          "id": "01KZXPZD4KHA0HVZG0Q9XS5F55",
+          "body": "We are investigating an issue while creating custom RBAC roles for Enterprise users.",
+          "created_at": "2026-08-13T14:03:49Z",
+          "display_at": "2026-08-13T14:03:49Z",
+          "incident_id": "01KZXPZD4KHMQQFF09PSNNEZT8",
+          "status": "investigating",
+          "updated_at": "2026-08-13T14:03:49Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZSC0T66YTVM57N5T79SV8ZV",
+      "name": "Increase in errors on API, Codex and Work Mode",
+      "status": "resolved",
+      "created_at": "2026-08-11T21:35:23Z",
+      "updated_at": "2026-08-11T22:42:26Z",
+      "resolved_at": "2026-08-11T22:42:26Z",
+      "impact": "none",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZSFVJKKC4TG4JRAM37MZH1B",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-11T22:42:26Z",
+          "display_at": "2026-08-11T22:42:26Z",
+          "incident_id": "01KZSC0T66YTVM57N5T79SV8ZV",
+          "status": "resolved",
+          "updated_at": "2026-08-11T22:42:26Z"
+        },
+        {
+          "id": "01KZSEBJW880QZY4M43NKHE8ZD",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-11T22:16:14Z",
+          "display_at": "2026-08-11T22:16:14Z",
+          "incident_id": "01KZSC0T66YTVM57N5T79SV8ZV",
+          "status": "monitoring",
+          "updated_at": "2026-08-11T22:16:14Z"
+        },
+        {
+          "id": "01KZSC96XFT2NMPB0JYWJP73QG",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-11T21:39:59Z",
+          "display_at": "2026-08-11T21:39:59Z",
+          "incident_id": "01KZSC0T66YTVM57N5T79SV8ZV",
+          "status": "identified",
+          "updated_at": "2026-08-11T21:39:59Z"
+        },
+        {
+          "id": "01KZSC3W1C07S1HE76R8WZES16",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-11T21:37:04Z",
+          "display_at": "2026-08-11T21:37:04Z",
+          "incident_id": "01KZSC0T66YTVM57N5T79SV8ZV",
+          "status": "identified",
+          "updated_at": "2026-08-11T21:37:04Z"
+        },
+        {
+          "id": "01KZSC0T661P5XKS02DXQ4STV6",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-11T21:35:23Z",
+          "display_at": "2026-08-11T21:35:23Z",
+          "incident_id": "01KZSC0T66YTVM57N5T79SV8ZV",
+          "status": "identified",
+          "updated_at": "2026-08-11T21:35:23Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZRXPE0NGXA12FJNP8WZF8D7",
+      "name": "Users unable to login to ads manager",
+      "status": "resolved",
+      "created_at": "2026-08-11T17:25:03Z",
+      "updated_at": "2026-08-11T17:28:04Z",
+      "resolved_at": "2026-08-11T17:28:04Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZRXVY5KS4KDNG32BVYTHZMW",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-11T17:28:04Z",
+          "display_at": "2026-08-11T17:28:04Z",
+          "incident_id": "01KZRXPE0NGXA12FJNP8WZF8D7",
+          "status": "resolved",
+          "updated_at": "2026-08-11T17:28:04Z"
+        },
+        {
+          "id": "01KZRXPE0N7VKQZ565Y2FNHPDZ",
+          "body": "We have identified that users are are unable to login to ads manager.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-11T17:25:03Z",
+          "display_at": "2026-08-11T17:25:03Z",
+          "incident_id": "01KZRXPE0NGXA12FJNP8WZF8D7",
+          "status": "identified",
+          "updated_at": "2026-08-11T17:25:03Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZRE6ZA1RE1ZH4HQ111CX1S8",
+      "name": "Increased error rates",
+      "status": "resolved",
+      "created_at": "2026-08-11T12:54:28Z",
+      "updated_at": "2026-08-11T15:01:38Z",
+      "resolved_at": "2026-08-11T15:01:38Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZRNFTC2AGAWH4J0HJT2AGYE",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-11T15:01:38Z",
+          "display_at": "2026-08-11T15:01:38Z",
+          "incident_id": "01KZRE6ZA1RE1ZH4HQ111CX1S8",
+          "status": "resolved",
+          "updated_at": "2026-08-11T15:01:38Z"
+        },
+        {
+          "id": "01KZRN8Q0DT6ADKNBX0TW8Q2V0",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-11T14:57:45Z",
+          "display_at": "2026-08-11T14:57:45Z",
+          "incident_id": "01KZRE6ZA1RE1ZH4HQ111CX1S8",
+          "status": "monitoring",
+          "updated_at": "2026-08-11T14:57:45Z"
+        },
+        {
+          "id": "01KZRKSKSGZ2A7RFCXHZPDEJST",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-11T14:32:02Z",
+          "display_at": "2026-08-11T14:32:02Z",
+          "incident_id": "01KZRE6ZA1RE1ZH4HQ111CX1S8",
+          "status": "monitoring",
+          "updated_at": "2026-08-11T14:32:02Z"
+        },
+        {
+          "id": "01KZRFQCZA33VWQKQ0G36KWWR6",
+          "body": "We are investigating the issue for the listed services.",
+          "created_at": "2026-08-11T13:20:55Z",
+          "display_at": "2026-08-11T13:20:55Z",
+          "incident_id": "01KZRE6ZA1RE1ZH4HQ111CX1S8",
+          "status": "investigating",
+          "updated_at": "2026-08-11T13:20:55Z"
+        },
+        {
+          "id": "01KZRE6ZA1R0C8RDWX93T776P4",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-11T12:54:28Z",
+          "display_at": "2026-08-11T12:54:28Z",
+          "incident_id": "01KZRE6ZA1RE1ZH4HQ111CX1S8",
+          "status": "identified",
+          "updated_at": "2026-08-11T12:54:28Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZRJHTR75WDXCMC0ZERX6YJC",
+      "name": "Elevated errors affecting ChatGPT Go conversations",
+      "status": "resolved",
+      "created_at": "2026-08-11T14:10:18Z",
+      "updated_at": "2026-08-11T14:20:28Z",
+      "resolved_at": "2026-08-11T14:20:28Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZRK4E4NZSTCQNGHKJXAPFFT",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-11T14:20:28Z",
+          "display_at": "2026-08-11T14:20:28Z",
+          "incident_id": "01KZRJHTR75WDXCMC0ZERX6YJC",
+          "status": "resolved",
+          "updated_at": "2026-08-11T14:20:28Z"
+        },
+        {
+          "id": "01KZRJHTR7YV70EQYXRFKQV39N",
+          "body": "We are investigating the issue for the listed services.",
+          "created_at": "2026-08-11T14:10:18Z",
+          "display_at": "2026-08-11T14:10:18Z",
+          "incident_id": "01KZRJHTR75WDXCMC0ZERX6YJC",
+          "status": "investigating",
+          "updated_at": "2026-08-11T14:10:18Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZNZTPWMV06Z6TQNMY1R1QDR",
+      "name": "Increased error rates",
+      "status": "resolved",
+      "created_at": "2026-08-10T14:04:37Z",
+      "updated_at": "2026-08-11T02:48:20Z",
+      "resolved_at": "2026-08-11T02:48:20Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZQBH3YM2CQ5D78NRKBABM31",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-11T02:48:20Z",
+          "display_at": "2026-08-11T02:48:20Z",
+          "incident_id": "01KZNZTPWMV06Z6TQNMY1R1QDR",
+          "status": "resolved",
+          "updated_at": "2026-08-11T02:48:20Z"
+        },
+        {
+          "id": "01KZP3EK1R6D4TWMFS0MEW3ECC",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-10T15:07:54Z",
+          "display_at": "2026-08-10T15:07:54Z",
+          "incident_id": "01KZNZTPWMV06Z6TQNMY1R1QDR",
+          "status": "monitoring",
+          "updated_at": "2026-08-10T15:07:54Z"
+        },
+        {
+          "id": "01KZNZTPWM1TEMYPSWNHC6ZE3A",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-10T14:04:37Z",
+          "display_at": "2026-08-10T14:04:37Z",
+          "incident_id": "01KZNZTPWMV06Z6TQNMY1R1QDR",
+          "status": "investigating",
+          "updated_at": "2026-08-10T14:04:37Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZN8RYNZY8T4QQGB3JWMPYRW",
+      "name": "Increased errors for some ChatGPT users",
+      "status": "resolved",
+      "created_at": "2026-08-10T07:21:42Z",
+      "updated_at": "2026-08-10T08:09:19Z",
+      "resolved_at": "2026-08-10T08:09:19Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZNBG4JNN585VMGZWE1FXHQV",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-10T08:09:19Z",
+          "display_at": "2026-08-10T08:09:19Z",
+          "incident_id": "01KZN8RYNZY8T4QQGB3JWMPYRW",
+          "status": "resolved",
+          "updated_at": "2026-08-10T08:09:19Z"
+        },
+        {
+          "id": "01KZNB71RPTPC7GF6VV753H2N1",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-10T08:04:21Z",
+          "display_at": "2026-08-10T08:04:21Z",
+          "incident_id": "01KZN8RYNZY8T4QQGB3JWMPYRW",
+          "status": "monitoring",
+          "updated_at": "2026-08-10T08:04:21Z"
+        },
+        {
+          "id": "01KZN8RYNZQM716YCTF2JHYSBX",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-08-10T07:21:42Z",
+          "display_at": "2026-08-10T07:21:42Z",
+          "incident_id": "01KZN8RYNZY8T4QQGB3JWMPYRW",
+          "status": "identified",
+          "updated_at": "2026-08-10T07:21:42Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZ96S5HEWX0CX26W2WFYFKE6",
+      "name": "Elevated errors with image generation",
+      "status": "resolved",
+      "created_at": "2026-08-05T14:55:59Z",
+      "updated_at": "2026-08-05T23:22:45Z",
+      "resolved_at": "2026-08-05T23:22:45Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZA3S2Z9YH6X717HHYRAF144",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-05T23:22:45Z",
+          "display_at": "2026-08-05T23:22:45Z",
+          "incident_id": "01KZ96S5HEWX0CX26W2WFYFKE6",
+          "status": "resolved",
+          "updated_at": "2026-08-05T23:22:45Z"
+        },
+        {
+          "id": "01KZ98MHTF2NP5GY64Y9G4FNQG",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-05T15:28:25Z",
+          "display_at": "2026-08-05T15:28:25Z",
+          "incident_id": "01KZ96S5HEWX0CX26W2WFYFKE6",
+          "status": "monitoring",
+          "updated_at": "2026-08-05T15:28:25Z"
+        },
+        {
+          "id": "01KZ96S5HE29K0DPR4PWNE0PT7",
+          "body": "We are investigating elevated errors affecting image generation. Some users may experience failed image generation requests. We are working to reduce the errors and will provide another update as we learn more.",
+          "created_at": "2026-08-05T14:55:59Z",
+          "display_at": "2026-08-05T14:55:59Z",
+          "incident_id": "01KZ96S5HEWX0CX26W2WFYFKE6",
+          "status": "identified",
+          "updated_at": "2026-08-05T14:55:59Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZ9DMQD2GJ8JJWDN7572RH78",
+      "name": "Issues with Custom GPT actions",
+      "status": "resolved",
+      "created_at": "2026-08-05T16:55:54Z",
+      "updated_at": "2026-08-05T22:49:08Z",
+      "resolved_at": "2026-08-05T22:49:08Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZA1VHC56G76RF68EGDTQQW4",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-05T22:49:08Z",
+          "display_at": "2026-08-05T22:49:08Z",
+          "incident_id": "01KZ9DMQD2GJ8JJWDN7572RH78",
+          "status": "resolved",
+          "updated_at": "2026-08-05T22:49:08Z"
+        },
+        {
+          "id": "01KZA1PDVKR8FHJWSRVXA68CGH",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-05T22:46:21Z",
+          "display_at": "2026-08-05T22:46:21Z",
+          "incident_id": "01KZ9DMQD2GJ8JJWDN7572RH78",
+          "status": "monitoring",
+          "updated_at": "2026-08-05T22:46:21Z"
+        },
+        {
+          "id": "01KZ9MY9D1YVFVG5XVNWK4SN51",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-05T19:03:27Z",
+          "display_at": "2026-08-05T19:03:27Z",
+          "incident_id": "01KZ9DMQD2GJ8JJWDN7572RH78",
+          "status": "monitoring",
+          "updated_at": "2026-08-05T19:03:27Z"
+        },
+        {
+          "id": "01KZ9JXBV1A35WW4QQ5QMEPXH5",
+          "body": "We are still implementing the mitigation.",
+          "created_at": "2026-08-05T18:28:00Z",
+          "display_at": "2026-08-05T18:28:00Z",
+          "incident_id": "01KZ9DMQD2GJ8JJWDN7572RH78",
+          "status": "identified",
+          "updated_at": "2026-08-05T18:28:00Z"
+        },
+        {
+          "id": "01KZ9DMQD2QM1033WSAY1M9J01",
+          "body": "We are investigating the issue for the listed services.",
+          "created_at": "2026-08-05T16:55:54Z",
+          "display_at": "2026-08-05T16:55:54Z",
+          "incident_id": "01KZ9DMQD2GJ8JJWDN7572RH78",
+          "status": "investigating",
+          "updated_at": "2026-08-05T16:55:54Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZ9E7QD8WFJD5DMF73QGVYH8",
+      "name": "Elevated errors in ChatGPT conversations with files",
+      "status": "resolved",
+      "created_at": "2026-08-05T17:06:16Z",
+      "updated_at": "2026-08-05T20:19:28Z",
+      "resolved_at": "2026-08-05T20:19:28Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZ9S9FAQ9SQCW1RY7TV0GMP4",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-05T20:19:28Z",
+          "display_at": "2026-08-05T20:19:28Z",
+          "incident_id": "01KZ9E7QD8WFJD5DMF73QGVYH8",
+          "status": "resolved",
+          "updated_at": "2026-08-05T20:19:28Z"
+        },
+        {
+          "id": "01KZ9E7QD8AE26DGPEAFS0PF95",
+          "body": "Error rates affecting ChatGPT conversations that use files and images have improved. We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-05T17:06:16Z",
+          "display_at": "2026-08-05T17:06:16Z",
+          "incident_id": "01KZ9E7QD8WFJD5DMF73QGVYH8",
+          "status": "monitoring",
+          "updated_at": "2026-08-05T17:06:16Z"
+        }
+      ]
+    },
+    {
+      "id": "01KZ6CT9K9Q52S3707W75MNBGB",
+      "name": "Elevated ChatGPT conversation errors affecting Plus, Pro, Business, and Edu users",
+      "status": "resolved",
+      "created_at": "2026-08-04T12:43:44Z",
+      "updated_at": "2026-08-04T15:25:30Z",
+      "resolved_at": "2026-08-04T15:25:30Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KZ6P2G45GP3H6MV59ZJ48C2C",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-08-04T15:25:30Z",
+          "display_at": "2026-08-04T15:25:30Z",
+          "incident_id": "01KZ6CT9K9Q52S3707W75MNBGB",
+          "status": "resolved",
+          "updated_at": "2026-08-04T15:25:30Z"
+        },
+        {
+          "id": "01KZ6DM2CGDMRYZTEBM38NKTS6",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-08-04T12:57:49Z",
+          "display_at": "2026-08-04T12:57:49Z",
+          "incident_id": "01KZ6CT9K9Q52S3707W75MNBGB",
+          "status": "monitoring",
+          "updated_at": "2026-08-04T12:57:49Z"
+        },
+        {
+          "id": "01KZ6CT9K96RN4A50T6408ZJ0J",
+          "body": "We are investigating elevated errors affecting ChatGPT conversations. Some users may experience failed or interrupted responses, and some conversation turns may not be saved. The issue is affecting users across Plus, Pro, Business and Edu ChatGPT plans.",
+          "created_at": "2026-08-04T12:43:44Z",
+          "display_at": "2026-08-04T12:43:44Z",
+          "incident_id": "01KZ6CT9K9Q52S3707W75MNBGB",
+          "status": "investigating",
+          "updated_at": "2026-08-04T12:43:44Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYVPNEY9736Z04D3X1NSFFF9",
+      "name": "Enterprise & Education Chat Errors",
+      "status": "resolved",
+      "created_at": "2026-07-31T09:04:13Z",
+      "updated_at": "2026-07-31T09:28:52Z",
+      "resolved_at": "2026-07-31T09:28:52Z",
+      "impact": "none",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYVR2K5E50GMHF4XGS52NB1J",
+          "body": "This is now resolved.",
+          "created_at": "2026-07-31T09:28:52Z",
+          "display_at": "2026-07-31T09:28:52Z",
+          "incident_id": "01KYVPNEY9736Z04D3X1NSFFF9",
+          "status": "resolved",
+          "updated_at": "2026-07-31T09:28:52Z"
+        },
+        {
+          "id": "01KYVPTCHC0SABAFWYTJ8FMHK8",
+          "body": "The issue has been mitigated.",
+          "created_at": "2026-07-31T09:06:54Z",
+          "display_at": "2026-07-31T09:06:54Z",
+          "incident_id": "01KYVPNEY9736Z04D3X1NSFFF9",
+          "status": "monitoring",
+          "updated_at": "2026-07-31T09:06:54Z"
+        },
+        {
+          "id": "01KYVPRC0EK2D7YE3AHGY15HAN",
+          "body": "We have identified that some ChatGPT Business and Education users are experiencing elevated errors when starting or continuing conversations. We are working on implementing a mitigation and will provide another update as soon as we have more information.",
+          "created_at": "2026-07-31T09:05:48Z",
+          "display_at": "2026-07-31T09:05:48Z",
+          "incident_id": "01KYVPNEY9736Z04D3X1NSFFF9",
+          "status": "identified",
+          "updated_at": "2026-07-31T09:05:48Z"
+        },
+        {
+          "id": "01KYVPNEY94W5MY3CAC72A1N2W",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-07-31T09:04:13Z",
+          "display_at": "2026-07-31T09:04:13Z",
+          "incident_id": "01KYVPNEY9736Z04D3X1NSFFF9",
+          "status": "identified",
+          "updated_at": "2026-07-31T09:04:13Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYSQ7PC81PV3PZE3ZEVFK6K5",
+      "name": "Elevated errors affecting ChatGPT conversations",
+      "status": "resolved",
+      "created_at": "2026-07-30T14:35:41Z",
+      "updated_at": "2026-08-07T15:26:31Z",
+      "resolved_at": "2026-07-30T16:01:11Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYSW47B604Y1K0KGFTZ4K46X",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-07-30T16:01:11Z",
+          "display_at": "2026-07-30T16:01:11Z",
+          "incident_id": "01KYSQ7PC81PV3PZE3ZEVFK6K5",
+          "status": "resolved",
+          "updated_at": "2026-07-30T16:01:11Z"
+        },
+        {
+          "id": "01KYST4JZC6K2S3VGG3VCKNV0E",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-07-30T15:26:25Z",
+          "display_at": "2026-07-30T15:26:25Z",
+          "incident_id": "01KYSQ7PC81PV3PZE3ZEVFK6K5",
+          "status": "monitoring",
+          "updated_at": "2026-07-30T15:26:25Z"
+        },
+        {
+          "id": "01KYSR7NZY10JWH8R4Z9GHBJ38",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-07-30T14:53:10Z",
+          "display_at": "2026-07-30T14:53:10Z",
+          "incident_id": "01KYSQ7PC81PV3PZE3ZEVFK6K5",
+          "status": "monitoring",
+          "updated_at": "2026-07-30T14:53:10Z"
+        },
+        {
+          "id": "01KYSQ7PC8XVKAS9P4PEGKDMX8",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-07-30T14:35:41Z",
+          "display_at": "2026-07-30T14:35:41Z",
+          "incident_id": "01KYSQ7PC81PV3PZE3ZEVFK6K5",
+          "status": "identified",
+          "updated_at": "2026-07-30T14:35:41Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYNNX2TQ3PV0KPJ9PTRRPX6C",
+      "name": "Elevated error rates with the invalid_prompt error code",
+      "status": "resolved",
+      "created_at": "2026-07-29T00:55:27Z",
+      "updated_at": "2026-07-29T02:20:19Z",
+      "resolved_at": "2026-07-29T02:20:19Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYNTRF6TQGFMXS1QWVKMYTP3",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-07-29T02:20:19Z",
+          "display_at": "2026-07-29T02:20:19Z",
+          "incident_id": "01KYNNX2TQ3PV0KPJ9PTRRPX6C",
+          "status": "resolved",
+          "updated_at": "2026-07-29T02:20:19Z"
+        },
+        {
+          "id": "01KYNRDT3QJWHHAFD6E2Q0W6E7",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-07-29T01:39:33Z",
+          "display_at": "2026-07-29T01:39:33Z",
+          "incident_id": "01KYNNX2TQ3PV0KPJ9PTRRPX6C",
+          "status": "monitoring",
+          "updated_at": "2026-07-29T01:39:33Z"
+        },
+        {
+          "id": "01KYNNX2TQAYR92FM2J10D8ZMM",
+          "body": "We are investigating the issue for the listed services.",
+          "created_at": "2026-07-29T00:55:27Z",
+          "display_at": "2026-07-29T00:55:27Z",
+          "incident_id": "01KYNNX2TQ3PV0KPJ9PTRRPX6C",
+          "status": "investigating",
+          "updated_at": "2026-07-29T00:55:27Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYMJND2XYYBDVCF8DKA5DY3N",
+      "name": "Elevated Image Generation Error Rate in ChatGPT",
+      "status": "resolved",
+      "created_at": "2026-07-28T14:39:36Z",
+      "updated_at": "2026-07-28T15:15:32Z",
+      "resolved_at": "2026-07-28T15:15:32Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYMMQ70EPMBRQA52CJM3M3W4",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-07-28T15:15:32Z",
+          "display_at": "2026-07-28T15:15:32Z",
+          "incident_id": "01KYMJND2XYYBDVCF8DKA5DY3N",
+          "status": "resolved",
+          "updated_at": "2026-07-28T15:15:32Z"
+        },
+        {
+          "id": "01KYMMM6G0V6NPZKPN0W13Q24V",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-07-28T15:13:53Z",
+          "display_at": "2026-07-28T15:13:53Z",
+          "incident_id": "01KYMJND2XYYBDVCF8DKA5DY3N",
+          "status": "monitoring",
+          "updated_at": "2026-07-28T15:13:53Z"
+        },
+        {
+          "id": "01KYMJND2XEQBKMGG82BVATGRC",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-07-28T14:39:36Z",
+          "display_at": "2026-07-28T14:39:36Z",
+          "incident_id": "01KYMJND2XYYBDVCF8DKA5DY3N",
+          "status": "identified",
+          "updated_at": "2026-07-28T14:39:36Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYJFG4S86K8FMTB4N6BDZS7F",
+      "name": "Image generation unavailable in ChatGPT",
+      "status": "resolved",
+      "created_at": "2026-07-27T19:05:49Z",
+      "updated_at": "2026-07-27T20:24:51Z",
+      "resolved_at": "2026-07-27T20:24:51Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYJM0W1HCCHMQ14H9DBJW3VQ",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-07-27T20:24:51Z",
+          "display_at": "2026-07-27T20:24:51Z",
+          "incident_id": "01KYJFG4S86K8FMTB4N6BDZS7F",
+          "status": "resolved",
+          "updated_at": "2026-07-27T20:24:51Z"
+        },
+        {
+          "id": "01KYJFG4S8C081J2GS9PYFN000",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-07-27T19:05:49Z",
+          "display_at": "2026-07-27T14:04:00Z",
+          "incident_id": "01KYJFG4S86K8FMTB4N6BDZS7F",
+          "status": "investigating",
+          "updated_at": "2026-07-27T19:07:34Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYJC3TDHZVSQFFPTC8X9RAHC",
+      "name": "We\u2019re seeing elevated latency, timeouts, and interrupted streaming across gpt 5.1 mini model and gpt 4.1 mini",
+      "status": "resolved",
+      "created_at": "2026-07-27T18:06:39Z",
+      "updated_at": "2026-07-27T20:52:18Z",
+      "resolved_at": "2026-07-27T17:30:00Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYJNK4N99976E797W18Y8YV3",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-07-27T20:52:18Z",
+          "display_at": "2026-07-27T17:30:00Z",
+          "incident_id": "01KYJC3TDHZVSQFFPTC8X9RAHC",
+          "status": "resolved",
+          "updated_at": "2026-07-27T21:03:14Z"
+        },
+        {
+          "id": "01KYJC3TDH17NJV110VQPF8ZET",
+          "body": "We are investigating the issue for the listed services.",
+          "created_at": "2026-07-27T18:06:39Z",
+          "display_at": "2026-07-27T15:30:00Z",
+          "incident_id": "01KYJC3TDHZVSQFFPTC8X9RAHC",
+          "status": "investigating",
+          "updated_at": "2026-07-27T21:03:02Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYDN6YPS6ARY1EC9089N089G",
+      "name": "Elevated errors affecting ChatGPT conversations",
+      "status": "resolved",
+      "created_at": "2026-07-25T22:09:27Z",
+      "updated_at": "2026-07-27T16:32:09Z",
+      "resolved_at": "2026-07-27T16:32:09Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYJ6PRXMC407ZPPG5FGDVKJX",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-07-27T16:32:09Z",
+          "display_at": "2026-07-27T16:32:09Z",
+          "incident_id": "01KYDN6YPS6ARY1EC9089N089G",
+          "status": "resolved",
+          "updated_at": "2026-07-27T16:32:09Z"
+        },
+        {
+          "id": "01KYDVD3AC4RVNAGYQ6SGPCX67",
+          "body": "Mitigation has been implemented, and we are monitoring the recovery of ChatGPT conversations.",
+          "created_at": "2026-07-25T23:57:40Z",
+          "display_at": "2026-07-25T23:57:40Z",
+          "incident_id": "01KYDN6YPS6ARY1EC9089N089G",
+          "status": "monitoring",
+          "updated_at": "2026-07-25T23:57:40Z"
+        },
+        {
+          "id": "01KYDS167T8MM52AAXV82R9V8T",
+          "body": "We have identified the source of intermittent errors affecting some ChatGPT conversations and are working to mitigate the issue. Error rates have decreased, but some users may continue to experience failures.",
+          "created_at": "2026-07-25T23:16:12Z",
+          "display_at": "2026-07-25T23:16:12Z",
+          "incident_id": "01KYDN6YPS6ARY1EC9089N089G",
+          "status": "identified",
+          "updated_at": "2026-07-25T23:16:12Z"
+        },
+        {
+          "id": "01KYDN6YPSZHX1S6N1EJPVJHDW",
+          "body": "We are investigating intermittent errors that may prevent some users from loading or continuing conversations in ChatGPT. The current period of impact began around 1:00 PM PT.",
+          "created_at": "2026-07-25T22:09:27Z",
+          "display_at": "2026-07-25T22:09:27Z",
+          "incident_id": "01KYDN6YPS6ARY1EC9089N089G",
+          "status": "investigating",
+          "updated_at": "2026-07-25T22:09:27Z"
+        }
+      ]
+    },
+    {
+      "id": "01KYCGY017EG43XZS6GFVXA8VH",
+      "name": "Elevated error rates",
+      "status": "resolved",
+      "created_at": "2026-07-25T11:35:24Z",
+      "updated_at": "2026-07-28T21:43:57Z",
+      "resolved_at": "2026-07-25T11:57:02Z",
+      "impact": "minor",
+      "page_id": "01JMDK9XYNY6RXSED6SDWW50WY",
+      "incident_updates": [
+        {
+          "id": "01KYCJ5JMGFY87FKVETDGYM0BC",
+          "body": "All impacted services have now fully recovered.",
+          "created_at": "2026-07-25T11:57:02Z",
+          "display_at": "2026-07-25T11:57:02Z",
+          "incident_id": "01KYCGY017EG43XZS6GFVXA8VH",
+          "status": "resolved",
+          "updated_at": "2026-07-25T11:57:02Z"
+        },
+        {
+          "id": "01KYCHJJSHX2FVGNZ21EAC89XY",
+          "body": "We have applied the mitigation and are monitoring the recovery.",
+          "created_at": "2026-07-25T11:46:39Z",
+          "display_at": "2026-07-25T11:46:39Z",
+          "incident_id": "01KYCGY017EG43XZS6GFVXA8VH",
+          "status": "monitoring",
+          "updated_at": "2026-07-25T11:46:39Z"
+        },
+        {
+          "id": "01KYCGY017E8KD0JKQJRBF18BM",
+          "body": "We have identified that users are experiencing elevated errors for the impacted services.\n\nWe are working on implementing a mitigation.",
+          "created_at": "2026-07-25T11:35:25Z",
+          "display_at": "2026-07-25T11:35:24Z",
+          "incident_id": "01KYCGY017EG43XZS6GFVXA8VH",
+          "status": "identified",
+          "updated_at": "2026-07-25T11:35:25Z"
+        }
+      ]
+    }
+  ]
+}

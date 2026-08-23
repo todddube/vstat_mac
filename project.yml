@@ -1,0 +1,121 @@
+name: VibeStats
+
+options:
+  bundleIdPrefix: com.todddube
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+  xcodeVersion: "27.0"
+
+configs:
+  Debug: debug
+  Release: release
+
+settings:
+  base:
+    # --- Language -------------------------------------------------------
+    SWIFT_VERSION: "6.0"                    # language mode 6
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_APPROACHABLE_CONCURRENCY: YES     # nonisolated(nonsending) by default
+    SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY: YES
+    SWIFT_UPCOMING_FEATURE_INTERNAL_IMPORTS_BY_DEFAULT: YES
+
+    # --- Platform -------------------------------------------------------
+    MACOSX_DEPLOYMENT_TARGET: "26.0"
+    ARCHS: "$(ARCHS_STANDARD)"              # arm64 + x86_64 universal
+    ONLY_ACTIVE_ARCH: NO
+    SDKROOT: macosx
+
+    # --- Hygiene --------------------------------------------------------
+    GCC_TREAT_WARNINGS_AS_ERRORS: NO
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
+    CLANG_ENABLE_MODULES: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    DEAD_CODE_STRIPPING: YES
+
+    # --- Versioning (single source of truth) -----------------------------
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+  configs:
+    Debug:
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      ENABLE_TESTABILITY: YES
+    Release:
+      SWIFT_OPTIMIZATION_LEVEL: "-O"
+      SWIFT_COMPILATION_MODE: wholemodule
+      ENABLE_TESTABILITY: NO
+
+targets:
+  VibeStats:
+    type: application
+    platform: macOS
+    sources:
+      - path: VibeStats
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_NAME: VibeStats
+        PRODUCT_BUNDLE_IDENTIFIER: com.todddube.VibeStats
+        INFOPLIST_FILE: VibeStats/Resources/Info.plist
+        CODE_SIGN_ENTITLEMENTS: VibeStats/Resources/VibeStats.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        COMBINE_HIDPI_IMAGES: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/../Frameworks"]
+      configs:
+        # Ad-hoc signed in Debug so the sandbox and entitlements are LIVE during
+        # development. Building unsigned would hide container-path and network
+        # entitlement problems until release day.
+        Debug:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: "-"
+          DEVELOPMENT_TEAM: ""
+        Release:
+          CODE_SIGN_STYLE: Automatic
+          CODE_SIGN_IDENTITY: "Developer ID Application"
+
+  VibeStatsTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: VibeStatsTests
+        excludes: ["Fixtures/**"]
+      # Recorded vendor payloads, copied into the test bundle. The test host is
+      # the sandboxed app, so fixtures cannot be read from the source tree by
+      # path — they have to travel inside the bundle.
+      - path: VibeStatsTests/Fixtures
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - target: VibeStats
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.todddube.VibeStatsTests
+        GENERATE_INFOPLIST_FILE: YES
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/VibeStats.app/Contents/MacOS/VibeStats"
+
+schemes:
+  VibeStats:
+    build:
+      targets:
+        VibeStats: all
+        VibeStatsTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - VibeStatsTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

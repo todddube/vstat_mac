@@ -1,0 +1,13 @@
+.DS_Store
+build/
+DerivedData/
+dist/
+*.xcodeproj/          # generated from project.yml — never hand-edit, never commit
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+.swiftpm/
+
+# iCloud Drive conflict copies — this repo lives under ~/Documents
+* [0-9].*
+*\ [0-9]/
