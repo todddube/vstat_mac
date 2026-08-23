@@ -7,6 +7,7 @@ import SwiftUI
 struct PopoverView: View {
     @Bindable var coordinator: MonitorCoordinator
     @Bindable var preferences: Preferences
+    @Bindable var session: PopoverSession
 
     @State private var history: [ServiceID: [HistorySample]] = [:]
     @Environment(\.openURL) private var openURL
@@ -16,7 +17,7 @@ struct PopoverView: View {
     var body: some View {
         VStack(spacing: 0) {
             header
-            Divider().opacity(0.5)
+            countdownRail
 
             ScrollView {
                 PopoverContentView(
@@ -33,6 +34,20 @@ struct PopoverView: View {
         }
         .frame(width: 420)
         .frame(minHeight: 300, maxHeight: 620)
+        // The exit animation. Scale from the top edge so it collapses back
+        // toward the menu bar item it came from rather than shrinking to the
+        // middle of nowhere.
+        .scaleEffect(session.isDismissing ? 0.94 : 1, anchor: .top)
+        .opacity(session.isDismissing ? 0 : 1)
+        .blur(radius: session.isDismissing ? 6 : 0)
+        .animation(
+            motion == .off ? nil : .easeIn(duration: 0.26),
+            value: session.isDismissing
+        )
+        // Any pointer inside the panel means the user is still reading.
+        .onHover { inside in
+            if inside { session.pause() } else { session.resume() }
+        }
         .task {
             await coordinator.refreshIfStale()
             history = await coordinator.recentHistory()
@@ -40,6 +55,37 @@ struct PopoverView: View {
         .onChange(of: coordinator.snapshot?.updatedAt) { _, _ in
             Task { history = await coordinator.recentHistory() }
         }
+    }
+
+    /// A hairline that visibly depletes, so the auto-dismiss is something the
+    /// user can see coming and interrupt — not a panel that vanishes mid-read.
+    private var countdownRail: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .fill(.separator.opacity(0.5))
+                .frame(height: 1)
+
+            if session.remaining != nil {
+                GeometryReader { geometry in
+                    Rectangle()
+                        .fill(
+                            LinearGradient(
+                                colors: session.isWarning
+                                    ? [Color.status(.minor), Color.status(.major)]
+                                    : [Color.vibe.opacity(0.7), Color.vibe],
+                                startPoint: .leading, endPoint: .trailing
+                            )
+                        )
+                        .frame(width: geometry.size.width * session.progress)
+                        .animation(.linear(duration: 0.06), value: session.progress)
+                }
+                .frame(height: 2)
+                .opacity(session.isPaused ? 0.25 : 1)
+                .animation(.easeOut(duration: 0.15), value: session.isPaused)
+            }
+        }
+        .frame(height: 2)
+        .accessibilityHidden(true)
     }
 
     // MARK: - Header
@@ -59,6 +105,26 @@ struct PopoverView: View {
             }
 
             Spacer()
+
+            if session.remaining != nil || session.isPinned {
+                Button {
+                    withAnimation(Motion.animation(.transition, level: motion)) {
+                        session.isPinned.toggle()
+                    }
+                } label: {
+                    Image(systemName: session.isPinned ? "pin.fill" : "pin")
+                        .font(.system(size: 11, weight: .medium))
+                        .foregroundStyle(session.isPinned ? Color.vibe : Color.secondary)
+                        .rotationEffect(.degrees(session.isPinned ? 0 : 35))
+                }
+                .buttonStyle(.plain)
+                .help(session.isPinned
+                      ? String(localized: "Unpin — resume the auto-close countdown")
+                      : String(localized: "Pin open — stop the auto-close countdown"))
+                .accessibilityLabel(session.isPinned
+                                    ? String(localized: "Unpin popover")
+                                    : String(localized: "Pin popover open"))
+            }
 
             Button {
                 Task { await coordinator.refresh(reason: .manual) }
@@ -83,12 +149,10 @@ struct PopoverView: View {
                 Button(String(localized: "Settings…")) { SettingsLauncher.open() }
                     .keyboardShortcut(",", modifiers: .command)
                 Divider()
+                // One dialog rather than three menu items: the repository and
+                // the privacy policy live inside About, where people look.
                 Button(String(localized: "About Vibe Stats")) {
-                    NSApp.orderFrontStandardAboutPanel(nil)
-                    NSApp.activate(ignoringOtherApps: true)
-                }
-                Button(String(localized: "Project on GitHub")) {
-                    openURL(URL(string: "https://github.com/todddube/vstat")!)
+                    AboutWindowController.shared.show()
                 }
                 Divider()
                 Button(String(localized: "Quit Vibe Stats")) { NSApp.terminate(nil) }

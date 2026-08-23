@@ -206,6 +206,7 @@ All settings live in `UserDefaults` under the app's suite and are exposed in a n
 | Show in Dock as well as menu bar | Bool | off (`LSUIElement`) |
 | Global hotkey to toggle popover | Recorder, default unset | unset |
 | Check on wake / on network restore | Bool | on |
+| Close the popover after | Stay open / 5 / 10 / 15 / 30 s / 1 min | 15 s |
 
 **Services**
 | Setting | Type | Default |
@@ -252,6 +253,7 @@ All settings live in `UserDefaults` under the app's suite and are exposed in a n
 - **FR-19** Clicking a card (outside interactive controls) opens the vendor status page in the default browser.
 - **FR-20** A 7-day uptime sparkline per service, sourced from the local history log.
 - **FR-21** ⌘R refreshes; Esc closes; Tab cycles focus; every control is VoiceOver-labelled.
+- **FR-21a** The popover closes itself after the configured idle interval. The countdown is **visible** (a depleting hairline under the header, amber for the final 4 seconds), **pausable** (the pointer entering the popover pauses it; leaving restarts it from full), and **defeatable** (a pin button stops it for that visit; "Stay open" disables it entirely). It exits by scaling toward its menu bar anchor and fading, and skips the animation under Reduce Motion.
 
 ### 5.5 Notifications
 

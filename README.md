@@ -35,7 +35,8 @@ make release    # Release archive
 | 3 — Coordination and persistence | ✅ |
 | 4 — Menu bar glyph | ✅ |
 | 5 — Popover UI | ✅ |
-| 6 — Settings and notifications | ⬜ |
+| 6a — Settings panel (General · Services · Appearance) | ✅ |
+| 6b — Transition notifications | ⬜ |
 | 7 — App icon and polish | ⬜ |
 
 ## Documentation

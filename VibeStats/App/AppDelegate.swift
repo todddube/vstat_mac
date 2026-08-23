@@ -4,12 +4,16 @@
 
 import AppKit
 import Observation
+import UserNotifications
 
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
-    private let preferences = Preferences.shared
-    private lazy var coordinator = MonitorCoordinator(preferences: preferences)
+    private let services = AppServices.shared
+    private var preferences: Preferences { services.preferences }
+    private var coordinator: MonitorCoordinator { services.coordinator }
     private var statusItemController: StatusItemController?
+    private var appearanceObserver: (any NSObjectProtocol)?
+    private lazy var notifications = NotificationDispatcher(preferences: preferences)
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         Log.app.info("Vibe Stats launching")
@@ -18,8 +22,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         controller.install()
         statusItemController = controller
 
-        coordinator.onSnapshotChange = { [weak controller] _, _ in
+        UNUserNotificationCenter.current().delegate = self
+
+        coordinator.onSnapshotChange = { [weak self, weak controller] previous, current in
             controller?.render()
+            Task { await self?.notifications.handle(previous: previous, current: current) }
         }
 
         // Redraw on every observable change of the coordinator, not only when a
@@ -27,9 +34,25 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // state too.
         observePhase()
 
+        // Appearance settings change the glyph but not the data, so they need
+        // their own nudge.
+        appearanceObserver = NotificationCenter.default.addObserver(
+            forName: .vibeStatsAppearanceChanged, object: nil, queue: .main
+        ) { _ in
+            MainActor.assumeIsolated { controller.render() }
+        }
+
+        NSApp.setActivationPolicy(preferences.showInDock ? .regular : .accessory)
+
         coordinator.start()
 
         #if DEBUG
+        if ProcessInfo.processInfo.environment["VIBESTATS_OPEN_SETTINGS"] == "1" {
+            Task {
+                try? await Task.sleep(for: .seconds(2))
+                SettingsLauncher.open()
+            }
+        }
         if ProcessInfo.processInfo.environment["VIBESTATS_OPEN_POPOVER"] == "1" {
             Task {
                 try? await Task.sleep(for: .seconds(3))
@@ -41,10 +64,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ notification: Notification) {
         coordinator.stop()
+        if let appearanceObserver {
+            NotificationCenter.default.removeObserver(appearanceObserver)
+        }
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         true
+    }
+
+    /// Opens the popover on the service a notification came from.
+    private func revealPopover(for service: ServiceID?) {
+        statusItemController?.revealPopover()
     }
 
     /// `withObservationTracking` fires once per change, so it re-arms itself.
@@ -58,5 +89,25 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 self.observePhase()
             }
         }
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    /// Show our own notifications even while the app is frontmost — an
+    /// accessory app is "frontmost" far more often than the user thinks.
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification
+    ) async -> UNNotificationPresentationOptions {
+        [.banner, .sound]
+    }
+
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse
+    ) async {
+        let raw = response.notification.request.content
+            .userInfo[SystemNotificationPresenter.serviceKey] as? String
+        revealPopover(for: raw.flatMap(ServiceID.init(rawValue:)))
     }
 }

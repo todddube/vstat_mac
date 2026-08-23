@@ -2,6 +2,7 @@
 //  Every user-facing setting, backed by UserDefaults. Phase 6 builds the UI;
 //  the model lives here so the coordinator can read it from day one.
 
+import AppKit
 import Foundation
 import Observation
 
@@ -24,6 +25,26 @@ enum RefreshInterval: Int, CaseIterable, Identifiable, Sendable, Codable {
         Duration.seconds(rawValue).formatted(
             .units(allowed: [.minutes], width: .wide)
         )
+    }
+}
+
+/// How long the popover stays open with no interaction. `.never` pins it open
+/// until the user dismisses it.
+enum PopoverAutoClose: Int, CaseIterable, Identifiable, Sendable, Codable {
+    case never = 0
+    case fiveSeconds = 5
+    case tenSeconds = 10
+    case fifteenSeconds = 15
+    case thirtySeconds = 30
+    case oneMinute = 60
+
+    var id: Int { rawValue }
+    var isEnabled: Bool { self != .never }
+    var interval: TimeInterval { TimeInterval(rawValue) }
+
+    var title: String {
+        guard isEnabled else { return String(localized: "Stay open") }
+        return Duration.seconds(rawValue).formatted(.units(allowed: [.seconds, .minutes], width: .wide))
     }
 }
 
@@ -103,6 +124,8 @@ final class Preferences {
     private static let registrationDefaults: [String: Any] = [
         Key.refreshInterval: RefreshInterval.fiveMinutes.rawValue,
         Key.checkOnWake: true,
+        Key.popoverAutoClose: PopoverAutoClose.fifteenSeconds.rawValue,
+        Key.launchAtLogin: false,
         Key.showInDock: false,
         Key.disabledServices: [String](),
         Key.iconStyle: MenuBarIconStyle.hub.rawValue,
@@ -115,12 +138,17 @@ final class Preferences {
         Key.notifyMinimumSeverity: NotificationSeverity.minor.rawValue,
         Key.notifyPrimaryOnly: true,
         Key.notifySound: false,
-        Key.notifyCooldownMinutes: 15
+        Key.notifyCooldownMinutes: 15,
+        Key.quietHoursEnabled: false,
+        Key.quietHoursStart: 22 * 60,
+        Key.quietHoursEnd: 8 * 60
     ]
 
     enum Key {
         static let refreshInterval = "refreshInterval"
         static let checkOnWake = "checkOnWake"
+        static let popoverAutoClose = "popoverAutoClose"
+        static let launchAtLogin = "launchAtLogin"
         static let showInDock = "showInDock"
         static let disabledServices = "disabledServices"
         static let iconStyle = "iconStyle"
@@ -134,6 +162,9 @@ final class Preferences {
         static let notifyPrimaryOnly = "notifyPrimaryOnly"
         static let notifySound = "notifySound"
         static let notifyCooldownMinutes = "notifyCooldownMinutes"
+        static let quietHoursEnabled = "quietHoursEnabled"
+        static let quietHoursStart = "quietHoursStart"
+        static let quietHoursEnd = "quietHoursEnd"
     }
 
     // MARK: - General
@@ -148,9 +179,32 @@ final class Preferences {
         set { defaults.set(newValue, forKey: Key.checkOnWake) }
     }
 
+    var popoverAutoClose: PopoverAutoClose {
+        get { PopoverAutoClose(rawValue: defaults.integer(forKey: Key.popoverAutoClose)) ?? .fifteenSeconds }
+        set { defaults.set(newValue.rawValue, forKey: Key.popoverAutoClose) }
+    }
+
+    /// Mirrors the real SMAppService state rather than trusting the stored
+    /// value: the user can revoke login items in System Settings behind our
+    /// back, and a checkbox that lies is worse than no checkbox.
+    var launchAtLogin: Bool {
+        get { LaunchAtLogin.isEnabled }
+        set {
+            do {
+                try LaunchAtLogin.set(newValue)
+                defaults.set(newValue, forKey: Key.launchAtLogin)
+            } catch {
+                Log.app.error("launch at login \(newValue ? "register" : "unregister") failed: \(error.localizedDescription)")
+            }
+        }
+    }
+
     var showInDock: Bool {
         get { defaults.bool(forKey: Key.showInDock) }
-        set { defaults.set(newValue, forKey: Key.showInDock) }
+        set {
+            defaults.set(newValue, forKey: Key.showInDock)
+            NSApp.setActivationPolicy(newValue ? .regular : .accessory)
+        }
     }
 
     // MARK: - Services
@@ -239,9 +293,29 @@ final class Preferences {
         set { defaults.set(Int(newValue.components.seconds / 60), forKey: Key.notifyCooldownMinutes) }
     }
 
+    var quietHoursEnabled: Bool {
+        get { defaults.bool(forKey: Key.quietHoursEnabled) }
+        set { defaults.set(newValue, forKey: Key.quietHoursEnabled) }
+    }
+
+    /// Minutes past midnight, local time.
+    var quietHoursStart: Int {
+        get { defaults.integer(forKey: Key.quietHoursStart) }
+        set { defaults.set(newValue, forKey: Key.quietHoursStart) }
+    }
+
+    var quietHoursEnd: Int {
+        get { defaults.integer(forKey: Key.quietHoursEnd) }
+        set { defaults.set(newValue, forKey: Key.quietHoursEnd) }
+    }
+
     // MARK: -
 
     private func enumValue<T: RawRepresentable>(_ key: String) -> T? where T.RawValue == String {
-        defaults.string(forKey: key).flatMap(T.init(rawValue:))
+        // Written out rather than `.flatMap(T.init(rawValue:))`: passing the
+        // initialiser as a function value crosses an isolation boundary the
+        // compiler cannot prove is safe.
+        guard let raw = defaults.string(forKey: key) else { return nil }
+        return T(rawValue: raw)
     }
 }

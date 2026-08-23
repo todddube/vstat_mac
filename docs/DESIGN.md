@@ -173,10 +173,12 @@ Three levels: **Full** (default), **Subtle**, **Off**. System Reduce Motion forc
 | M9 | **Popover appear** — scale 0.96→1.0 + fade, 180 ms, anchored at the status item | on | fade only | instant |
 | M10 | **Badge count change** — the numeral rolls vertically (`.contentTransition(.numericText())`) | on | on | instant |
 | M11 | **Degradation attention** — on a new degradation while the popover is open, the affected card's border pulses its status colour twice over 1.2 s | on | once | off |
-| M12 | **Glass response** — cards use the system's built-in glass interaction (`.glassEffect(.regular.interactive())`) for hover and press, rather than a hand-written scale/shadow | system | system | system (system honours Reduce Motion itself) |
+| M12 | **Auto-close** — the popover collapses toward its menu bar anchor (scale 0.94 from the top edge), fades, and blurs over 260 ms, preceded by a hairline that depletes for the whole idle interval and turns amber for the last 4 s | on | on, no blur | no animation; the popover just closes |
+| M13 | **Glass response** — cards use the system's built-in glass interaction (`.glassEffect(.regular.interactive())`) for hover and press, rather than a hand-written scale/shadow | system | system | system (system honours Reduce Motion itself) |
 
 Rules that keep this from becoming noise:
 
+- Auto-dismiss is never silent. A panel that vanishes mid-sentence is a bug the user cannot report, so the countdown is visible, pausing on hover, and defeatable with the pin button.
 - Only **one** looping animation exists (M1), and it stops entirely while the popover is open — the instrument is idle-facing.
 - Motion never delays information. Every animated value is already correct at frame 0; the animation is the transition, not the reveal.
 - No animation runs while the display is asleep, the app is hidden, or the status item is in an overflow menu bar.

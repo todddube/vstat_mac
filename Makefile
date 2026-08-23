@@ -14,7 +14,7 @@ SCHEME  := VibeStats
 DERIVED := $(HOME)/Library/Developer/Xcode/DerivedData/VibeStats-build
 APP     := $(DERIVED)/Build/Products/Debug/VibeStats.app
 
-.PHONY: all generate build test run clean fixtures release
+.PHONY: all generate build test run clean fixtures release icon
 
 all: build
 
@@ -42,6 +42,11 @@ release: generate
 	xcodebuild -project $(PROJECT) -scheme $(SCHEME) -configuration Release \
 		-derivedDataPath $(DERIVED) archive \
 		-archivePath build/VibeStats.xcarchive
+
+# Redraw the app icon at every size the asset catalogue needs. The artwork is
+# drawn per size, never downscaled — a 1024 hub reduced to 16 px is mush.
+icon:
+	swift Scripts/make-appicon.swift VibeStats/Resources/Assets.xcassets/AppIcon.appiconset
 
 # Re-capture live vendor payloads so schema drift shows up as a diff.
 fixtures:

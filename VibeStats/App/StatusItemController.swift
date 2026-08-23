@@ -161,6 +161,17 @@ final class StatusItemController {
         popoverController?.close()
     }
 
+    /// Opens the popover programmatically — used when a notification is
+    /// activated, where there is no click to respond to.
+    func revealPopover() {
+        guard let button = statusItem.button else { return }
+        if popoverController == nil {
+            popoverController = PopoverController(coordinator: coordinator, preferences: preferences)
+        }
+        guard popoverController?.isShown != true else { return }
+        popoverController?.show(relativeTo: button)
+    }
+
     #if DEBUG
     /// Opens the popover without a click, so it can be screenshotted and
     /// reviewed during development. Set VIBESTATS_OPEN_POPOVER=1.
@@ -202,6 +213,11 @@ final class StatusItemController {
         settings.target = self
         menu.addItem(settings)
 
+        let about = NSMenuItem(title: String(localized: "About Vibe Stats"),
+                               action: #selector(openAbout), keyEquivalent: "")
+        about.target = self
+        menu.addItem(about)
+
         menu.addItem(.separator())
         menu.addItem(withTitle: String(localized: "Quit Vibe Stats"),
                      action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
@@ -224,18 +240,8 @@ final class StatusItemController {
     @objc private func openSettings() {
         SettingsLauncher.open()
     }
-}
 
-/// SwiftUI's `Settings` scene installs its action on the responder chain under
-/// a selector that is not exposed to Swift, so it has to be sent by name. The
-/// name changed in macOS 13 — try the current one, then the legacy one.
-@MainActor
-enum SettingsLauncher {
-    static func open() {
-        NSApp.activate(ignoringOtherApps: true)
-        for name in ["showSettingsWindow:", "showPreferencesWindow:"] {
-            if NSApp.sendAction(Selector((name)), to: nil, from: nil) { return }
-        }
-        Log.menuBar.error("could not open the Settings window")
+    @objc private func openAbout() {
+        AboutWindowController.shared.show()
     }
 }
