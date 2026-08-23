@@ -42,6 +42,12 @@ make notarize   # export, notarize and staple (needs a Developer ID)
 | 6b — Transition notifications | ✅ |
 | 7 — App icon, About window, DMG | ✅ |
 
+126 tests in 19 suites. Debug and Release both build clean, universal (arm64 + x86_64). Known gaps are listed in [CLAUDE.md](CLAUDE.md#known-gaps--next-steps).
+
+## Resuming work
+
+Read [CLAUDE.md](CLAUDE.md) first. It carries the commands, the invariants that must not be re-broken, the environment gotchas that cost real time to discover, and the list of known gaps.
+
 ## Documentation
 
 | Document | Contents |
@@ -52,6 +58,7 @@ make notarize   # export, notarize and staple (needs a Developer ID)
 | [docs/DESIGN.md](docs/DESIGN.md) | Visual system, layout, the animation catalogue, accessibility |
 | [docs/ICONS.md](docs/ICONS.md) | The four-spoke hub mark, every glyph state, the app icon |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Milestones, test plan, release plan |
+| [CLAUDE.md](CLAUDE.md) | Working notes: commands, invariants, environment gotchas, status |
 
 ## Privacy
 
