@@ -1,6 +1,7 @@
 # Vibe Stats for macOS — Product & Functional Specification
 
-**Document status:** v1.0 draft (2026-08-23)
+**Document status:** v1.1 — implemented (2026-08-23)
+**Implementation status:** all eight phases built; see [CLAUDE.md](CLAUDE.md) for what is done, what is not, and where to pick up.
 **Owner:** Todd Dube
 **Source of truth for behaviour parity:** `~/Documents/Github/vstat` (Vibe Stats browser extension v1.3.1)
 
@@ -11,6 +12,7 @@
 | [docs/DESIGN.md](docs/DESIGN.md) | Visual system, popover layout, settings UI, animation catalogue, accessibility |
 | [docs/ICONS.md](docs/ICONS.md) | Menu bar icon and app icon design, including drawing code and every state |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Milestones, work breakdown, test plan, release/notarization plan |
+| [CLAUDE.md](CLAUDE.md) | **Start here to resume work.** Commands, invariants, environment gotchas, current status and known gaps |
 
 ---
 
@@ -307,6 +309,24 @@ All settings live in `UserDefaults` under the app's suite and are exposed in a n
 ---
 
 ## 8. Acceptance criteria for v1.0
+
+Status against the criteria below, as built:
+
+| # | Criterion | State |
+|---|---|---|
+| 1 | PARITY rows behave identically against recorded fixtures | ✅ |
+| 2 | Unit tests over mapping, roll-up, matching, pruning, normalisers | ✅ 126 tests / 19 suites |
+| 3 | Page-major + components-green reads Operational with a divergence chip | ✅ |
+| 4 | A missing registry component reads UNKNOWN, and unresolved counts are visible | ✅ |
+| 5 | Network loss produces the Offline presentation and recovers cleanly | ⚠️ implemented, not yet exercised on real hardware |
+| 6 | Wake produces a check within 5 s | ⚠️ implemented, not yet exercised on real hardware |
+| 7 | One notification per transition, none inside the cooldown | ✅ |
+| 8 | Reduce Motion disables every animation; VoiceOver reads every surface | ⚠️ Reduce Motion is gated centrally; a full VoiceOver pass is outstanding |
+| 9 | Passes notarytool and launches from a quarantined DMG | ⬜ `make notarize` written, never run |
+| 10 | Menu bar icon legible at every scale, appearance and wallpaper | ✅ verified live and by contact sheet |
+| 11 | App icon correct in all four macOS 26 appearances | ⚠️ classic asset catalogue ships; Icon Composer `.icon` is a manual pass |
+
+### Original criteria
 
 1. Every row of the parity matrix in §3 marked PARITY behaves identically to the extension against the same recorded API fixtures.
 2. Unit tests cover `mapComponentStatus`, `mapPageIndicator`, `rollUp`, `matchComponent` (including the `claimed`-set stealing case), `pruneIncidents`, and both incident normalisers, with fixtures captured from the live endpoints.
