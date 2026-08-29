@@ -327,3 +327,92 @@ struct NotificationPolicyTests {
         return Snapshot(services: [service], combined: .combine([service]), updatedAt: .distantPast)
     }
 }
+
+/// Notification Centre stacks banners in arrival order, so the order we post
+/// them in is the order the user reads them in. This suite exists because the
+/// dispatcher once sorted by identifier — which put an outage after a recovery
+/// purely because "claude" sorts before "github".
+@Suite("Notification ordering")
+@MainActor
+struct NotificationOrderingTests {
+
+    private func dispatcher() -> NotificationDispatcher {
+        let preferences = Preferences(defaults: UserDefaults(suiteName: "order-\(UUID().uuidString)")!)
+        return NotificationDispatcher(preferences: preferences, presenter: SpyPresenter())
+    }
+
+    private func transition(
+        _ id: String,
+        service: ServiceID,
+        from: StatusIndicator,
+        to: StatusIndicator
+    ) -> StatusTransition {
+        StatusTransition(
+            service: service,
+            serviceName: ServiceRegistry.definition(for: service).name,
+            componentID: id, componentLabel: id, isPrimary: true,
+            from: from, to: to
+        )
+    }
+
+    @Test("A burst is ordered worst-first, not alphabetically")
+    func worstFirst() {
+        // claude sorts before github alphabetically, so an id sort would put
+        // the recovery ahead of the outage.
+        let planned = dispatcher().plan(
+            transitions: [
+                transition("claude-code", service: .claude, from: .major, to: .operational),
+                transition("copilot", service: .github, from: .operational, to: .critical)
+            ],
+            now: .now
+        )
+
+        #expect(planned.count == 2)
+        #expect(planned.first?.service == .github)
+        #expect(planned.first?.severity == .critical)
+        #expect(planned.last?.severity == .major)
+    }
+
+    @Test("Every severity lands in descending order")
+    func fullOrdering() {
+        let planned = dispatcher().plan(
+            transitions: [
+                transition("claude-code", service: .claude, from: .operational, to: .minor),
+                transition("copilot", service: .github, from: .operational, to: .critical),
+                transition("codex-api", service: .openai, from: .operational, to: .major)
+            ],
+            now: .now
+        )
+
+        #expect(planned.map(\.severity) == [.critical, .major, .minor])
+    }
+
+    @Test("Equal severities break the tie on id, so the order is reproducible")
+    func stableTies() {
+        let transitions = [
+            transition("copilot", service: .github, from: .operational, to: .major),
+            transition("claude-code", service: .claude, from: .operational, to: .major)
+        ]
+
+        let first = dispatcher().plan(transitions: transitions, now: .now)
+        let second = dispatcher().plan(transitions: transitions.reversed(), now: .now)
+
+        #expect(first.map(\.id) == second.map(\.id))
+        #expect(first.map(\.id) == first.map(\.id).sorted())
+    }
+
+    @Test("A grouped summary carries the worst severity in the group")
+    func summarySeverity() {
+        let planned = dispatcher().plan(
+            transitions: [
+                transition("copilot", service: .github, from: .operational, to: .minor),
+                transition("copilot-models", service: .github, from: .operational, to: .critical),
+                transition("codespaces", service: .github, from: .operational, to: .major)
+            ],
+            now: .now
+        )
+
+        #expect(planned.count == 1, "three in one service group into one notification")
+        #expect(planned.first?.severity == .critical)
+    }
+}

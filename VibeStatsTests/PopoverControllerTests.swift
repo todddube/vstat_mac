@@ -109,4 +109,54 @@ struct PopoverControllerTests {
 
         window.orderOut(nil)
     }
+
+    // MARK: - Opened from a notification
+
+    @Test("Opening from a notification points the popover at that service")
+    func showFocusesService() async throws {
+        let controller = makeController(autoClose: .never)
+        let (window, anchor) = makeAnchor()
+
+        controller.show(relativeTo: anchor, focusing: .github)
+        #expect(controller.focusedService == .github)
+
+        await teardown(controller, window)
+    }
+
+    @Test("A plain click focuses nothing")
+    func toggleFocusesNothing() async throws {
+        let controller = makeController(autoClose: .never)
+        let (window, anchor) = makeAnchor()
+
+        controller.toggle(relativeTo: anchor)
+        #expect(controller.focusedService == nil)
+
+        await teardown(controller, window)
+    }
+
+    @Test("A second notification retargets an already-open popover")
+    func focusRetargets() async throws {
+        let controller = makeController(autoClose: .never)
+        let (window, anchor) = makeAnchor()
+
+        controller.show(relativeTo: anchor, focusing: .claude)
+        // Without this the popover would stay pointed at the first card while
+        // a newer, worse notification named a different one.
+        controller.focus(.openai)
+        #expect(controller.focusedService == .openai)
+
+        await teardown(controller, window)
+    }
+
+    @Test("Closing clears the focus so the next plain click starts unfocused")
+    func closeClearsFocus() async throws {
+        let controller = makeController(autoClose: .never)
+        let (window, anchor) = makeAnchor()
+
+        controller.show(relativeTo: anchor, focusing: .gemini)
+        #expect(controller.focusedService == .gemini)
+
+        await teardown(controller, window)
+        #expect(controller.focusedService == nil)
+    }
 }

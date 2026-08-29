@@ -22,6 +22,10 @@ final class StatusItemController {
     private var sleepObservers: [any NSObjectProtocol] = []
     /// Frames for the handful of static states, so a steady app draws nothing.
     private var staticFrames: [IconState: NSImage] = [:]
+    /// IconState includes the per-service map and the affected count, so the
+    /// key space is far larger than the handful of states actually seen. Cheap
+    /// to redraw, expensive to leak: past this many, start over.
+    private static let maxCachedFrames = 64
 
     init(coordinator: MonitorCoordinator, preferences: Preferences) {
         self.coordinator = coordinator
@@ -106,6 +110,7 @@ final class StatusItemController {
             return VibeIconRenderer.image(for: state, phase: phase)
         }
         if let cached = staticFrames[state] { return cached }
+        if staticFrames.count >= Self.maxCachedFrames { staticFrames.removeAll(keepingCapacity: true) }
         let image = VibeIconRenderer.image(for: state)
         staticFrames[state] = image
         return image
@@ -191,14 +196,19 @@ final class StatusItemController {
     }
 
     /// Opens the popover programmatically — used when a notification is
-    /// activated, where there is no click to respond to.
-    func revealPopover() {
+    /// activated, where there is no click to respond to. `service` names the
+    /// card the notification was about, so it is scrolled to and ringed.
+    func revealPopover(focusing service: ServiceID? = nil) {
         guard let button = statusItem.button else { return }
         if popoverController == nil {
             popoverController = PopoverController(coordinator: coordinator, preferences: preferences)
         }
-        guard popoverController?.isShown != true else { return }
-        popoverController?.show(relativeTo: button)
+        guard popoverController?.isShown != true else {
+            // Already open: retarget rather than doing nothing.
+            popoverController?.focus(service)
+            return
+        }
+        popoverController?.show(relativeTo: button, focusing: service)
     }
 
     #if DEBUG

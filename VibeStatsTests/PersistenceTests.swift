@@ -120,4 +120,40 @@ struct HistoryLogTests {
     func absentLog() async {
         #expect(await HistoryLog(directory: temporaryDirectory()).samples().isEmpty)
     }
+
+    @Test("The first pruneIfNeeded prunes; a second one the same day does not")
+    func prunesOnceADay() async {
+        let log = HistoryLog(directory: temporaryDirectory())
+        let now = Date(timeIntervalSince1970: 1_787_000_000)
+
+        #expect(await log.pruneIfNeeded(now: now), "the first call must prune")
+        #expect(await log.pruneIfNeeded(now: now.addingTimeInterval(3600)) == false)
+        #expect(await log.pruneIfNeeded(now: now.addingTimeInterval(86_399)) == false)
+    }
+
+    @Test("A machine left running for days still prunes")
+    func prunesDaily() async {
+        let log = HistoryLog(directory: temporaryDirectory())
+        let now = Date(timeIntervalSince1970: 1_787_000_000)
+
+        // Pruning at launch only meant the one machine that never restarts was
+        // the one machine whose log grew without bound.
+        await log.pruneIfNeeded(now: now)
+        #expect(await log.pruneIfNeeded(now: now.addingTimeInterval(HistoryLog.pruneInterval)))
+        #expect(await log.pruneIfNeeded(now: now.addingTimeInterval(HistoryLog.pruneInterval * 2)))
+    }
+
+    @Test("A daily prune still drops everything outside the retention window")
+    func dailyPruneDropsOldSamples() async {
+        let log = HistoryLog(directory: temporaryDirectory())
+        let now = Date(timeIntervalSince1970: 1_787_000_000)
+
+        await log.record(sampleSnapshot(at: now.addingTimeInterval(-30 * 86_400)))
+        await log.record(sampleSnapshot(at: now))
+        await log.pruneIfNeeded(now: now)
+
+        let remaining = await log.samples(since: .distantPast)
+        #expect(remaining.count == ServiceID.allCases.count)
+        #expect(remaining.allSatisfy { $0.t == now })
+    }
 }

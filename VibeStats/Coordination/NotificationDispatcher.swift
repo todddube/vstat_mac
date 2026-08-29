@@ -83,8 +83,17 @@ final class NotificationDispatcher {
             }
         }
 
-        // Worst first, so a burst arrives in a sensible order.
-        return notifications.sorted { $0.id < $1.id }
+        // Worst first, so a burst arrives in a sensible order. Sorting by id
+        // instead — as this did — ordered an outage after a recovery purely
+        // because "claude" sorts before "github".
+        return notifications.sorted { left, right in
+            let leftSeverity = left.severity.severity ?? -1
+            let rightSeverity = right.severity.severity ?? -1
+            // Ties break on id so a burst has a stable, reproducible order.
+            return leftSeverity == rightSeverity
+                ? left.id < right.id
+                : leftSeverity > rightSeverity
+        }
     }
 
     private func allows(_ transition: StatusTransition) -> Bool {
@@ -140,7 +149,8 @@ final class NotificationDispatcher {
             title: title,
             body: body,
             service: transition.service,
-            playsSound: preferences.notifySound
+            playsSound: preferences.notifySound,
+            severity: transition.judgedSeverity
         )
     }
 
@@ -156,7 +166,9 @@ final class NotificationDispatcher {
                 : String(localized: "\(name): \(transitions.count) components affected"),
             body: labels,
             service: service,
-            playsSound: preferences.notifySound
+            playsSound: preferences.notifySound,
+            // `transitions` is already sorted worst-first by plan().
+            severity: transitions.first?.judgedSeverity ?? .unknown
         )
     }
 }

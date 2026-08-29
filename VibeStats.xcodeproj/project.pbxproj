@@ -21,6 +21,7 @@
 		344B427481995C696DDB4FBE /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EC7FE2D39B3F4953B61B4 /* Formatting.swift */; };
 		351CA80CD1147A767C848F82 /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFA368F2B2BA99FF99638D /* StatusIndicator.swift */; };
 		35CCBD06C3971EE571AD9C4C /* GoogleCloudAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1EC5E88D91DDBD48006FB /* GoogleCloudAdapter.swift */; };
+		361583EECDE71DC82B3E5E11 /* FormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97B7DA0107266FADD42B43 /* FormattingTests.swift */; };
 		3BA9AF76378F967792FF027E /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645300BDD7076917B874177 /* Palette.swift */; };
 		3C9C668702D624342F4EA49E /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2A28120468FD7506289292 /* NotificationPresenter.swift */; };
 		3E739F7F91E6085CFDDABB3A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2743C1F90F5E05D466C0E095 /* Preferences.swift */; };
@@ -133,6 +134,7 @@
 		7C0EFF411396568332017E32 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		7C4191C9876BD2BEC30D3722 /* ServiceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistry.swift; sourceTree = "<group>"; };
 		7E935ED4BD268B57B5F93091 /* NotificationDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDispatcher.swift; sourceTree = "<group>"; };
+		7F97B7DA0107266FADD42B43 /* FormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingTests.swift; sourceTree = "<group>"; };
 		82A245EC235B90F743E2B9B0 /* VibeIconRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeIconRenderer.swift; sourceTree = "<group>"; };
 		8C64C7EB53C0A7F68C49260C /* IconState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconState.swift; sourceTree = "<group>"; };
 		8D5D6282035D35D79F9C8E04 /* PopoverControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverControllerTests.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				2D9CD1BE2C3224E33D9BCC32 /* CoordinatorTests.swift */,
 				44B6CA530D0D177AA43EBC16 /* EngineTests.swift */,
 				F3669508A29DC5FDD28FF48C /* Fixtures */,
+				7F97B7DA0107266FADD42B43 /* FormattingTests.swift */,
 				38241624C31B188FA3466295 /* IconRenderingTests.swift */,
 				3565B3164058531DA949F20D /* NotificationTests.swift */,
 				508410CE65890EAB890B7915 /* PersistenceTests.swift */,
@@ -495,6 +498,7 @@
 				AF40DBDA66C5165933CDFBD6 /* CoordinatorTests.swift in Sources */,
 				5BD8AAFDD87CC50649E4FC18 /* EngineTests.swift in Sources */,
 				434AC1DC0DB285AB32C036D7 /* FixtureLoader.swift in Sources */,
+				361583EECDE71DC82B3E5E11 /* FormattingTests.swift in Sources */,
 				E50537EFE9CBA40CF08CA653 /* IconRenderingTests.swift in Sources */,
 				031EEB5AA09848B9F1EE5942 /* NotificationTests.swift in Sources */,
 				D8D21A7DEDCC322AB1C946E8 /* PersistenceTests.swift in Sources */,

@@ -261,9 +261,10 @@ All settings live in `UserDefaults` under the app's suite and are exposed in a n
 
 - **FR-22** After each successful check, the coordinator diffs the new per-component indicators against the previous snapshot and emits notifications per the rules in §5.2, subject to per-component cooldown and quiet hours.
 - **FR-23** The first check after launch never notifies — there is no prior state to diff against.
-- **FR-24** A notification's action opens the popover.
+- **FR-24** A notification's action opens the popover, scrolled to and ringing the card for the service the notification was about. If the popover is already open, it retargets rather than doing nothing.
 - **FR-25a** Three or more transitions within one service are announced as a single grouped notification rather than a burst.
 - **FR-25b** Transitions into or out of `unknown` are never announced.
+- **FR-25c** When several notifications are posted at once they are posted worst-first. Notification Centre stacks banners in arrival order, so posting a recovery ahead of an outage buries the one that matters. Equal severities break the tie on identifier, so the order is reproducible.
 
 ### 5.6 Data & privacy
 
@@ -315,7 +316,7 @@ Status against the criteria below, as built:
 | # | Criterion | State |
 |---|---|---|
 | 1 | PARITY rows behave identically against recorded fixtures | ✅ |
-| 2 | Unit tests over mapping, roll-up, matching, pruning, normalisers | ✅ 126 tests / 19 suites |
+| 2 | Unit tests over mapping, roll-up, matching, pruning, normalisers | ✅ 152 tests / 22 suites |
 | 3 | Page-major + components-green reads Operational with a divergence chip | ✅ |
 | 4 | A missing registry component reads UNKNOWN, and unresolved counts are visible | ✅ |
 | 5 | Network loss produces the Offline presentation and recovers cleanly | ⚠️ implemented, not yet exercised on real hardware |
