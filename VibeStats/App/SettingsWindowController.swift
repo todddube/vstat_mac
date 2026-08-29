@@ -25,7 +25,11 @@ final class SettingsWindowController {
         window.title = String(localized: "Vibe Stats Settings")
         window.styleMask = [.titled, .closable, .miniaturizable]
         window.isReleasedWhenClosed = false
-        window.setContentSize(NSSize(width: 520, height: 470))
+        // Sized from the content, not a hardcoded pair. The hardcoded 520x470
+        // was the width SettingsRootView pins its content to, which left no
+        // room for the scene padding around it — the content was wider than the
+        // window that held it.
+        window.setContentSize(hosting.view.fittingSize)
         window.center()
         window.makeKeyAndOrderFront(nil)
 

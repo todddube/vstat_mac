@@ -110,6 +110,23 @@ struct PopoverSessionTests {
         #expect(session.isDismissing == false)
     }
 
+    @Test("A session begun from a notification carries the service it named")
+    func focusedService() {
+        let session = PopoverSession()
+        session.begin(interval: nil, focusing: .openai) {}
+        #expect(session.focusedService == .openai)
+
+        session.end()
+        #expect(session.focusedService == nil, "focus must not survive the popover it belonged to")
+    }
+
+    @Test("A session begun from a click carries no focus")
+    func unfocusedByDefault() {
+        let session = PopoverSession()
+        session.begin(.never) {}
+        #expect(session.focusedService == nil)
+    }
+
     @Test("Auto-close options map to sane intervals")
     func options() {
         #expect(PopoverAutoClose.never.isEnabled == false)

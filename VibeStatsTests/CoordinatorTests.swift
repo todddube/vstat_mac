@@ -98,6 +98,27 @@ struct CoordinatorTests {
         #expect(await client.callCount("openai/status.json") == 0)
     }
 
+    @Test("Offline blocks the scheduled sweep but never a manual refresh")
+    func offlineGating() {
+        // A user pressing Refresh and getting nothing at all — no attempt, no
+        // error — is worse than one wasted request while genuinely offline.
+        #expect(MonitorCoordinator.allows(.manual, in: .offline))
+        #expect(MonitorCoordinator.allows(.networkRestored, in: .offline))
+
+        for reason in [MonitorCoordinator.RefreshReason.scheduled, .launch, .wake, .popoverOpened, .settingsChanged] {
+            #expect(MonitorCoordinator.allows(reason, in: .offline) == false, "\(reason.rawValue) burns a retry while offline")
+        }
+    }
+
+    @Test("Every reason is allowed once we are back online")
+    func onlineAllowsEverything() {
+        for phase in [MonitorCoordinator.Phase.idle, .checking, .failed("boom")] {
+            for reason in [MonitorCoordinator.RefreshReason.scheduled, .launch, .manual, .wake, .networkRestored, .popoverOpened, .settingsChanged] {
+                #expect(MonitorCoordinator.allows(reason, in: phase))
+            }
+        }
+    }
+
     @Test("Preferences round-trip through their own defaults suite")
     func preferencesRoundTrip() {
         let preferences = Preferences(defaults: UserDefaults(suiteName: "test-\(UUID().uuidString)")!)

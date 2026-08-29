@@ -75,7 +75,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     /// Opens the popover on the service a notification came from.
     private func revealPopover(for service: ServiceID?) {
-        statusItemController?.revealPopover()
+        statusItemController?.revealPopover(focusing: service)
     }
 
     /// `withObservationTracking` fires once per change, so it re-arms itself.

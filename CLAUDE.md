@@ -27,14 +27,15 @@ Two corollaries that keep getting re-derived, so they are stated once here:
 ```bash
 make generate   # project.yml -> VibeStats.xcodeproj (the project is GENERATED)
 make build      # universal Debug build, ad-hoc signed WITH the sandbox live
-make test       # 126 tests in 19 suites
+make test       # 152 tests in 22 suites
 make run        # build, kill any running copy, launch
 make icon       # redraw the app icon at every size from Scripts/make-appicon.swift
 make fixtures   # re-capture live vendor payloads into VibeStatsTests/Fixtures
 make dmg        # package a DMG into dist/
 make release    # Release archive
 make notarize   # export, notarize, staple (needs a Developer ID + AC_PASSWORD profile)
-make clean
+make clean      # build products and DerivedData (leaves the committed .xcodeproj)
+make distclean  # clean + delete the generated .xcodeproj; `make generate` restores it
 ```
 
 `make` sets `DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer`, so **no `xcode-select` is needed** — but any raw `xcodebuild` invocation must set it too.
@@ -68,13 +69,15 @@ This mirrors the extension's own layering (`services.js` / `status-monitor.js` /
 | `StatuspageAdapter` | Falls back to `pageIndicator` **only** when `resolvedCount == 0` |
 | `IncidentPruner` | 10 most recent, within 14 days, newest first |
 | `TransitionDiff` | Transitions into or out of `unknown` are never reported |
-| `NotificationDispatcher` | First snapshot after launch is silent; ≥3 transitions in one service group into one notification |
+| `NotificationDispatcher` | First snapshot after launch is silent; ≥3 transitions in one service group into one notification; a burst is posted **worst-first** (Notification Centre stacks in arrival order) |
+| `MonitorCoordinator.allows` | Offline suspends the scheduled sweep, but a **manual** refresh is always attempted — a Refresh button that does nothing is worse than one wasted request |
+| `HistoryLog.pruneIfNeeded` | Prunes at launch **and** at most once a day thereafter; a machine that never restarts is the one whose log would otherwise grow |
 | `PopoverSession` | Countdown is **deadline-driven**, not decrement-per-tick |
 
 ## Conventions
 
 - **Swift 6 language mode**, `SWIFT_STRICT_CONCURRENCY=complete`. Default isolation stays `nonisolated`; UI annotates itself (see [docs/ARCHITECTURE.md §2.1](docs/ARCHITECTURE.md) for why not `-default-isolation MainActor`).
-- **Never hand-edit `VibeStats.xcodeproj`** — it is generated from `project.yml` and gitignored.
+- **Never hand-edit `VibeStats.xcodeproj`** — it is generated from `project.yml` by `make generate`. It **is** committed, so the build stays reviewable in a diff and a fresh checkout opens in Xcode without running XcodeGen first. Regenerate it rather than editing it, and commit the regenerated result alongside the `project.yml` change that caused it.
 - **No third-party runtime dependencies.** SwiftUI + AppKit + Foundation + UserNotifications + ServiceManagement + Network only.
 - **No view names a hex value.** Colours come from `Palette` semantic tokens.
 - **Status is never carried by colour alone** — always colour *and* text, and `unknown` gets a distinct hollow shape so it survives monochrome and colour-blindness.
@@ -94,13 +97,15 @@ These all cost real time to discover. Read before debugging something that "shou
 
 **`NSApp.occlusionState` reflects the app's *windows*.** A menu-bar-only app has none, so gating the icon animation on it freezes the glyph permanently. Display sleep is handled with explicit `NSWorkspace.screensDidSleep/Wake` observers instead.
 
+**"Invalid view geometry: width is negative" on the first Settings open is not ours.** AppKit logs it four times — once per tab — from inside SwiftUI's `TabView` during its first layout pass only. It is not reproduced by reusing the window, and it is unaffected by `scenePadding()`, by the window's content size, or by pre-sizing the hosting view. `WindowTests.settingsContentFits` guards the thing that *was* ours (content wider than its window); do not go chasing the log again.
+
 **`OSLog` is not queryable here.** `log show --predicate 'subsystem == "com.todddube.VibeStats"'` returns nothing for the sandboxed process. Verify behaviour with tests, not log-grepping.
 
 **Screenshotting the running app is unreliable.** An accessory app launched from a background shell cannot take focus, so the popover ends up behind other windows. Use the offscreen rendering techniques below instead. `VIBESTATS_OPEN_POPOVER=1` and `VIBESTATS_OPEN_SETTINGS=1` (DEBUG only) open those surfaces at launch if you do want to try.
 
 ## Testing
 
-`make test` — 126 tests, 19 suites, Swift Testing (`import Testing`, not XCTest).
+`make test` — 152 tests, 22 suites, Swift Testing (`import Testing`, not XCTest).
 
 **The test host is the sandboxed app itself.** Consequences:
 
@@ -128,7 +133,6 @@ All eight planned phases are complete: the app builds universal in Debug and Rel
 | **Global hotkey** | Specced ([specs.md §5.2](specs.md)) but not implemented and not exposed in Settings. Nothing is dead-ended |
 | **Card reordering** | Specced, not implemented — cards render in registry order |
 | **Per-service component visibility** | The Services settings tab lists components read-only; the spec allows choosing which appear on a card |
-| **`HistoryLog` pruning** | Runs at launch only. Spec says launch *and* daily |
 | **Localisation** | All strings go through `String(localized:)` but only `en` ships |
 | **Notarization** | `make notarize` exists but has never been run — needs a Developer ID and an `AC_PASSWORD` keychain profile |
 

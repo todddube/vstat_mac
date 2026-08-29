@@ -19,6 +19,11 @@ final class PopoverSession {
     /// True while the exit animation plays, so the view can shrink and fade.
     private(set) var isDismissing = false
 
+    /// Set when the popover is opened from a notification, so the view can
+    /// scroll to that card and ring it. Without this, activating a "Copilot is
+    /// down" banner dropped you at the top of a four-card grid to go find it.
+    var focusedService: ServiceID?
+
     /// Set by the pin button. Survives for the session, not the preference.
     var isPinned = false {
         didSet {
@@ -61,12 +66,25 @@ final class PopoverSession {
 
     // MARK: - Lifecycle
 
-    func begin(_ autoClose: PopoverAutoClose, onExpiry: @escaping @MainActor () -> Void) {
-        begin(interval: autoClose.isEnabled ? autoClose.interval : nil, onExpiry: onExpiry)
+    func begin(
+        _ autoClose: PopoverAutoClose,
+        focusing service: ServiceID? = nil,
+        onExpiry: @escaping @MainActor () -> Void
+    ) {
+        begin(
+            interval: autoClose.isEnabled ? autoClose.interval : nil,
+            focusing: service,
+            onExpiry: onExpiry
+        )
     }
 
-    func begin(interval: TimeInterval?, onExpiry: @escaping @MainActor () -> Void) {
+    func begin(
+        interval: TimeInterval?,
+        focusing service: ServiceID? = nil,
+        onExpiry: @escaping @MainActor () -> Void
+    ) {
         configuredInterval = interval
+        focusedService = service
         self.onExpiry = onExpiry
         isPinned = false
         isDismissing = false
@@ -134,6 +152,7 @@ final class PopoverSession {
         stop()
         remaining = nil
         isDismissing = false
+        focusedService = nil
     }
 
     private func expire() {

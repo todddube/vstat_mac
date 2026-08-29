@@ -66,7 +66,7 @@ final class MonitorCoordinator {
             // Show the last known state immediately; a stale reading with a
             // timestamp beats an empty window.
             snapshot = await store.load()
-            await history.prune()
+            await history.pruneIfNeeded()
 
             wakeObserver.start { [weak self] reason in
                 guard let self, self.preferences.checkOnWake else { return }
@@ -126,8 +126,21 @@ final class MonitorCoordinator {
 
     // MARK: - Checking
 
+    /// Whether a refresh for this reason should be attempted at all.
+    ///
+    /// Extracted as a pure rule so the offline policy is testable without
+    /// having to convince NWPathMonitor that the network is down.
+    ///
+    /// A manual refresh is ALWAYS attempted: the user pressing Refresh and
+    /// getting nothing — no attempt, no error — is worse than one wasted
+    /// request, and NWPathMonitor can lag a network that is already back.
+    static func allows(_ reason: RefreshReason, in phase: Phase) -> Bool {
+        guard phase == .offline else { return true }
+        return reason == .networkRestored || reason == .manual
+    }
+
     func refresh(reason: RefreshReason) async {
-        guard phase != .offline || reason == .networkRestored else {
+        guard Self.allows(reason, in: phase) else {
             Log.app.debug("skipping \(reason.rawValue) refresh while offline")
             return
         }
@@ -150,6 +163,11 @@ final class MonitorCoordinator {
 
             await store.save(fresh)
             await history.record(fresh)
+            // Launch AND daily. pruneIfNeeded is a no-op inside its interval,
+            // so calling it after every check costs nothing and means a machine
+            // left running for a week — exactly the machine whose log grows —
+            // still prunes.
+            await history.pruneIfNeeded()
 
             onSnapshotChange?(previous, fresh)
             Log.app.info("check (\(reason.rawValue)): \(fresh.combined.description)")

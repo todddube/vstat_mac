@@ -10,6 +10,8 @@ struct ServiceCardView: View {
     let snapshot: ServiceSnapshot?
     let history: [HistorySample]
     let motion: MotionLevel
+    /// True when the popover was opened from this service's notification.
+    var isFocused: Bool = false
 
     @State private var showsIncidents = false
     @Environment(\.openURL) private var openURL
@@ -55,9 +57,17 @@ struct ServiceCardView: View {
             RoundedRectangle(cornerRadius: 10).fill(.quaternary.opacity(0.22))
         )
         .overlay(
-            RoundedRectangle(cornerRadius: 10).strokeBorder(.separator.opacity(0.6), lineWidth: 1)
+            RoundedRectangle(cornerRadius: 10)
+                // The focus ring uses the vendor accent at full strength, which
+                // is 2 pt against a 1 pt hairline — legible without colour
+                // alone carrying it, since it is also the card scrolled to.
+                .strokeBorder(
+                    isFocused ? Color.accent(definition.id) : Color(nsColor: .separatorColor).opacity(0.6),
+                    lineWidth: isFocused ? 2 : 1
+                )
         )
         .clipShape(RoundedRectangle(cornerRadius: 10))
+        .animation(Motion.animation(.transition, level: motion), value: isFocused)
         .accessibilityElement(children: .contain)
         .accessibilityLabel(accessibilitySummary)
     }

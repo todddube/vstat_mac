@@ -12,6 +12,10 @@ struct VibeNotification: Sendable, Hashable, Identifiable {
     let body: String
     let service: ServiceID
     let playsSound: Bool
+    /// The worst state this notification is about, so a burst can be ordered
+    /// worst-first. Notification Centre stacks in arrival order, so posting an
+    /// outage after a recovery buries the thing that matters.
+    let severity: StatusIndicator
 }
 
 protocol NotificationPresenting: Sendable {

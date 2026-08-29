@@ -44,6 +44,10 @@ final class PopoverController: NSObject {
 
     var isShown: Bool { popover.isShown }
 
+    /// The card the popover is currently pointed at, if it was opened from a
+    /// notification.
+    var focusedService: ServiceID? { session.focusedService }
+
     func toggle(relativeTo anchor: NSView) {
         if popover.isShown {
             dismiss(animated: false)
@@ -52,9 +56,16 @@ final class PopoverController: NSObject {
         }
     }
 
+    /// Retarget an already-open popover at another card, so a second
+    /// notification while it is on screen still takes you to the right place.
+    func focus(_ service: ServiceID?) {
+        session.focusedService = service
+    }
+
     /// Takes an NSView rather than an NSStatusBarButton so the lifetime can be
-    /// exercised against any anchor in a test.
-    func show(relativeTo anchor: NSView) {
+    /// exercised against any anchor in a test. `focusing` names the card to
+    /// scroll to and ring — set when the popover is opened from a notification.
+    func show(relativeTo anchor: NSView, focusing service: ServiceID? = nil) {
         // Activating first means keyboard focus actually lands in the popover;
         // without it an accessory app's popover takes clicks but not keys.
         NSApp.activate(ignoringOtherApps: true)
@@ -63,7 +74,7 @@ final class PopoverController: NSObject {
 
         let autoClose = preferences.popoverAutoClose
         Log.menuBar.info("popover shown (auto-close: \(autoClose.rawValue)s)")
-        session.begin(autoClose) { [weak self] in
+        session.begin(autoClose, focusing: service) { [weak self] in
             Log.menuBar.info("popover auto-close expired — dismissing")
             self?.dismiss(animated: true)
         }

@@ -15,6 +15,10 @@ struct HistorySample: Codable, Sendable, Hashable {
 
 actor HistoryLog {
     static let retentionDays = 7
+    /// How often `pruneIfNeeded` will actually rewrite the file.
+    static let pruneInterval: TimeInterval = 86_400
+
+    private var lastPrunedAt: Date?
 
     private let fileURL: URL
     private let encoder = JSONEncoder()
@@ -50,8 +54,21 @@ actor HistoryLog {
         }
     }
 
+    /// Prune at most once a day. Called at launch and after every check, so a
+    /// machine left running for a week still prunes — pruning only at launch
+    /// meant the one machine that never restarts was the one that never pruned.
+    @discardableResult
+    func pruneIfNeeded(now: Date = .now) -> Bool {
+        if let lastPrunedAt, now.timeIntervalSince(lastPrunedAt) < Self.pruneInterval {
+            return false
+        }
+        prune(now: now)
+        return true
+    }
+
     /// Drop everything outside the retention window by rewriting the file.
     func prune(now: Date = .now) {
+        lastPrunedAt = now
         let cutoff = now.addingTimeInterval(-Double(Self.retentionDays) * 86_400)
         let kept = readAll().filter { $0.t >= cutoff }
 

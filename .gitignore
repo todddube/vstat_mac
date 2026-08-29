@@ -2,7 +2,14 @@
 build/
 DerivedData/
 dist/
-*.xcodeproj/          # generated from project.yml — never hand-edit, never commit
+# The generated .xcodeproj IS committed, so the build is reviewable and a
+# checkout opens in Xcode without running XcodeGen first. It is still generated:
+# never hand-edit it, run `make generate`.
+#
+# Note for whoever adds the next rule: .gitignore has no inline comments. This
+# line used to read "*.xcodeproj/  # generated ...", which made the pattern the
+# whole string including the comment — so it matched nothing and the project was
+# committed anyway. Comments go on their own line.
 *.xcworkspace/
 xcuserdata/
 *.xcuserstate

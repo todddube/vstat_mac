@@ -25,15 +25,26 @@ struct PopoverView: View {
             header
             countdownRail
 
-            ScrollView {
-                PopoverContentView(
-                    coordinator: coordinator,
-                    preferences: preferences,
-                    history: history,
-                    motion: motion
-                )
+            ScrollViewReader { proxy in
+                ScrollView {
+                    PopoverContentView(
+                        coordinator: coordinator,
+                        preferences: preferences,
+                        history: history,
+                        motion: motion,
+                        focusedService: session.focusedService
+                    )
+                }
+                .scrollBounceBehavior(.basedOnSize)
+                // Opened from a notification: take the reader to the card the
+                // notification was about instead of the top of the grid.
+                .onChange(of: session.focusedService, initial: true) { _, service in
+                    guard let service else { return }
+                    withAnimation(Motion.animation(.transition, level: motion)) {
+                        proxy.scrollTo(service, anchor: .center)
+                    }
+                }
             }
-            .scrollBounceBehavior(.basedOnSize)
 
             Divider().opacity(0.5)
             footer
@@ -215,6 +226,8 @@ struct PopoverContentView: View {
     let preferences: Preferences
     let history: [ServiceID: [HistorySample]]
     let motion: MotionLevel
+    /// The card a notification pointed at, ringed so it is findable at a glance.
+    var focusedService: ServiceID?
 
     var body: some View {
         VStack(spacing: 12) {
@@ -293,8 +306,11 @@ struct PopoverContentView: View {
                     definition: definition,
                     snapshot: coordinator.snapshot?[definition.id],
                     history: history[definition.id] ?? [],
-                    motion: motion
+                    motion: motion,
+                    isFocused: definition.id == focusedService
                 )
+                // The scroll target for ScrollViewReader.
+                .id(definition.id)
             }
         }
     }
