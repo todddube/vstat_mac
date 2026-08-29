@@ -34,7 +34,8 @@ make fixtures   # re-capture live vendor payloads into VibeStatsTests/Fixtures
 make dmg        # package a DMG into dist/
 make release    # Release archive
 make notarize   # export, notarize, staple (needs a Developer ID + AC_PASSWORD profile)
-make clean
+make clean      # build products and DerivedData (leaves the committed .xcodeproj)
+make distclean  # clean + delete the generated .xcodeproj; `make generate` restores it
 ```
 
 `make` sets `DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer`, so **no `xcode-select` is needed** — but any raw `xcodebuild` invocation must set it too.
@@ -76,7 +77,7 @@ This mirrors the extension's own layering (`services.js` / `status-monitor.js` /
 ## Conventions
 
 - **Swift 6 language mode**, `SWIFT_STRICT_CONCURRENCY=complete`. Default isolation stays `nonisolated`; UI annotates itself (see [docs/ARCHITECTURE.md §2.1](docs/ARCHITECTURE.md) for why not `-default-isolation MainActor`).
-- **Never hand-edit `VibeStats.xcodeproj`** — it is generated from `project.yml` and gitignored.
+- **Never hand-edit `VibeStats.xcodeproj`** — it is generated from `project.yml` by `make generate`. It **is** committed, so the build stays reviewable in a diff and a fresh checkout opens in Xcode without running XcodeGen first. Regenerate it rather than editing it, and commit the regenerated result alongside the `project.yml` change that caused it.
 - **No third-party runtime dependencies.** SwiftUI + AppKit + Foundation + UserNotifications + ServiceManagement + Network only.
 - **No view names a hex value.** Colours come from `Palette` semantic tokens.
 - **Status is never carried by colour alone** — always colour *and* text, and `unknown` gets a distinct hollow shape so it survives monochrome and colour-blindness.

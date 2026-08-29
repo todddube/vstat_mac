@@ -14,7 +14,7 @@ SCHEME  := VibeStats
 DERIVED := $(HOME)/Library/Developer/Xcode/DerivedData/VibeStats-build
 APP     := $(DERIVED)/Build/Products/Debug/VibeStats.app
 
-.PHONY: all generate build test run clean fixtures release icon dmg notarize
+.PHONY: all generate build test run clean distclean fixtures release icon dmg notarize
 
 all: build
 
@@ -64,5 +64,13 @@ notarize: release
 dmg:
 	@./Scripts/make-dmg.sh
 
+# Deliberately does NOT delete $(PROJECT): the generated .xcodeproj is
+# committed, so removing it here would leave the working tree with a deleted
+# tracked file every time someone cleaned. Use `make distclean` for that.
 clean:
-	rm -rf build $(PROJECT) $(DERIVED)
+	rm -rf build $(DERIVED)
+
+# The full nuke, including the committed project. `make generate` puts it back
+# byte-for-byte, so this is recoverable — it is just not what `clean` should do.
+distclean: clean
+	rm -rf $(PROJECT)
