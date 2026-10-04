@@ -8,11 +8,13 @@ actor StatusEngine {
     private let client: any StatusAPIClient
     private let statuspage: StatuspageAdapter
     private let google: GoogleCloudAdapter
+    private let rss: RSSFeedAdapter
 
     init(client: any StatusAPIClient) {
         self.client = client
         self.statuspage = StatuspageAdapter(client: client)
         self.google = GoogleCloudAdapter(client: client)
+        self.rss = RSSFeedAdapter(client: client)
     }
 
     /// Check every enabled service concurrently and roll the results up.
@@ -54,8 +56,10 @@ actor StatusEngine {
             switch definition.api {
             case .statuspage(let base):
                 return await statuspage.check(definition, base: base, now: now)
-            case .googleCloud(let incidents):
-                return try await google.check(definition, incidentsURL: incidents, now: now)
+            case .googleCloud(let incidents, let keywords):
+                return try await google.check(definition, incidentsURL: incidents, keywords: keywords, now: now)
+            case .rssFeed(let feed):
+                return try await rss.check(definition, feedURL: feed, now: now)
             }
         } catch let error as APIError {
             Log.engine.error("\(definition.id.rawValue) failed: \(error.summary)")

@@ -11,7 +11,7 @@ struct CombinedStatusTests {
         affected: [String] = [],
         unresolved: Int = 0
     ) -> ServiceSnapshot {
-        let definition = ServiceRegistry.definition(for: id)
+        let definition = ServiceRegistry.definition(id)
         return ServiceSnapshot(
             id: id,
             name: definition.name,
@@ -30,7 +30,7 @@ struct CombinedStatusTests {
 
     @Test("All healthy reads as vibing")
     func allHealthy() {
-        let combined = CombinedStatus.combine(ServiceID.allCases.map { snapshot($0, .operational) })
+        let combined = CombinedStatus.combine(ServiceRegistry.ids.map { snapshot($0, .operational) })
         #expect(combined.indicator == .operational)
         #expect(combined.description == "All dev tools are vibing")
         #expect(combined.affectedCount == 0)
@@ -39,10 +39,10 @@ struct CombinedStatusTests {
     /// The headline defect: four unknown services must not read as healthy.
     @Test("A total blackout never says everything is vibing")
     func totalBlackout() {
-        let combined = CombinedStatus.combine(ServiceID.allCases.map { snapshot($0, .unknown) })
+        let combined = CombinedStatus.combine(ServiceRegistry.ids.map { snapshot($0, .unknown) })
         #expect(combined.indicator == .unknown)
         #expect(combined.description == "Unable to check status")
-        #expect(combined.unknownServices.count == 4)
+        #expect(combined.unknownServices.count == ServiceRegistry.ids.count)
     }
 
     @Test("One unknown service suppresses the cheerful copy")
@@ -99,7 +99,7 @@ struct CombinedStatusTests {
 
     @Test("Snapshot round-trips through JSON")
     func codable() throws {
-        let services = ServiceID.allCases.map { snapshot($0, .operational) }
+        let services = ServiceRegistry.ids.map { snapshot($0, .operational) }
         let original = Snapshot(
             services: services,
             combined: .combine(services),

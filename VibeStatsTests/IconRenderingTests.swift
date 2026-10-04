@@ -135,6 +135,17 @@ struct IconRenderingTests {
         }
     }
 
+    @Test("Scaling grows the canvas so a settings preview stays crisp")
+    func scaledCanvas() {
+        let image = VibeIconRenderer.image(for: state(.operational), scale: 2.5)
+        #expect(image.size.height == VibeIconRenderer.canvas * 2.5)
+        #expect(image.size.width == VibeIconRenderer.canvas * 2.5)
+        #expect(image.tiffRepresentation != nil)
+
+        let badged = VibeIconRenderer.image(for: state(.critical, affected: 2), scale: 2)
+        #expect(badged.size.width == VibeIconRenderer.badgeCanvas * 2)
+    }
+
     @Test("The badge widens the canvas; a bare glyph stays square")
     func canvasWidth() {
         #expect(VibeIconRenderer.image(for: state(.operational)).size.width == VibeIconRenderer.canvas)
@@ -142,20 +153,33 @@ struct IconRenderingTests {
                 == VibeIconRenderer.badgeCanvas)
     }
 
-    @Test("Node geometry puts each service in its fixed corner")
+    @Test("Four nodes land exactly on the original diagonal mark")
     func nodePositions() {
         let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
-        let claude = VibeHubGeometry.node(0, in: rect)   // upper-left
-        let github = VibeHubGeometry.node(1, in: rect)   // upper-right
-        let openai = VibeHubGeometry.node(2, in: rect)   // lower-right
-        let gemini = VibeHubGeometry.node(3, in: rect)   // lower-left
+        let original: [CGPoint] = [
+            CGPoint(x: -1, y: 1), CGPoint(x: 1, y: 1), CGPoint(x: 1, y: -1), CGPoint(x: -1, y: -1)
+        ]
+        let reach = VibeHubGeometry.nodeRingRadius * 100 * 0.70710678
+        for (index, offset) in original.enumerated() {
+            let node = VibeHubGeometry.node(index, of: 4, in: rect)
+            #expect(abs(node.x - (50 + offset.x * reach)) < 0.001)
+            #expect(abs(node.y - (50 + offset.y * reach)) < 0.001)
+        }
+    }
 
-        #expect(claude.x < 50 && claude.y > 50)
-        #expect(github.x > 50 && github.y > 50)
-        #expect(openai.x > 50 && openai.y < 50)
-        #expect(gemini.x < 50 && gemini.y < 50)
-        // Symmetric about the centre.
-        #expect(abs((claude.x + github.x) / 2 - 50) < 0.001)
+    @Test("Any node count spaces evenly on one ring, without overlapping nodes",
+          arguments: [3, 5, 6])
+    func nodeCounts(count: Int) {
+        let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
+        let nodes = (0..<count).map { VibeHubGeometry.node($0, of: count, in: rect) }
+        let diameter = VibeHubGeometry.nodeRadius * 2 * 100
+        for (index, node) in nodes.enumerated() {
+            #expect(abs(hypot(node.x - 50, node.y - 50) - VibeHubGeometry.nodeRingRadius * 100) < 0.001)
+            let next = nodes[(index + 1) % count]
+            #expect(hypot(next.x - node.x, next.y - node.y) > diameter)
+        }
+        // The first node is always upper-left.
+        #expect(nodes[0].x < 50 && nodes[0].y > 50)
     }
 
     /// Writes a contact sheet so the glyph can be reviewed by eye, not only by
@@ -230,5 +254,54 @@ struct IconRenderingTests {
 
         print("ICON SHEET: \(url.path)")
         #expect(FileManager.default.fileExists(atPath: url.path))
+    }
+}
+
+@Suite("Test in menu bar")
+@MainActor
+struct IconDemoTests {
+    @Test("The demo covers every status, offline and checking, across every service")
+    func coversEverything() {
+        let steps = IconDemo.steps(for: ServiceRegistry.ids)
+        let indicators = Set(steps.filter { !$0.isOffline }.map(\.indicator))
+        #expect(indicators == Set(StatusIndicator.allCases))
+        #expect(steps.contains { $0.isOffline })
+        #expect(steps.contains { $0.isChecking })
+        for step in steps {
+            #expect(Set(step.services.keys) == Set(ServiceRegistry.ids))
+        }
+        // Each step must look different from the one before it.
+        for (previous, next) in zip(steps, steps.dropFirst()) {
+            #expect(previous != next)
+        }
+    }
+
+    @Test("Start shows a step and notifies; Stop hands the glyph back to live")
+    func startStop() {
+        let demo = IconDemo()
+        var changes = 0
+        demo.onChange = { changes += 1 }
+
+        demo.start()
+        // The first step is set from inside a Task, so nothing is shown yet…
+        #expect(!demo.isRunning || demo.current?.indicator == .operational)
+
+        demo.stop()
+        #expect(!demo.isRunning)
+        #expect(changes >= 1)
+    }
+
+    @Test("A running demo walks through its steps and ends on its own")
+    func runsToCompletion() async {
+        let demo = IconDemo()
+        var seen: [String] = []
+        demo.onChange = { seen.append(demo.current?.title ?? "live") }
+
+        demo.start()
+        try? await Task.sleep(for: IconDemo.duration + .milliseconds(800))
+
+        #expect(!demo.isRunning)
+        #expect(seen.last == "live")
+        #expect(seen.count == IconDemo.steps(for: ServiceRegistry.ids).count + 1)
     }
 }

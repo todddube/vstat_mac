@@ -77,8 +77,8 @@ struct HistoryLogTests {
         await log.record(sampleSnapshot(at: .now))
 
         let samples = await log.samples()
-        #expect(samples.count == ServiceID.allCases.count)
-        #expect(Set(samples.map(\.service)) == Set(ServiceID.allCases))
+        #expect(samples.count == ServiceRegistry.ids.count)
+        #expect(Set(samples.map(\.service)) == Set(ServiceRegistry.ids))
     }
 
     @Test("Appending accumulates instead of replacing")
@@ -87,7 +87,7 @@ struct HistoryLogTests {
         await log.record(sampleSnapshot(at: .now.addingTimeInterval(-60)))
         await log.record(sampleSnapshot(at: .now))
 
-        #expect(await log.samples().count == ServiceID.allCases.count * 2)
+        #expect(await log.samples().count == ServiceRegistry.ids.count * 2)
     }
 
     @Test("Samples can be filtered by service")
@@ -110,7 +110,7 @@ struct HistoryLogTests {
         await log.prune(now: now)
 
         let remaining = await log.samples(since: .distantPast)
-        #expect(remaining.count == ServiceID.allCases.count)
+        #expect(remaining.count == ServiceRegistry.ids.count)
         for sample in remaining {
             #expect(sample.t >= now.addingTimeInterval(-Double(HistoryLog.retentionDays) * 86_400))
         }
@@ -153,7 +153,7 @@ struct HistoryLogTests {
         await log.pruneIfNeeded(now: now)
 
         let remaining = await log.samples(since: .distantPast)
-        #expect(remaining.count == ServiceID.allCases.count)
+        #expect(remaining.count == ServiceRegistry.ids.count)
         #expect(remaining.allSatisfy { $0.t == now })
     }
 }

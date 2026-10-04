@@ -1,5 +1,7 @@
 import Foundation
 import Testing
+import Observation
+import Synchronization
 @testable import VibeStats
 
 @Suite("MonitorCoordinator")
@@ -30,7 +32,7 @@ struct CoordinatorTests {
 
         #expect(coordinator.hasCompletedFirstCheck)
         #expect(coordinator.phase == .idle)
-        #expect(coordinator.snapshot?.services.count == 4)
+        #expect(coordinator.snapshot?.services.count == ServiceRegistry.ids.count)
         #expect(coordinator.combined.indicator == .operational)
     }
 
@@ -93,7 +95,7 @@ struct CoordinatorTests {
 
         await coordinator.refresh(reason: .manual)
 
-        #expect(coordinator.snapshot?.services.count == 3)
+        #expect(coordinator.snapshot?.services.count == ServiceRegistry.ids.count - 1)
         #expect(coordinator.snapshot?[.openai] == nil)
         #expect(await client.callCount("openai/status.json") == 0)
     }
@@ -135,6 +137,25 @@ struct CoordinatorTests {
         #expect(preferences.refreshInterval == .oneMinute)
         #expect(preferences.motionLevel == .off)
         #expect(!preferences.isEnabled(.gemini))
-        #expect(preferences.enabledServices.map(\.id) == [.claude, .github, .openai])
+        #expect(preferences.enabledServices.map(\.id) == [.claude, .github, .openai, .grok])
+    }
+
+    @Test("Writing a preference is observable, so Settings and the menu bar hear it")
+    func preferencesAreObservable() {
+        let preferences = Preferences(defaults: UserDefaults(suiteName: "test-\(UUID().uuidString)")!)
+        let fired = Mutex(false)
+
+        // Every setting is computed over UserDefaults, which `@Observable`
+        // does not instrument: the icon-style cards wrote the value but no
+        // `onChange` fired, so the menu bar kept the old glyph.
+        withObservationTracking {
+            _ = preferences.iconStyle
+        } onChange: {
+            fired.withLock { $0 = true }
+        }
+        preferences.iconStyle = .minimal
+
+        #expect(fired.withLock { $0 })
+        #expect(preferences.iconStyle == .minimal)
     }
 }

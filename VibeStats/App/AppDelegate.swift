@@ -14,6 +14,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItemController: StatusItemController?
     private var appearanceObserver: (any NSObjectProtocol)?
     private lazy var notifications = NotificationDispatcher(preferences: preferences)
+    private let soundPlayer: any AlertSoundPlaying = SystemAlertSoundPlayer()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         Log.app.info("Vibe Stats launching")
@@ -42,7 +43,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             MainActor.assumeIsolated { controller.render() }
         }
 
+        IconDemo.shared.onChange = { [weak controller] in controller?.render() }
+
         NSApp.setActivationPolicy(preferences.showInDock ? .regular : .accessory)
+
+        // A menu bar app comes up with no window and no Dock bounce, so the
+        // chime is the only signal that it is running at all.
+        if let chime = preferences.launchChime() {
+            soundPlayer.play(chime)
+        }
 
         coordinator.start()
 

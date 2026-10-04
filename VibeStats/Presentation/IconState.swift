@@ -6,8 +6,11 @@ import Foundation
 
 struct IconState: Hashable, Sendable {
     var indicator: StatusIndicator = .unknown
-    /// Per-service state, used to colour the four nodes.
+    /// Per-service state, used to colour the hub's nodes.
     var services: [ServiceID: StatusIndicator] = [:]
+    /// The hub's nodes, in order: the enabled services. Separate from
+    /// `services` because a node exists before its first check lands.
+    var nodes: [ServiceID] = ServiceRegistry.ids
     var affectedCount: Int = 0
     var isOffline: Bool = false
     var isChecking: Bool = false
@@ -80,5 +83,20 @@ struct IconState: Hashable, Sendable {
         case .criticalPulse: return motion == .subtle ? .milliseconds(2500) : .milliseconds(1400)
         case .refreshSweep:  return .milliseconds(900)
         }
+    }
+}
+
+extension IconState {
+    /// Per-service states for previews: the second node carries `indicator`,
+    /// the rest are healthy, and `spreading` adds a major on the last node so
+    /// an outage preview shows more than one node lit.
+    static func sample(
+        _ indicator: StatusIndicator, spreading: Bool = false
+    ) -> [ServiceID: StatusIndicator] {
+        let ids = ServiceRegistry.ids
+        var services = Dictionary(uniqueKeysWithValues: ids.map { ($0, StatusIndicator.operational) })
+        if ids.indices.contains(1) { services[ids[1]] = indicator }
+        if spreading, let last = ids.last, ids.count > 2 { services[last] = .major }
+        return services
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 
 protocol StatusAPIClient: Sendable {
     func get<T: Decodable & Sendable>(_ type: T.Type, from url: URL) async throws -> T
+    /// The raw body, for feeds that are not JSON (RSS). Same retry policy.
+    func data(from url: URL) async throws -> Data
 }
 
 enum APIError: Error, Sendable, Equatable {
@@ -60,7 +62,9 @@ struct LiveStatusAPIClient: StatusAPIClient {
         // Fail fast; the coordinator owns the offline state machine.
         configuration.waitsForConnectivity = false
         configuration.httpAdditionalHeaders = [
-            "Accept": "application/json",
+            // RSS feeds share this session; most servers ignore Accept, but a
+            // strict one would 406 a feed request that only offered JSON.
+            "Accept": "application/json, application/rss+xml;q=0.9, */*;q=0.5",
             "User-Agent": Self.userAgent
         ]
         if let protocolClasses {
@@ -75,10 +79,19 @@ struct LiveStatusAPIClient: StatusAPIClient {
     }()
 
     func get<T: Decodable & Sendable>(_ type: T.Type, from url: URL) async throws -> T {
+        let data = try await data(from: url)
+        do {
+            return try decoder.decode(type, from: data)
+        } catch {
+            throw APIError.decoding(String(describing: error).prefix(160).description)
+        }
+    }
+
+    func data(from url: URL) async throws -> Data {
         var attempt = 0
         while true {
             do {
-                return try await fetch(type, from: url)
+                return try await fetch(from: url)
             } catch let error as APIError where error.isTransient && attempt < maxRetries {
                 attempt += 1
                 // Linear backoff with jitter — enough to clear a blip, bounded
@@ -90,7 +103,7 @@ struct LiveStatusAPIClient: StatusAPIClient {
         }
     }
 
-    private func fetch<T: Decodable & Sendable>(_ type: T.Type, from url: URL) async throws -> T {
+    private func fetch(from url: URL) async throws -> Data {
         let data: Data
         let response: URLResponse
 
@@ -107,12 +120,7 @@ struct LiveStatusAPIClient: StatusAPIClient {
         if let http = response as? HTTPURLResponse, !(200..<300).contains(http.statusCode) {
             throw APIError.http(status: http.statusCode)
         }
-
-        do {
-            return try decoder.decode(type, from: data)
-        } catch {
-            throw APIError.decoding(String(describing: error).prefix(160).description)
-        }
+        return data
     }
 
     private static func map(_ error: URLError) -> APIError {

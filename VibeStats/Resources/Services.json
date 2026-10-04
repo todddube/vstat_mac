@@ -1,0 +1,194 @@
+{
+  "//": [
+    "The service registry: every service, every component, every match pattern.",
+    "Adding or changing a monitored service is an edit to this file alone.",
+    "",
+    "ORDER IS SIGNIFICANT. It is the card order, the hub-glyph node order",
+    "(clockwise from upper-left), and it decides who claims a contested component.",
+    "",
+    "Components are matched against the vendor's names first by exact name",
+    "(exactMatches, case-insensitive) and then by ICU regex (patterns), so a",
+    "vendor rename degrades to a fuzzy hit instead of a silent 'operational'.",
+    "isPrimary marks what a healthy card shows; EVERY component feeds the roll-up.",
+    "",
+    "api.type:",
+    "  statuspage  - Atlassian Statuspage. base = the .../api/v2 URL.",
+    "  googleCloud - Google Cloud's flat incident feed, filtered by keywords.",
+    "  rssFeed     - an RSS incident feed whose item titles start with",
+    "                '[Component name]'. Component health is derived from open",
+    "                incidents, so patterns match that bracketed name.",
+    "",
+    "accent is the card's vendor colour (hex, per appearance). It marks WHOSE",
+    "card this is and must never read as a status colour.",
+    "",
+    "RegistryTests validates this file: unique ids, compilable patterns, every",
+    "component self-matches, no pattern collides with a sibling's exact name."
+  ],
+  "services": [
+    {
+      "id": "claude",
+      "name": "Claude AI",
+      "vendor": "Anthropic",
+      "statusURL": "https://status.claude.com",
+      "accent": { "dark": "#E08C3C", "light": "#D97706" },
+      "api": { "type": "statuspage", "base": "https://status.claude.com/api/v2" },
+      "components": [
+        {
+          "id": "claude-code", "label": "Claude Code",
+          "exactMatches": ["claude code"],
+          "patterns": ["\\bclaude code\\b"],
+          "isPrimary": true
+        },
+        {
+          "//": "Not a bare \\bapi\\b: that binds to any component containing 'API' - a silent wrong answer, worse than unknown (docs/REVIEW.md 3.6).",
+          "id": "claude-api", "label": "API",
+          "exactMatches": ["claude api (api.anthropic.com)"],
+          "patterns": ["\\bclaude api\\b", "\\bapi\\.anthropic\\.com\\b"],
+          "isPrimary": true
+        },
+        {
+          "id": "claude-web", "label": "Claude.ai",
+          "exactMatches": ["claude.ai"],
+          "patterns": ["\\bclaude\\.ai\\b"],
+          "isPrimary": true
+        },
+        {
+          "id": "claude-console", "label": "Console",
+          "exactMatches": ["claude console (platform.claude.com)"],
+          "patterns": ["\\bclaude console\\b", "\\bplatform\\.claude\\.com\\b"],
+          "isPrimary": true
+        },
+        {
+          "id": "claude-cowork", "label": "Cowork",
+          "exactMatches": ["claude cowork"],
+          "patterns": ["\\bcowork\\b"]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "name": "GitHub Copilot",
+      "vendor": "GitHub",
+      "statusURL": "https://www.githubstatus.com",
+      "accent": { "dark": "#A78BFA", "light": "#7C3AED" },
+      "api": { "type": "statuspage", "base": "https://www.githubstatus.com/api/v2" },
+      "components": [
+        {
+          "id": "copilot", "label": "Copilot",
+          "exactMatches": ["copilot"], "patterns": ["^copilot$"], "isPrimary": true
+        },
+        {
+          "id": "copilot-models", "label": "AI Models",
+          "exactMatches": ["copilot ai model providers"],
+          "patterns": ["copilot.*model"], "isPrimary": true
+        },
+        {
+          "id": "codespaces", "label": "Codespaces",
+          "exactMatches": ["codespaces"], "patterns": ["\\bcodespaces\\b"], "isPrimary": true
+        },
+        {
+          "id": "actions", "label": "Actions",
+          "exactMatches": ["actions"], "patterns": ["^actions$"], "isPrimary": true
+        },
+        {
+          "id": "github-api", "label": "API Requests",
+          "exactMatches": ["api requests"], "patterns": ["\\bapi requests\\b"]
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "vendor": "OpenAI",
+      "statusURL": "https://status.openai.com",
+      "accent": { "dark": "#34D399", "light": "#059669" },
+      "api": { "type": "statuspage", "base": "https://status.openai.com/api/v2" },
+      "//": "OpenAI publishes very granular components; we watch the developer surfaces, not the consumer ones.",
+      "components": [
+        {
+          "id": "codex-api", "label": "Codex API",
+          "exactMatches": ["codex api"], "patterns": ["^codex api$"], "isPrimary": true
+        },
+        {
+          "id": "codex-web", "label": "Codex Web",
+          "exactMatches": ["codex web"], "patterns": ["^codex web$"], "isPrimary": true
+        },
+        {
+          "id": "vscode-extension", "label": "VS Code Ext",
+          "exactMatches": ["vs code extension"], "patterns": ["vs ?code extension"],
+          "isPrimary": true
+        },
+        {
+          "id": "chat-completions", "label": "Chat API",
+          "exactMatches": ["chat completions"], "patterns": ["^chat completions$"],
+          "isPrimary": true
+        },
+        {
+          "id": "responses", "label": "Responses",
+          "exactMatches": ["responses"], "patterns": ["^responses$"]
+        },
+        {
+          "id": "codex-cli", "label": "CLI",
+          "exactMatches": ["cli"], "patterns": ["^cli$"]
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "vendor": "Google",
+      "statusURL": "https://status.cloud.google.com",
+      "accent": { "dark": "#60A5FA", "light": "#2563EB" },
+      "api": {
+        "type": "googleCloud",
+        "incidents": "https://status.cloud.google.com/incidents.json",
+        "keywords": ["gemini", "ai studio", "vertex ai", "generative ai", "ai platform", "cloud ai"]
+      },
+      "//": "No Statuspage: component states are derived from active incidents, so they are pattern-only.",
+      "components": [
+        { "id": "gemini-api", "label": "Gemini API", "patterns": ["\\bgemini\\b"], "isPrimary": true },
+        { "id": "ai-studio", "label": "AI Studio", "patterns": ["\\bai studio\\b"], "isPrimary": true },
+        { "id": "vertex-ai", "label": "Vertex AI", "patterns": ["\\bvertex ai\\b"], "isPrimary": true }
+      ]
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "vendor": "xAI",
+      "statusURL": "https://status.x.ai",
+      "accent": { "dark": "#F472B6", "light": "#BE185D" },
+      "api": { "type": "rssFeed", "feed": "https://status.x.ai/feed.xml" },
+      "//": "status.x.ai blocks every endpoint except its RSS feed. Item titles read '[Grok (Web)] Models outage'.",
+      "components": [
+        {
+          "id": "grok-web", "label": "Grok.com",
+          "exactMatches": ["grok (web)"], "patterns": ["^grok \\(web\\)$"], "isPrimary": true
+        },
+        {
+          "//": "One API component per region; any region down marks the API.",
+          "id": "grok-api", "label": "API",
+          "exactMatches": ["api (us-east-1.api.x.ai)"],
+          "patterns": ["^api \\([a-z0-9-]+\\.api\\.x\\.ai\\)$"],
+          "isPrimary": true
+        },
+        {
+          "id": "grok-build", "label": "Grok Build",
+          "exactMatches": ["grok build"], "patterns": ["^grok build$"], "isPrimary": true
+        },
+        {
+          "id": "grok-console", "label": "Console",
+          "exactMatches": ["api console"], "patterns": ["^api console$"], "isPrimary": true
+        },
+        {
+          "id": "grok-apps", "label": "Mobile Apps",
+          "exactMatches": ["grok (ios)", "grok (android)"],
+          "patterns": ["^grok \\((ios|android)\\)$"]
+        },
+        {
+          "id": "grok-x", "label": "Grok in X",
+          "exactMatches": ["grok in x"], "patterns": ["^grok in x$"]
+        }
+      ]
+    }
+  ]
+}

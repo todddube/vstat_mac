@@ -19,7 +19,7 @@ struct EngineTests {
     func allComponentsResolve() async throws {
         let snapshot = await engine(try .liveFixtures()).check(now: now)
 
-        #expect(snapshot.services.count == 4)
+        #expect(snapshot.services.count == ServiceRegistry.ids.count)
         for service in snapshot.services {
             #expect(
                 service.componentsResolved == service.componentsWatched,
@@ -32,7 +32,7 @@ struct EngineTests {
     @Test("Services come back in registry order")
     func registryOrder() async throws {
         let snapshot = await engine(try .liveFixtures()).check(now: now)
-        #expect(snapshot.services.map(\.id) == ServiceID.allCases)
+        #expect(snapshot.services.map(\.id) == ServiceRegistry.ids)
     }
 
     @Test("Matched components carry the vendor's own name and raw status")

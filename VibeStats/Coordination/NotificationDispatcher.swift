@@ -116,17 +116,10 @@ final class NotificationDispatcher {
         return now.timeIntervalSince(last) < cooldown
     }
 
-    /// Handles a window that wraps past midnight (22:00 → 08:00).
+    /// Lives on Preferences, which is where the window is stored — the launch
+    /// chime has to ask the same question.
     func isQuietHour(_ date: Date) -> Bool {
-        let components = Calendar.current.dateComponents([.hour, .minute], from: date)
-        let minutes = (components.hour ?? 0) * 60 + (components.minute ?? 0)
-        let start = preferences.quietHoursStart
-        let end = preferences.quietHoursEnd
-
-        if start == end { return false }
-        return start < end
-            ? (minutes >= start && minutes < end)
-            : (minutes >= start || minutes < end)
+        preferences.isQuietHour(date)
     }
 
     private func severity(_ transition: StatusTransition) -> Int {
@@ -149,7 +142,7 @@ final class NotificationDispatcher {
             title: title,
             body: body,
             service: transition.service,
-            playsSound: preferences.notifySound,
+            sound: preferences.alertSound,
             severity: transition.judgedSeverity
         )
     }
@@ -166,7 +159,7 @@ final class NotificationDispatcher {
                 : String(localized: "\(name): \(transitions.count) components affected"),
             body: labels,
             service: service,
-            playsSound: preferences.notifySound,
+            sound: preferences.alertSound,
             // `transitions` is already sorted worst-first by plan().
             severity: transitions.first?.judgedSeverity ?? .unknown
         )

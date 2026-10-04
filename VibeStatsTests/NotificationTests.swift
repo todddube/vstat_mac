@@ -1,3 +1,4 @@
+import AppKit
 import Foundation
 import Testing
 @testable import VibeStats
@@ -105,6 +106,62 @@ struct TransitionDiffTests {
     }
 }
 
+@Suite("Alert sounds")
+@MainActor
+struct AlertSoundTests {
+
+    private func preferences(_ configure: (Preferences) -> Void) -> Preferences {
+        let preferences = Preferences(defaults: UserDefaults(suiteName: "sound-\(UUID().uuidString)")!)
+        configure(preferences)
+        return preferences
+    }
+
+    private func date(hour: Int) throws -> Date {
+        try #require(Calendar.current.date(bySettingHour: hour, minute: 0, second: 0, of: .now))
+    }
+
+    @Test("Notifications are silent unless sound is switched on")
+    func notificationSound() {
+        #expect(preferences { $0.notifySound = false }.alertSound == nil)
+        #expect(preferences {
+            $0.notifySound = true
+            $0.notifyAlertSound = .hero
+        }.alertSound == .hero)
+    }
+
+    @Test("The launch chime has its own switch, and is not nested under the alert sound")
+    func launchChime() throws {
+        #expect(preferences {
+            $0.notifySound = false
+            $0.launchSound = true
+            $0.notifyAlertSound = .glass
+        }.launchChime(at: try date(hour: 12)) == .glass, "wanting a chime without outage sounds is legitimate")
+
+        #expect(preferences { $0.launchSound = false }.launchChime(at: try date(hour: 12)) == nil)
+    }
+
+    @Test("Quiet hours silence the launch chime — a login item starts at whatever hour you booted")
+    func launchChimeRespectsQuietHours() throws {
+        let preferences = preferences {
+            $0.launchSound = true
+            $0.quietHoursEnabled = true
+            $0.quietHoursStart = 22 * 60
+            $0.quietHoursEnd = 8 * 60
+        }
+        #expect(preferences.launchChime(at: try date(hour: 23)) == nil)
+        #expect(preferences.launchChime(at: try date(hour: 3)) == nil)
+        #expect(preferences.launchChime(at: try date(hour: 12)) != nil)
+    }
+
+    @Test("Every case names a sound that exists on the system")
+    func systemSoundsResolve() {
+        for sound in AlertSound.allCases {
+            guard let name = sound.systemName else { continue }
+            #expect(NSSound(named: name) != nil, "\(name) is not a system sound")
+        }
+    }
+}
+
 @Suite("Notification policy")
 @MainActor
 struct NotificationPolicyTests {
@@ -126,7 +183,7 @@ struct NotificationPolicyTests {
     ) -> StatusTransition {
         StatusTransition(
             service: service,
-            serviceName: ServiceRegistry.definition(for: service).name,
+            serviceName: ServiceRegistry.definition(service).name,
             componentID: id, componentLabel: id, isPrimary: primary,
             from: from, to: to
         )
@@ -141,6 +198,34 @@ struct NotificationPolicyTests {
         #expect(planned.count == 1)
         #expect(planned[0].title.contains("Claude AI"))
         #expect(planned[0].service == .claude)
+    }
+
+    @Test("The chosen alert sound rides along, and only when sound is on")
+    func alertSound() {
+        let (silent, _) = dispatcher {
+            $0.notifySound = false
+            $0.notifyAlertSound = .submarine
+        }
+        #expect(silent.plan(
+            transitions: [transition(from: .operational, to: .major)], now: .now
+        )[0].sound == nil)
+
+        let (audible, _) = dispatcher {
+            $0.notifySound = true
+            $0.notifyAlertSound = .submarine
+        }
+        let planned = audible.plan(
+            transitions: [
+                transition("copilot", from: .operational, to: .critical, service: .github),
+                transition("codespaces", from: .operational, to: .major, service: .github),
+                transition("actions", from: .operational, to: .major, service: .github)
+            ],
+            now: .now
+        )
+        #expect(planned.count == 1, "grouped, and the summary carries the sound too")
+        #expect(planned[0].sound == .submarine)
+        #expect(AlertSound.submarine.systemName == "Submarine")
+        #expect(AlertSound.default.systemName == nil)
     }
 
     @Test("Degradation and recovery can each be switched off")
@@ -349,7 +434,7 @@ struct NotificationOrderingTests {
     ) -> StatusTransition {
         StatusTransition(
             service: service,
-            serviceName: ServiceRegistry.definition(for: service).name,
+            serviceName: ServiceRegistry.definition(service).name,
             componentID: id, componentLabel: id, isPrimary: true,
             from: from, to: to
         )

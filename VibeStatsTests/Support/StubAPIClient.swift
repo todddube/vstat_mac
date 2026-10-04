@@ -22,7 +22,7 @@ actor StubAPIClient: StatusAPIClient {
         self.replies = replies
     }
 
-    /// The four services, all healthy, from the recorded live payloads.
+    /// Every service, all healthy, from the recorded live payloads.
     static func liveFixtures() throws -> StubAPIClient {
         StubAPIClient([
             "claude/status.json":     .data(try Fixture.data("claude-status")),
@@ -34,7 +34,8 @@ actor StubAPIClient: StatusAPIClient {
             "openai/status.json":     .data(try Fixture.data("openai-status")),
             "openai/components.json": .data(try Fixture.data("openai-components")),
             "openai/incidents.json":  .data(try Fixture.data("openai-incidents")),
-            "gemini/incidents.json":  .data(try Fixture.data("gemini-incidents"))
+            "gemini/incidents.json":  .data(try Fixture.data("gemini-incidents")),
+            "grok/feed.xml":          .data(try Fixture.data("grok-feed", extension: "xml"))
         ])
     }
 
@@ -64,6 +65,26 @@ actor StubAPIClient: StatusAPIClient {
         }
     }
 
+    func data(from url: URL) async throws -> Data {
+        let key = Self.key(for: url)
+        callCounts[key, default: 0] += 1
+
+        guard let reply = replies[key] else {
+            throw APIError.http(status: 404)
+        }
+
+        switch reply {
+        case .data(let data):
+            return data
+        case .failure(let error):
+            throw error
+        case .flaky(let times, let data):
+            if callCounts[key, default: 0] <= times { throw APIError.timeout }
+            replies[key] = .data(data)
+            return data
+        }
+    }
+
     private func decode<T: Decodable & Sendable>(_ type: T.Type, from data: Data) throws -> T {
         do { return try decoder.decode(type, from: data) }
         catch { throw APIError.decoding(String(describing: error).prefix(120).description) }
@@ -76,6 +97,7 @@ actor StubAPIClient: StatusAPIClient {
         case let host where host.contains("claude"): service = "claude"
         case let host where host.contains("github"): service = "github"
         case let host where host.contains("openai"): service = "openai"
+        case let host where host.hasSuffix("x.ai"):  service = "grok"
         default:                                     service = "gemini"
         }
         return "\(service)/\(url.lastPathComponent)"
