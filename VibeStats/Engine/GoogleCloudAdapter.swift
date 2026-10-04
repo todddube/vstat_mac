@@ -12,14 +12,16 @@ import Foundation
 struct GoogleCloudAdapter: Sendable {
     let client: any StatusAPIClient
 
-    func check(_ definition: ServiceDefinition, incidentsURL: URL, now: Date) async throws -> ServiceSnapshot {
+    func check(
+        _ definition: ServiceDefinition, incidentsURL: URL, keywords: [String], now: Date
+    ) async throws -> ServiceSnapshot {
         let payload = try await client.get([GoogleCloud.Incident].self, from: incidentsURL)
 
         // Keep the flattened search text alongside each incident while we work;
         // it is an internal index and never reaches the snapshot.
         let relevant = payload.compactMap { incident -> (Incident, String)? in
             let text = searchText(for: incident)
-            guard ServiceRegistry.googleAIKeywords.contains(where: text.contains) else { return nil }
+            guard keywords.contains(where: text.contains) else { return nil }
             return (normalize(incident, now: now), text)
         }
 

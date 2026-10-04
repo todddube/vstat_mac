@@ -1,0 +1,3545 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SpaceXAI System Status</title>
+    <link>https://status.x.ai</link>
+    <description>Current status and incident history of SpaceXAI's services and systems</description>
+    <language>en-us</language>
+    <atom:link href="https://status.x.ai/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2026 01:29:59 GMT</lastBuildDate>
+    <ttl>30</ttl>
+    
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Outages across API, Grok.com, and Grok Build</title>
+      <link>https://status.x.ai/api-us-east-1/INC578e0bc8</link>
+      <guid isPermaLink="false">INC578e0bc8</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 22 Sep 2026 01:28:30 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 22 Sep 2026 01:28:43 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>This incident has been resolved. All services are operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 22 Sep 2026 01:20:08 GMT</strong></p>
+               <h3>Traffic is almost all healthy</h3>
+               <p>Traffic has almost fully recovered, seeing slight hiccups</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 22 Sep 2026 01:03:07 GMT</strong></p>
+               <h3>Mitigation in progress</h3>
+               <p>We are investigating a datacenter issue</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 22 Sep 2026 01:02:42 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-west-2.api.x.ai)] Enterprise Voice Degraded</title>
+      <link>https://status.x.ai/api-us-west-2/INC698e276c</link>
+      <guid isPermaLink="false">INC698e276c</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 10 Sep 2026 07:15:52 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 10 Sep 2026 07:15:52 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been fully resolved. All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 10 Sep 2026 07:10:41 GMT</strong></p>
+               <h3>Fix Deployed</h3>
+               <p>We have identified the root cause and deployed a fix. Services are gradually recovering and we are monitoring stability.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 10 Sep 2026 07:03:52 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are investigating an issue with Enterprise Voice that is affecting some users.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 10 Sep 2026 07:03:52 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Models outage</title>
+      <link>https://status.x.ai/ios-app/INCc33a8af</link>
+      <guid isPermaLink="false">INCc33a8af</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:08:11 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:08:11 GMT</strong></p>
+               <h3>Traffic is healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Investigating outage</h3>
+               <p>Grok is experiencing issues. We are working on restoring service as quickly as possible.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Models outage</title>
+      <link>https://status.x.ai/android-app/INC3b127ff3</link>
+      <guid isPermaLink="false">INC3b127ff3</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:04:59 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:04:59 GMT</strong></p>
+               <h3>Traffic is healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Models outage</h3>
+               <p>We are experiencing issues with our models.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Models outage</title>
+      <link>https://status.x.ai/grok-com/INC25664c15</link>
+      <guid isPermaLink="false">INC25664c15</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:07:07 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:07:07 GMT</strong></p>
+               <h3>Traffic is healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Investigating outage</h3>
+               <p>Grok is experiencing issues. We are working on restoring service as quickly as possible.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok Build] Models outage</title>
+      <link>https://status.x.ai/grok-build/INC4d4eae88</link>
+      <guid isPermaLink="false">INC4d4eae88</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:05:13 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:05:13 GMT</strong></p>
+               <h3>Traffic healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Investigating outage</h3>
+               <p>Grok is experiencing issues. We are working on restoring service as quickly as possible.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Office/Workspace Plugins)] Models outage</title>
+      <link>https://status.x.ai/office-workspace-plugins/INC4d558447</link>
+      <guid isPermaLink="false">INC4d558447</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:06:10 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:06:10 GMT</strong></p>
+               <h3>Traffic healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Investigating outage</h3>
+               <p>Grok is experiencing issues. We are working on restoring service as quickly as possible.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Models outage</title>
+      <link>https://status.x.ai/api-us-east-1/INC410324ed</link>
+      <guid isPermaLink="false">INC410324ed</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:07:20 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:07:20 GMT</strong></p>
+               <h3>Traffic is healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Investigating outage</h3>
+               <p>Grok is experiencing issues. We are working on restoring service as quickly as possible.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-west-2.api.x.ai)] Models outage</title>
+      <link>https://status.x.ai/api-us-west-2/INC72f6dd00</link>
+      <guid isPermaLink="false">INC72f6dd00</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:09:14 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:09:14 GMT</strong></p>
+               <h3>Traffic healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Investigating outage</h3>
+               <p>Grok is experiencing issues. We are working on restoring service as quickly as possible.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok in X] Models outage</title>
+      <link>https://status.x.ai/grok-in-x/INC429d651a</link>
+      <guid isPermaLink="false">INC429d651a</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Sep 2026 17:05:50 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 17:05:50 GMT</strong></p>
+               <h3>Traffic healthy again</h3>
+               <p>We have resolved the situation, and traffic is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Sep 2026 13:30:00 GMT</strong></p>
+               <h3>Investigating outage</h3>
+               <p>Grok is experiencing issues. We are working on restoring service as quickly as possible.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Sep 2026 13:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] grok-4.6 and grok-4.5 high error rate</title>
+      <link>https://status.x.ai/api-us-east-1/INC5a3245c3</link>
+      <guid isPermaLink="false">INC5a3245c3</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 17 Aug 2026 23:28:05 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 17 Aug 2026 23:28:05 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been fully resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 17 Aug 2026 22:39:21 GMT</strong></p>
+               <h3>Elevated TTFT</h3>
+               <p>Some customers will still see some elevated TTFT on grok-4.6</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 17 Aug 2026 21:57:42 GMT</strong></p>
+               <h3>Elevated TTFT and 500 rate on grok models</h3>
+               <p>We are investigating an issue with one of our GPU clusters</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 17 Aug 2026 21:57:27 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-west-2.api.x.ai)] Imagine Video 1.5 is experiencing lower success rate and higher latency</title>
+      <link>https://status.x.ai/api-us-west-2/INC548339c6</link>
+      <guid isPermaLink="false">INC548339c6</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 07 Jul 2026 16:37:02 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 07 Jul 2026 16:37:02 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been resolved and the success rate is returning to normal.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 07 Jul 2026 15:40:26 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are currently investigating the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 07 Jul 2026 15:40:26 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (eu-west-1.api.x.ai)] Imagine Video 1.5 is experiencing lower success rate and higher latency</title>
+      <link>https://status.x.ai/api-eu-west-1/INC5068f51b</link>
+      <guid isPermaLink="false">INC5068f51b</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 07 Jul 2026 16:38:07 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 07 Jul 2026 16:38:07 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been resolved and the success rate is returning to normal.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 07 Jul 2026 15:36:32 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are investigating the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 07 Jul 2026 15:36:32 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Imagine Video 1.5 is experiencing lower success rate and higher latency</title>
+      <link>https://status.x.ai/api-us-east-1/INC3d7f8a82</link>
+      <guid isPermaLink="false">INC3d7f8a82</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 07 Jul 2026 16:35:50 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 07 Jul 2026 16:35:50 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been resolved and the success rate is returning to normal.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 07 Jul 2026 15:35:34 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are investigating the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 07 Jul 2026 15:35:34 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Grok Build 0.1 unavailable</title>
+      <link>https://status.x.ai/api-us-east-1/INC5bb72a4a</link>
+      <guid isPermaLink="false">INC5bb72a4a</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 02 Jul 2026 01:10:01 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 02 Jul 2026 01:10:17 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>This incident has been resolved. All services are operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 02 Jul 2026 00:44:30 GMT</strong></p>
+               <h3>Grok Build 0.1 high error rate</h3>
+               <p>We are having networking issues and actively investigating</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 02 Jul 2026 00:44:20 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (eu-west-1.api.x.ai)] Increased Error rate on Image Generation Endpoint</title>
+      <link>https://status.x.ai/api-eu-west-1/INC7392b4a1</link>
+      <guid isPermaLink="false">INC7392b4a1</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 17 Jun 2026 12:36:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 17 Jun 2026 16:41:14 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The issue has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 17 Jun 2026 12:13:15 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>There is increased error rate on Image Generation endpoint. Our team is investigating and trying to mitigate the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 17 Jun 2026 12:13:15 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Increased Error rate on Image Generation Endpoint</title>
+      <link>https://status.x.ai/api-us-east-1/INC2d87987d</link>
+      <guid isPermaLink="false">INC2d87987d</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 17 Jun 2026 12:36:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 17 Jun 2026 16:23:24 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 17 Jun 2026 12:12:07 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>There is increased error rate on Image Generation endpoint. Our team is investigating and trying to mitigate the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 17 Jun 2026 12:12:07 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Increased Failure Rate of Image Generation and Editing</title>
+      <link>https://status.x.ai/api-us-east-1/INC305af888</link>
+      <guid isPermaLink="false">INC305af888</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 03 Jun 2026 10:46:42 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 03 Jun 2026 10:46:42 GMT</strong></p>
+               <h3>Service Restored</h3>
+               <p>The incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 03 Jun 2026 10:16:29 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are aware of an increased error rate with  model. We are working on resolving the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 03 Jun 2026 10:16:29 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (eu-west-1.api.x.ai)] Increased Failure Rate of Image Generation and Editing</title>
+      <link>https://status.x.ai/api-eu-west-1/INC54c445a8</link>
+      <guid isPermaLink="false">INC54c445a8</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 03 Jun 2026 10:46:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 03 Jun 2026 11:34:55 GMT</strong></p>
+               <h3>Service Restored</h3>
+               <p>The incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 03 Jun 2026 10:16:29 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are aware of an increased error rate with  model. We are working on resolving the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 03 Jun 2026 10:16:29 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] Grok Build Caching broken</title>
+      <link>https://status.x.ai/api-console/INC62431056</link>
+      <guid isPermaLink="false">INC62431056</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 26 May 2026 16:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 26 May 2026 15:10:59 GMT</strong></p>
+               <h3>Not working</h3>
+               <p>Caching broke around rollout at midnight</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 26 May 2026 16:55:00 GMT</strong></p>
+               <h3>Issue resolved</h3>
+               <p>We have reverted the changes and restored the service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 26 May 2026 15:10:45 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] Console not loading</title>
+      <link>https://status.x.ai/api-console/INC702624e4</link>
+      <guid isPermaLink="false">INC702624e4</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 18 May 2026 02:29:34 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Investigating issues related to authentication</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 18 May 2026 12:00:00 GMT</strong></p>
+               <h3>Updated</h3>
+               <p>The issue has been resolved.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 18 May 2026 01:58:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Requests Using grok-imagine Models have Reduced Success Rate</title>
+      <link>https://status.x.ai/api-us-east-1/INC78c0aac0</link>
+      <guid isPermaLink="false">INC78c0aac0</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 13 May 2026 16:37:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 13 May 2026 15:50:00 GMT</strong></p>
+               <h3>Requests Using grok-imagine Models have Reduced Success Rate</h3>
+               <p>We are experiencing issues with grok-imagine models. Our team is working on restoring the service level.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 13 May 2026 16:37:00 GMT</strong></p>
+               <h3>Issues Resolved</h3>
+               <p>The service has been restored.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 13 May 2026 15:50:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (eu-west-1.api.x.ai)] Requests Using grok-imagine Models have Reduced Success Rate</title>
+      <link>https://status.x.ai/api-eu-west-1/INC38fc6020</link>
+      <guid isPermaLink="false">INC38fc6020</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 13 May 2026 16:37:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 13 May 2026 15:50:00 GMT</strong></p>
+               <h3>Requests Using grok-imagine Models have Reduced Success Rate</h3>
+               <p>We are experiencing issues with grok-imagine models. Our team is working on restoring the service level.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 13 May 2026 16:37:00 GMT</strong></p>
+               <h3>Issues Resolved</h3>
+               <p>The service has been restored.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 13 May 2026 15:50:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] 4.3 losing conversation context</title>
+      <link>https://status.x.ai/grok-com/INC7c527912</link>
+      <guid isPermaLink="false">INC7c527912</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sun, 10 May 2026 23:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 11 May 2026 21:48:16 GMT</strong></p>
+               <h3>Resolved.</h3>
+               <p>Conversation context issues were resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Sun, 10 May 2026 22:05:35 GMT</strong></p>
+               <h3>Needs investigation</h3>
+               <p>Reported</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sun, 10 May 2026 22:05:21 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] Test+Incident</title>
+      <link>https://status.x.ai/api-console/INC23af3dd4</link>
+      <guid isPermaLink="false">INC23af3dd4</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 24 Mar 2026 13:35:26 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 24 Mar 2026 13:35:42 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Resolution is working</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 24 Mar 2026 13:34:34 GMT</strong></p>
+               <h3>Developing</h3>
+               <p>Updates are working</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 24 Mar 2026 13:10:48 GMT</strong></p>
+               <h3>Developing</h3>
+               <p>Developing+a+new+incident+system</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 24 Mar 2026 13:10:36 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok in X] Grok in X is Temporarily Unavailable</title>
+      <link>https://status.x.ai/grok-in-x/INC31772712</link>
+      <guid isPermaLink="false">INC31772712</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 10 Mar 2026 22:33:04 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 22:33:04 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 20:09:38 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok in X is Temporarily Unavailable</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 10 Mar 2026 20:09:38 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok on iOS  is Temporarily Unavailable</title>
+      <link>https://status.x.ai/ios-app/INC7532db86</link>
+      <guid isPermaLink="false">INC7532db86</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 10 Mar 2026 22:31:46 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 22:31:46 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 20:06:42 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable on the iOS app.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 10 Mar 2026 20:06:42 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/grok-com/INC3ae226c</link>
+      <guid isPermaLink="false">INC3ae226c</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 10 Mar 2026 22:30:01 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 22:30:01 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 20:05:52 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 10 Mar 2026 20:05:52 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/android-app/INC6202bec1</link>
+      <guid isPermaLink="false">INC6202bec1</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 10 Mar 2026 22:29:49 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 22:29:49 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 10 Mar 2026 20:05:35 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 10 Mar 2026 20:05:35 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok-iOS is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/ios-app/INC2f830b63</link>
+      <guid isPermaLink="false">INC2f830b63</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 02 Mar 2026 23:41:29 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 02 Mar 2026 23:41:29 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 02 Mar 2026 22:59:40 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 02 Mar 2026 22:59:40 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/grok-com/INC35f142b7</link>
+      <guid isPermaLink="false">INC35f142b7</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 02 Mar 2026 23:39:15 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 02 Mar 2026 23:39:15 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 02 Mar 2026 22:59:02 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 02 Mar 2026 22:59:02 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok on Android is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/android-app/INC3695bcb1</link>
+      <guid isPermaLink="false">INC3695bcb1</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 02 Mar 2026 23:40:36 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 02 Mar 2026 23:40:36 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 02 Mar 2026 22:58:47 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 02 Mar 2026 22:58:47 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] embedding small collections failing to embed</title>
+      <link>https://status.x.ai/android-app/INC3676524a</link>
+      <guid isPermaLink="false">INC3676524a</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Fri, 20 Feb 2026 01:04:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Fri, 20 Feb 2026 01:10:49 GMT</strong></p>
+               <h3>we have deployed a fix and the service is fully healthy again</h3>
+               <p>The incident has been fully resolved. All services are fully healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Fri, 20 Feb 2026 00:58:44 GMT</strong></p>
+               <h3>embedding model outage</h3>
+               <p>We have detected an embedding model outage, we have identified the issue and rolling out a fix.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok in X] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/grok-in-x/INC3ded1559</link>
+      <guid isPermaLink="false">INC3ded1559</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 12 Feb 2026 20:32:56 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 20:32:56 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 19:42:21 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok-in-X is Temporarily Unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 12 Feb 2026 19:42:21 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/grok-com/INC637caa3f</link>
+      <guid isPermaLink="false">INC637caa3f</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 12 Feb 2026 20:32:15 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 20:32:15 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 19:41:56 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok.com is Temporarily Unavailable.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 19:41:09 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok.com is Temporarily Unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 12 Feb 2026 19:41:09 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/ios-app/INC20ed5ec9</link>
+      <guid isPermaLink="false">INC20ed5ec9</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 12 Feb 2026 20:33:48 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 20:33:49 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 19:40:28 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 12 Feb 2026 19:40:28 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/android-app/INC4ad4e4f7</link>
+      <guid isPermaLink="false">INC4ad4e4f7</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 12 Feb 2026 20:29:32 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 20:29:32 GMT</strong></p>
+               <h3>Incident has been resolved</h3>
+               <p>Incident has been resolved</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 12 Feb 2026 19:39:59 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok is Temporarily Unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 12 Feb 2026 19:39:59 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] grok-code-fast-1 outage</title>
+      <link>https://status.x.ai/android-app/INC2e7a54d4</link>
+      <guid isPermaLink="false">INC2e7a54d4</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 05 Feb 2026 14:19:31 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 05 Feb 2026 14:19:31 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The model is available again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 05 Feb 2026 13:44:30 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>The  is currently partially unavailable. We&apos;re investigating.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 05 Feb 2026 13:44:30 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] grok-4-1-fast unstable</title>
+      <link>https://status.x.ai/api-us-east-1/INC66505d02</link>
+      <guid isPermaLink="false">INC66505d02</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 05 Feb 2026 14:20:32 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 05 Feb 2026 14:20:32 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>We are implementing further layers of protection from malicious requests to prevent this kind of service degradation in the future.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 05 Feb 2026 13:33:18 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are investigating instability and increased latency on the  models.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 05 Feb 2026 13:33:18 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] grok-4-fast-reasoning and grok-4-fast-non-reasoning context size limitation</title>
+      <link>https://status.x.ai/api-us-east-1/INC686ffa19</link>
+      <guid isPermaLink="false">INC686ffa19</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 03 Feb 2026 14:02:23 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 03 Feb 2026 14:02:23 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The context length limitation has been mitigated.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 02 Feb 2026 17:37:35 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are currently seeing issues on requests where context length is over 120k tokens.
+Currently investigating root cause.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sun, 01 Feb 2026 17:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok in X] Grok is Temporarily Unavailable in X</title>
+      <link>https://status.x.ai/grok-in-x/INC4c39b6e8</link>
+      <guid isPermaLink="false">INC4c39b6e8</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 21:37:50 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 21:37:50 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 15:05:32 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok in X is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 15:05:32 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Increased error rates and latency</title>
+      <link>https://status.x.ai/grok-com/INC1c66a98f</link>
+      <guid isPermaLink="false">INC1c66a98f</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 21:39:21 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 21:39:21 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:12:28 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are seeing increased error rates on grok.com and the Grok apps. We are investigating.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 14:12:28 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Increased error rates and latency</title>
+      <link>https://status.x.ai/android-app/INC26a8ca2d</link>
+      <guid isPermaLink="false">INC26a8ca2d</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 21:38:24 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 21:38:24 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:11:34 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>We are seeing increased error rates on grok.com and the Grok apps. We are investigating.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 14:11:34 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (eu-west-1.api.x.ai)] grok-code-fast-1 unavailable</title>
+      <link>https://status.x.ai/api-eu-west-1/INC7f850efd</link>
+      <guid isPermaLink="false">INC7f850efd</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 14:33:54 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:10:31 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>The model  is currently unavailable. We are investigating ways to restore the service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:33:54 GMT</strong></p>
+               <h3>grok-code-fast-1 availability restored</h3>
+               <p>We have restored the service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 14:10:31 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/ios-app/INC7c0d680</link>
+      <guid isPermaLink="false">INC7c0d680</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 21:35:54 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 21:35:54 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:10:00 GMT</strong></p>
+               <h3>Grok is experiencing an outage. We are working to restore service.</h3>
+               <p>We are working on restoring the service. We will provide an update soon.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 14:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/android-app/INCe2d25e</link>
+      <guid isPermaLink="false">INCe2d25e</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 21:36:24 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 21:36:24 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:10:00 GMT</strong></p>
+               <h3>Grok is experiencing an outage. We are working to restore service.</h3>
+               <p>We are working on restoring the service. We will provide an update soon.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 14:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/grok-com/INC6693ac66</link>
+      <guid isPermaLink="false">INC6693ac66</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 21:36:09 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 21:36:09 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:10:00 GMT</strong></p>
+               <h3>Grok is experiencing an outage. We are working to restore service.</h3>
+               <p>We are working on restoring the service. We will provide an update soon.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 14:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] grok-code-fast-1 unavailable</title>
+      <link>https://status.x.ai/api-us-east-1/INC4b51791a</link>
+      <guid isPermaLink="false">INC4b51791a</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 14:33:54 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:33:54 GMT</strong></p>
+               <h3>grok-code-fast-1 availability restored</h3>
+               <p>We moved traffic to a different region in order to restore availability.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 14:09:54 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>The model  is currently unavailable. We are investigating ways to restore the service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 14:09:54 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/ios-app/INCf2f329f</link>
+      <guid isPermaLink="false">INCf2f329f</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 03:46:16 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:46:16 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:33:02 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok iOS app is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 03:33:02 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/android-app/INC8431e9d</link>
+      <guid isPermaLink="false">INC8431e9d</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 03:47:04 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:47:04 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:32:23 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok on Android is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 03:32:23 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/grok-com/INC6de5da5c</link>
+      <guid isPermaLink="false">INC6de5da5c</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 03:47:39 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:47:39 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:31:09 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok.com is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 03:31:09 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok.com is Temporarily Unavailable</title>
+      <link>https://status.x.ai/android-app/INC537d64a7</link>
+      <guid isPermaLink="false">INC537d64a7</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 Jan 2026 03:48:16 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:48:16 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Incident has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 27 Jan 2026 03:30:19 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok.com is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 27 Jan 2026 03:30:19 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/ios-app/INC7e6bb987</link>
+      <guid isPermaLink="false">INC7e6bb987</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 26 Jan 2026 22:59:26 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 22:59:26 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 19:59:39 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok iOS app is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 26 Jan 2026 19:59:39 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok in X] Grok is Temporarily Unavailable in X</title>
+      <link>https://status.x.ai/grok-in-x/INC5f61f6dc</link>
+      <guid isPermaLink="false">INC5f61f6dc</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 26 Jan 2026 22:46:40 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 22:46:40 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 19:55:45 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok in X is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 26 Jan 2026 19:55:45 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/android-app/INC38a13908</link>
+      <guid isPermaLink="false">INC38a13908</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 26 Jan 2026 22:45:58 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 22:45:58 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 19:54:55 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok on Android is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 26 Jan 2026 19:54:55 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] grok-code-fast-1 unavailable</title>
+      <link>https://status.x.ai/api-us-east-1/INC2f635a97</link>
+      <guid isPermaLink="false">INC2f635a97</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 26 Jan 2026 19:59:02 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 19:59:02 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>Traffic was redirected to a different region and the model is available again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 19:53:30 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>The  model is currently unavailable. We&apos;re working on restoring the service by redirecting traffic to a different region.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 26 Jan 2026 19:53:30 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/grok-com/INC17acef4f</link>
+      <guid isPermaLink="false">INC17acef4f</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 26 Jan 2026 23:00:13 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 23:00:13 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 26 Jan 2026 19:52:10 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok.com is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 26 Jan 2026 19:52:10 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok in X] Grok is Temporarily Unavailable in X</title>
+      <link>https://status.x.ai/grok-in-x/INCc77fa60</link>
+      <guid isPermaLink="false">INCc77fa60</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sat, 24 Jan 2026 02:37:01 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 02:37:01 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been fully resolved. All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 00:14:06 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok in X is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sat, 24 Jan 2026 00:14:06 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok is Temporarily Unavailable</title>
+      <link>https://status.x.ai/ios-app/INC13a2dec0</link>
+      <guid isPermaLink="false">INC13a2dec0</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sat, 24 Jan 2026 02:37:36 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 02:37:36 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been fully resolved. All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 00:12:33 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok on iOS is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 00:10:26 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok on iOS is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 00:01:13 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok iOS app is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sat, 24 Jan 2026 00:01:13 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/android-app/INC59b3c9de</link>
+      <guid isPermaLink="false">INC59b3c9de</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sat, 24 Jan 2026 02:36:34 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 02:36:34 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been fully resolved. All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 00:01:02 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok on Android is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sat, 24 Jan 2026 00:01:02 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Temporarily Unavailable.</title>
+      <link>https://status.x.ai/grok-com/INC7e42bd9a</link>
+      <guid isPermaLink="false">INC7e42bd9a</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sat, 24 Jan 2026 02:36:51 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Sat, 24 Jan 2026 02:36:51 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The incident has been fully resolved. All services are now operating normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Fri, 23 Jan 2026 23:57:52 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>Grok.com is currently unavailable for most users. Our team is working to restore service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 23 Jan 2026 23:57:52 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Models unavailable</title>
+      <link>https://status.x.ai/api-us-east-1/INC7c0fd2b1</link>
+      <guid isPermaLink="false">INC7c0fd2b1</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 21 Jan 2026 13:02:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 11:19:00 GMT</strong></p>
+               <h3>Models are unavailable on the API</h3>
+               <p>All models are unavailable on the API. We are working on restoring the service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 11:40:00 GMT</strong></p>
+               <h3>A preliminary fix is being deployed</h3>
+               <p>We are deploying a preliminary fix to restore the service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 11:58:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still working on a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:13:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still working on a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:21:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still working on a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:36:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still deploying a fix and the service will be restored in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:56:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still deploying a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 13:02:00 GMT</strong></p>
+               <h3>Incident resolved</h3>
+               <p>We have deployed the fix and will share the details on the issue later today.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 21 Jan 2026 11:19:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (eu-west-1.api.x.ai)] Models unavailable</title>
+      <link>https://status.x.ai/api-eu-west-1/INC6bf67591</link>
+      <guid isPermaLink="false">INC6bf67591</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 21 Jan 2026 13:02:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 11:19:00 GMT</strong></p>
+               <h3>Models are unavailable on the API.</h3>
+               <p>All models are unavailable on the API. We are working on restoring the service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 11:40:00 GMT</strong></p>
+               <h3>A preliminary fix is being deployed.</h3>
+               <p>We are deploying a preliminary fix to restore the service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 11:58:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still working on a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:13:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still working on a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:21:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still working on a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:36:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still deploying a fix and the service will be restored in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 12:56:00 GMT</strong></p>
+               <h3>Fix in progress</h3>
+               <p>We are still deploying a fix and will provide an update in approximately 15 minutes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 Jan 2026 13:02:00 GMT</strong></p>
+               <h3>Incident resolved</h3>
+               <p>We have deployed the fix and will share the details on the issue later today.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 21 Jan 2026 11:19:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (eu-west-1.api.x.ai)] Issue with using API keys</title>
+      <link>https://status.x.ai/api-eu-west-1/INC6af6cf60</link>
+      <guid isPermaLink="false">INC6af6cf60</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 19 Jan 2026 19:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 19 Jan 2026 06:58:00 GMT</strong></p>
+               <h3>A new API key may be rejected by service.</h3>
+               <p>You may see error messages such as &quot;Incorrect API key provided&quot; We are actively working on resolving the problem.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 19 Jan 2026 15:41:00 GMT</strong></p>
+               <h3>We have identified the issue and is working to fix it.</h3>
+               <p>We are working on restoring the service.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 19 Jan 2026 19:00:00 GMT</strong></p>
+               <h3>Service restored.</h3>
+               <p>We have fixed the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 19 Jan 2026 06:58:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Models unavailable</title>
+      <link>https://status.x.ai/api-us-east-1/INC10b35980</link>
+      <guid isPermaLink="false">INC10b35980</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 14 Jan 2026 21:19:48 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 14 Jan 2026 21:19:48 GMT</strong></p>
+               <h3>Model availability restored</h3>
+               <p>This incident is now resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 14 Jan 2026 19:14:23 GMT</strong></p>
+               <h3>Models partially unavailable</h3>
+               <p>We have identified and resolved a problem on our inference engines and error rates are decreasing now.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 14 Jan 2026 18:53:15 GMT</strong></p>
+               <h3>We are currently investigating the issue</h3>
+               <p>The models grok-4-1-fast-non-reasoning and grok-4-1-fast-reasoning are currently unavailable. We are investigating the issue and will post another update in 10 minutes.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 14 Jan 2026 18:53:15 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok.com incident</title>
+      <link>https://status.x.ai/grok-com/INC73c456f</link>
+      <guid isPermaLink="false">INC73c456f</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sat, 01 Nov 2025 15:07:09 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Sat, 01 Nov 2025 15:07:09 GMT</strong></p>
+               <h3>Incident resolved.</h3>
+               <p>We identified an issue in our internal network and have deployed an update to solve it.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 01 Nov 2025 14:35:54 GMT</strong></p>
+               <h3>Grok.com incident</h3>
+               <p>We have detected an issue affecting grok.com, we are currently investigating.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sat, 01 Nov 2025 14:35:54 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Model fails to process very long prompts</title>
+      <link>https://status.x.ai/api-us-east-1/INC46dbbd89</link>
+      <guid isPermaLink="false">INC46dbbd89</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 29 Oct 2025 19:16:17 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 29 Oct 2025 19:16:17 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>grok-4-fast is fully operational for long prompts.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 29 Oct 2025 18:47:57 GMT</strong></p>
+               <h3>Recovering</h3>
+               <p>The model is back online and traffic is resuming.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 29 Oct 2025 18:19:31 GMT</strong></p>
+               <h3>Investigating</h3>
+               <p>grok-4-fast currently fails to process very long prompts. Short prompts are unaffected.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 29 Oct 2025 18:05:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] TEST TEST TEST</title>
+      <link>https://status.x.ai/api-us-east-1/INCdea3771</link>
+      <guid isPermaLink="false">INCdea3771</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 28 Oct 2025 17:59:34 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 28 Oct 2025 17:59:34 GMT</strong></p>
+               <h3>TEST TEST TEST</h3>
+               <p>This is testing our alerting system</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 28 Oct 2025 17:57:06 GMT</strong></p>
+               <h3>TEST TEST TEST</h3>
+               <p>This is a testing our alerting system</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 28 Oct 2025 17:54:03 GMT</strong></p>
+               <h3>TEST TEST TEST</h3>
+               <p>This is testing our alerting system</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 28 Oct 2025 17:54:03 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] grok-3 degraded performance</title>
+      <link>https://status.x.ai/api-us-east-1/INC3c8ce3f2</link>
+      <guid isPermaLink="false">INC3c8ce3f2</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 10 Feb 2026 18:50:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 10 Feb 2026 18:54:49 GMT</strong></p>
+               <h3>grok-3 degraded performance resolved</h3>
+               <p>Clusters are fully healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 10 Feb 2026 17:32:20 GMT</strong></p>
+               <h3>Grok 3 through our API is currently suffering degraded performance</h3>
+               <p>We have identified the root cause and will be working on a solution.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 24 Oct 2025 17:20:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok is Slow to Respond</title>
+      <link>https://status.x.ai/grok-com/INC703f4956</link>
+      <guid isPermaLink="false">INC703f4956</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 23 Oct 2025 16:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 23 Oct 2025 16:00:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The issue is resolved and we are restoring the service to normal operation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 23 Oct 2025 15:15:00 GMT</strong></p>
+               <h3>Grok is Slow to Respond</h3>
+               <p>Grok is slow to respond. We are investigating the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 23 Oct 2025 15:15:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] EAPI us-east-1 incident</title>
+      <link>https://status.x.ai/api-us-east-1/INC4295db12</link>
+      <guid isPermaLink="false">INC4295db12</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 20 Oct 2025 23:08:06 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 20 Oct 2025 23:08:06 GMT</strong></p>
+               <h3>Incident resolved.</h3>
+               <p>We have deployed a number of fixes and service is currently healthy.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 20 Oct 2025 15:33:44 GMT</strong></p>
+               <h3>Degraded performance on reasoning models due to AWS outage.</h3>
+               <p>We have identified an issue with our us-east-1 hosted services that affects reasoning models.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 20 Oct 2025 15:33:44 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok.com availability issue</title>
+      <link>https://status.x.ai/grok-com/INC73c92399</link>
+      <guid isPermaLink="false">INC73c92399</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 16 Oct 2025 16:58:34 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 16 Oct 2025 16:58:34 GMT</strong></p>
+               <h3>Incident resolved.</h3>
+               <p>We found an issue while retrieving subscriptions, we have pushed a resolution.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 16 Oct 2025 15:31:05 GMT</strong></p>
+               <h3>Grok.com availability issue</h3>
+               <p>We have identified an issue with grok.com affecting all registered users.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 16 Oct 2025 15:31:05 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok responses are disrupted</title>
+      <link>https://status.x.ai/grok-com/INC4de6c5a</link>
+      <guid isPermaLink="false">INC4de6c5a</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 02 Oct 2025 23:45:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 02 Oct 2025 23:45:00 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>The issue has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 02 Oct 2025 22:00:00 GMT</strong></p>
+               <h3>Grok responses are delayed or disrupted</h3>
+               <p>We have identified an issue with the models serving Grok.com.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 02 Oct 2025 21:45:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] API Console Unavailable</title>
+      <link>https://status.x.ai/api-console/INC26c6bc66</link>
+      <guid isPermaLink="false">INC26c6bc66</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 02 Oct 2025 16:40:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 02 Oct 2025 16:40:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The issue with our API console and billing system has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 02 Oct 2025 15:10:00 GMT</strong></p>
+               <h3>API Console Unavailable</h3>
+               <p>We are currently experiencing issues with our API console and billing system. The website may be partially unavailable.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 02 Oct 2025 15:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] API Credits Are Not Actively Reflected for Teams</title>
+      <link>https://status.x.ai/api-console/INC63bbb10b</link>
+      <guid isPermaLink="false">INC63bbb10b</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 02 Oct 2025 12:05:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 02 Oct 2025 12:05:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The issue on API console credit display and payment has been resolved.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 02 Oct 2025 10:45:00 GMT</strong></p>
+               <h3>API Credits Are Not Actively Reflected on Teams</h3>
+               <p>Users are having issue seeing/using newly-added API credits. Our team is actively working on resolving the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 01 Oct 2025 23:40:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] API Inference Incident</title>
+      <link>https://status.x.ai/api-us-east-1/INCcb17e2</link>
+      <guid isPermaLink="false">INCcb17e2</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Fri, 19 Sep 2025 19:42:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Fri, 19 Sep 2025 19:42:00 GMT</strong></p>
+               <h3>Solved</h3>
+               <p>We have addressed the issue and status of the inference api is healthy again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Fri, 19 Sep 2025 19:24:00 GMT</strong></p>
+               <h3>Reasoning models incident</h3>
+               <p>We have identified an issue with our inference clusters affecting reasoning models.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 19 Sep 2025 19:24:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok Imagine Response is Unavailable</title>
+      <link>https://status.x.ai/ios-app/INC1bb68208</link>
+      <guid isPermaLink="false">INC1bb68208</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 14 Aug 2025 16:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:55:00 GMT</strong></p>
+               <h3>Issue fixed</h3>
+               <p>We have fixed the issue and the service is returning to normal operation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 15:10:00 GMT</strong></p>
+               <h3>Grok Imagine Response is Unavailable</h3>
+               <p>Grok Imagine is not responding to input. We are actively investigating the situation.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 14 Aug 2025 15:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Grok Response is Disrupted</title>
+      <link>https://status.x.ai/ios-app/INC58e769ba</link>
+      <guid isPermaLink="false">INC58e769ba</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 14 Aug 2025 16:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:55:00 GMT</strong></p>
+               <h3>Issue fixed</h3>
+               <p>We have fixed the issue and the service is returning to normal operation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 15:10:00 GMT</strong></p>
+               <h3>Grok Response is Disrupted</h3>
+               <p>Grok is not responding to user requests. We are actively investigating the situation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:17:00 GMT</strong></p>
+               <h3>We have identified the issue and are working on a fix</h3>
+               <p>We have identified an issue with a service provider. Our team is working on fixing the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 14 Aug 2025 15:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok Imagine Response is Unavailable</title>
+      <link>https://status.x.ai/android-app/INC7a6d40ea</link>
+      <guid isPermaLink="false">INC7a6d40ea</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 14 Aug 2025 16:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:55:00 GMT</strong></p>
+               <h3>Issue fixed</h3>
+               <p>We have fixed the issue and the service is returning to normal operation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 15:10:00 GMT</strong></p>
+               <h3>Grok Imagine Response is Unavailable</h3>
+               <p>Grok Imagine is not responding to input. We are actively investigating the situation.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 14 Aug 2025 15:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Grok Response is Disrupted</title>
+      <link>https://status.x.ai/android-app/INC776d04e4</link>
+      <guid isPermaLink="false">INC776d04e4</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 14 Aug 2025 16:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:55:00 GMT</strong></p>
+               <h3>Issue fixed</h3>
+               <p>We have fixed the issue and the service is returning to normal operation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 15:10:00 GMT</strong></p>
+               <h3>Grok Response is Disrupted</h3>
+               <p>Grok is not responding to user requests. We are actively investigating the situation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:17:00 GMT</strong></p>
+               <h3>We have identified the issue and are working on a fix</h3>
+               <p>We have identified an issue with a service provider. Our team is working on fixing the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 14 Aug 2025 15:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok Response is Disrupted</title>
+      <link>https://status.x.ai/grok-com/INC76b3fc14</link>
+      <guid isPermaLink="false">INC76b3fc14</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 14 Aug 2025 16:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:55:00 GMT</strong></p>
+               <h3>Issue fixed</h3>
+               <p>We have fixed the issue and the service is returning to normal operation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 15:10:00 GMT</strong></p>
+               <h3>Grok Response is Disrupted</h3>
+               <p>Grok is not responding to user requests. We are actively investigating the situation.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 14 Aug 2025 16:17:00 GMT</strong></p>
+               <h3>We have identified the issue and are working on a fix</h3>
+               <p>We have identified an issue with a service provider. Our team is working on fixing the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 14 Aug 2025 15:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Responses Using Grok 3 Might be Slower Than Usual</title>
+      <link>https://status.x.ai/grok-com/INC7977039a</link>
+      <guid isPermaLink="false">INC7977039a</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 17 Jul 2025 00:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 15 Jul 2025 16:16:00 GMT</strong></p>
+               <h3>Responses Using Grok 3 Might be Slower Than Usual</h3>
+               <p>Responses that uses Grok 3 might be slower than usual. You might want to use Grok 4 instead. Our team is working on a fix.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 17 Jul 2025 00:00:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>We have improved resource allocation.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 15 Jul 2025 16:16:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Grok 4 capacity issues</title>
+      <link>https://status.x.ai/api-us-east-1/INC530d7e98</link>
+      <guid isPermaLink="false">INC530d7e98</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Fri, 11 Jul 2025 10:28:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Fri, 11 Jul 2025 10:28:00 GMT</strong></p>
+               <h3>More capacity added</h3>
+               <p>We added more capacity to resolve the current performance issues and will add an additional batch of GPUs later today to increase headroom.</p>
+             </div>
+           
+             <div>
+               <p><strong>Fri, 11 Jul 2025 09:10:00 GMT</strong></p>
+               <h3>Adding more capacity</h3>
+               <p>We&apos;re seeing above-zero error rates on grok-4-0709 due to capacity limitations. We&apos;re adding more capacity now.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 11 Jul 2025 09:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] Scheduled maintenance for the billing system</title>
+      <link>https://status.x.ai/api-console/INC20aa890c</link>
+      <guid isPermaLink="false">INC20aa890c</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 09 Jul 2025 10:52:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 09 Jul 2025 10:52:00 GMT</strong></p>
+               <h3>Maintenance is complete</h3>
+               <p>The billing system is fully operational again.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 09 Jul 2025 10:12:00 GMT</strong></p>
+               <h3>Maintenance has started</h3>
+               <p>We have started the maintenance process. We will send an update once maintenance is complete.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 09 Jul 2025 10:00:00 GMT</strong></p>
+               <h3>Billing system will be unavailable</h3>
+               <p>We will perform scheduled maintenance on the billing system powering the API from 10 am UTC to 11 am UTC on July 9, 2025. During this period, you will be unable to purchase credits, view invoices, or modify spending limits.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 09 Jul 2025 10:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] API</title>
+      <link>https://status.x.ai/api-us-east-1/INC5e4b8f66</link>
+      <guid isPermaLink="false">INC5e4b8f66</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 10 Jun 2025 06:20:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 10 Jun 2025 06:20:00 GMT</strong></p>
+               <h3>API Access Restored</h3>
+               <p>The API access to all models is restored.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 10 Jun 2025 05:08:00 GMT</strong></p>
+               <h3>API Access to Models is Unavailable</h3>
+               <p>All models are currently unavailable on API. We are investigating the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 10 Jun 2025 05:08:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Grok-3 structured output and function calling unavailable</title>
+      <link>https://status.x.ai/api-us-east-1/INC2592e4a7</link>
+      <guid isPermaLink="false">INC2592e4a7</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 27 May 2025 09:01:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 27 May 2025 09:01:00 GMT</strong></p>
+               <h3>Resolved</h3>
+               <p>All the capabilities of grok-3 models have been restored.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 26 May 2025 15:00:00 GMT</strong></p>
+               <h3>Grok-3 structured output and function calling unavailable</h3>
+               <p>The structured output and function calling of all grok-3 has been temporarily disabled. Our team is currently investigating the issue</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 26 May 2025 15:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Single Sign-On] Issue with Sign-In with X Account</title>
+      <link>https://status.x.ai/single-sign-on/INC594ef635</link>
+      <guid isPermaLink="false">INC594ef635</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sat, 24 May 2025 07:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 22 May 2025 23:03:00 GMT</strong></p>
+               <h3>User Cannot Sign-In with X Account</h3>
+               <p>Users may not sign-in with X account at the moment. This is due to an issue at X. We are actively working on resolving the issue.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 24 May 2025 07:00:00 GMT</strong></p>
+               <h3>X sign-in issue resolved</h3>
+               <p>The issue has been resolved</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 22 May 2025 23:03:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Grok-3 Temporarily Unavailable</title>
+      <link>https://status.x.ai/api-us-east-1/INC2377cdea</link>
+      <guid isPermaLink="false">INC2377cdea</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 21 May 2025 10:20:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 21 May 2025 10:20:00 GMT</strong></p>
+               <h3>Outage is Fixed</h3>
+               <p>We have restored the operation of Grok-3 models</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 21 May 2025 10:02:00 GMT</strong></p>
+               <h3>Grok-3 Temporarily Unavailable</h3>
+               <p>Grok-3 is temporarily available. We have identified the issue and is restoring the service.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 21 May 2025 10:02:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Increased Latency for Chat Completions</title>
+      <link>https://status.x.ai/api-us-east-1/INC6cdd1aed</link>
+      <guid isPermaLink="false">INC6cdd1aed</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 20 May 2025 05:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 20 May 2025 05:00:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The issue has been resolved. The latency is returning to normal.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 19 May 2025 09:50:00 GMT</strong></p>
+               <h3>Increased Latency for Chat Completions</h3>
+               <p>We are observing an increased latency for chat completions. Our engineers are actively debugging the issue and will resolve it shortly.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 19 May 2025 09:50:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Disruption on Some Models</title>
+      <link>https://status.x.ai/api-us-east-1/INCfea6181</link>
+      <guid isPermaLink="false">INCfea6181</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 13 May 2025 15:50:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 13 May 2025 15:50:00 GMT</strong></p>
+               <h3>Model Operations Restored</h3>
+               <p>We have resolved the issue and all customers should be able to access the models without issues.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 13 May 2025 13:35:00 GMT</strong></p>
+               <h3>grok-3-beta and grok-3-beta-fast Models May Experience Disruptions</h3>
+               <p>You may experience errors using grok-3-beta and grok-3-beta fast models. We are actively debugging the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 13 May 2025 13:35:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Single Sign-On] Unable to Sign-In via X</title>
+      <link>https://status.x.ai/single-sign-on/INC756db6ae</link>
+      <guid isPermaLink="false">INC756db6ae</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Fri, 09 May 2025 18:43:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Fri, 09 May 2025 18:43:00 GMT</strong></p>
+               <h3>Sign-In via X restored</h3>
+               <p>Users should be able to sign-in with X account.</p>
+             </div>
+           
+             <div>
+               <p><strong>Fri, 09 May 2025 17:30:12 GMT</strong></p>
+               <h3>Unable to Sign-In via X</h3>
+               <p>Users may not be able to sign-in with X account. We are actively troubleshooting the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 09 May 2025 16:10:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Routine Maintenance</title>
+      <link>https://status.x.ai/ios-app/INC2f0c71e2</link>
+      <guid isPermaLink="false">INC2f0c71e2</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 01 May 2025 08:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 01 May 2025 08:00:00 GMT</strong></p>
+               <h3>Maintenance Completed</h3>
+               <p>The routine maintenance has been completed.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 01 May 2025 07:00:00 GMT</strong></p>
+               <h3>Routine Maintenance</h3>
+               <p>A routine maintenance is scheduled for Grok.com, Grok mobile apps. Responses may be delayed or incomplete.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 01 May 2025 07:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Routine Maintenance</title>
+      <link>https://status.x.ai/android-app/INC2339e6fc</link>
+      <guid isPermaLink="false">INC2339e6fc</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 01 May 2025 08:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 01 May 2025 08:00:00 GMT</strong></p>
+               <h3>Maintenance Completed</h3>
+               <p>The routine maintenance has been completed.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 01 May 2025 07:00:00 GMT</strong></p>
+               <h3>Routine Maintenance</h3>
+               <p>A routine maintenance is scheduled for Grok.com, Grok mobile apps. Responses may be delayed or incomplete.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 01 May 2025 07:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Routine Maintenance</title>
+      <link>https://status.x.ai/grok-com/INC681b8d04</link>
+      <guid isPermaLink="false">INC681b8d04</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 01 May 2025 08:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 01 May 2025 08:00:00 GMT</strong></p>
+               <h3>Maintenance Completed</h3>
+               <p>The routine maintenance has been completed.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 01 May 2025 07:00:00 GMT</strong></p>
+               <h3>Routine Maintenance</h3>
+               <p>A routine maintenance is scheduled for Grok.com, Grok mobile apps. Responses may be delayed or incomplete.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 01 May 2025 07:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Some Users May Not Be Able to Purchase a Subscription</title>
+      <link>https://status.x.ai/android-app/INC725d8fc9</link>
+      <guid isPermaLink="false">INC725d8fc9</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 30 Apr 2025 13:49:14 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 30 Apr 2025 13:49:14 GMT</strong></p>
+               <h3>Subscription Processing Restored</h3>
+               <p>The subscription processing has been restored.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 30 Apr 2025 11:30:00 GMT</strong></p>
+               <h3>Some Users May Not Be Able to Purchase a Subscription</h3>
+               <p>Some users may not be able to purchase a subscritpion via Grok Android App. We are investigating the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 30 Apr 2025 11:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Grok Response Unavailable</title>
+      <link>https://status.x.ai/grok-com/INC5e11bcc5</link>
+      <guid isPermaLink="false">INC5e11bcc5</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 16 Apr 2025 16:03:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 16 Apr 2025 16:03:00 GMT</strong></p>
+               <h3>System Fully Operational</h3>
+               <p>Our team has identified and fixed the issue. The system is fully operational now.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 16 Apr 2025 14:23:00 GMT</strong></p>
+               <h3>Grok is Temporarily Unavailable</h3>
+               <p>Chat response and voice mode is unavailable to generate responses. Our team is working on troubleshooting the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 16 Apr 2025 14:23:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Responses Might be Temporarily Unavailable</title>
+      <link>https://status.x.ai/grok-com/INC1070268b</link>
+      <guid isPermaLink="false">INC1070268b</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 15 Apr 2025 23:26:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Tue, 15 Apr 2025 22:45:00 GMT</strong></p>
+               <h3>Grok Responses Might be Temporarily Unavailable</h3>
+               <p>Responses might be temporarily unavailable on Grok, where the response will be stuck and not able to generate a completed response.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 15 Apr 2025 23:26:00 GMT</strong></p>
+               <h3>Service Restored</h3>
+               <p>Service is restored. If you have any pending chats, please refresh and retry generating the response.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Tue, 15 Apr 2025 22:45:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Responses are Temporarily Unavailable</title>
+      <link>https://status.x.ai/ios-app/INC5fa5d1d8</link>
+      <guid isPermaLink="false">INC5fa5d1d8</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Apr 2025 15:24:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Apr 2025 14:55:00 GMT</strong></p>
+               <h3>Grok Responses are Temporarily Unavailable</h3>
+               <p>We are experiencing networking issues that might disrupt Grok&apos;s responses.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Apr 2025 15:24:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The issue is resolved and system is fully operational.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Apr 2025 14:55:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Responses are Temporarily Unavailable</title>
+      <link>https://status.x.ai/android-app/INC283910ca</link>
+      <guid isPermaLink="false">INC283910ca</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Apr 2025 15:24:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Apr 2025 14:55:00 GMT</strong></p>
+               <h3>Grok Responses are Temporarily Unavailable</h3>
+               <p>We are experiencing networking issues that might disrupt Grok&apos;s responses.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Apr 2025 15:24:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The issue is resolved and system is fully operational.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Apr 2025 14:55:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Responses are Temporarily Unavailable</title>
+      <link>https://status.x.ai/grok-com/INC10e1dcc2</link>
+      <guid isPermaLink="false">INC10e1dcc2</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 03 Apr 2025 15:24:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 03 Apr 2025 14:55:00 GMT</strong></p>
+               <h3>Grok Responses are Temporarily Unavailable</h3>
+               <p>We are experiencing networking issues that might disrupt Grok&apos;s responses.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 03 Apr 2025 15:24:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>The issue is resolved and system is fully operational.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 03 Apr 2025 14:55:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] Models Might Not be Displayed Correctly on xAI Console</title>
+      <link>https://status.x.ai/api-console/INC2d276af5</link>
+      <guid isPermaLink="false">INC2d276af5</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 31 Mar 2025 15:40:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Sun, 30 Mar 2025 23:00:00 GMT</strong></p>
+               <h3>Models Might Not be Displayed Correctly on xAI Console</h3>
+               <p>Available models might not be correctly displayed on xAI Console. Please refer to https://docs.x.ai/docs/models for generally available models.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 31 Mar 2025 15:40:00 GMT</strong></p>
+               <h3>Models Display Restored</h3>
+               <p>You should be able to view the available models and pricing in xAI Console now.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sun, 30 Mar 2025 23:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Single Sign-On] Users Might Not be Able to Login</title>
+      <link>https://status.x.ai/single-sign-on/INCb8c5ac4</link>
+      <guid isPermaLink="false">INCb8c5ac4</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sat, 29 Mar 2025 18:28:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Sat, 29 Mar 2025 10:09:00 GMT</strong></p>
+               <h3>Users Might Not be Able to Login</h3>
+               <p>We are experiencing issues with our login system. Users might not be able to access the sign-in webpage or sign-in on website or mobile applications.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 29 Mar 2025 17:29:00 GMT</strong></p>
+               <h3>Login Issues Resolved for Mobile Apps</h3>
+               <p>Mobile app users should be able to sign-in normally.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sat, 29 Mar 2025 18:28:00 GMT</strong></p>
+               <h3>Login Issues Resolved for Website</h3>
+               <p>Users should be able to sign-in on the web</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Sat, 29 Mar 2025 10:09:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] xAI Console Unavailable</title>
+      <link>https://status.x.ai/api-console/INC7d8db487</link>
+      <guid isPermaLink="false">INC7d8db487</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Fri, 28 Mar 2025 13:55:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Fri, 28 Mar 2025 11:00:00 GMT</strong></p>
+               <h3>xAI Console is Currently Unavailable</h3>
+               <p>xAI Console is unavailable. Our team is investigating and rolling out temporary fixes.</p>
+             </div>
+           
+             <div>
+               <p><strong>Fri, 28 Mar 2025 13:55:00 GMT</strong></p>
+               <h3>xAI Console Restored</h3>
+               <p>xAI Console service is restored with temporary fixes. Our team is investigating the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 28 Mar 2025 11:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Increased Error Rates Due to High Traffic Volumes</title>
+      <link>https://status.x.ai/ios-app/INC13ac1d50</link>
+      <guid isPermaLink="false">INC13ac1d50</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sun, 30 Mar 2025 19:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 15:22:00 GMT</strong></p>
+               <h3>Increased Error Rates Due to High Traffic Volumes</h3>
+               <p>Users may experience delays or intermittent failures when accessing services due to unusually high traffic volumes. Please retry the request if you have experienced errors.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sun, 30 Mar 2025 19:00:00 GMT</strong></p>
+               <h3>Normal Operation Restored</h3>
+               <p>Error rate returned to normal. We apologize for the inconvenience caused.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Mar 2025 15:22:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Increased Error Rates Due to High Traffic Volumes</title>
+      <link>https://status.x.ai/android-app/INC59321cf2</link>
+      <guid isPermaLink="false">INC59321cf2</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sun, 30 Mar 2025 19:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 15:22:00 GMT</strong></p>
+               <h3>Increased Error Rates Due to High Traffic Volumes</h3>
+               <p>Users may experience delays or intermittent failures when accessing services due to unusually high traffic volumes. Please retry the request if you have experienced errors.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sun, 30 Mar 2025 19:00:00 GMT</strong></p>
+               <h3>Normal Operation Restored</h3>
+               <p>Error rate returned to normal. We apologize for the inconvenience caused.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Mar 2025 15:22:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Increased Error Rates Due to High Traffic Volumes</title>
+      <link>https://status.x.ai/grok-com/INC7af0b4ea</link>
+      <guid isPermaLink="false">INC7af0b4ea</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Sun, 30 Mar 2025 19:00:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 15:22:00 GMT</strong></p>
+               <h3>Increased Error Rates Due to High Traffic Volumes</h3>
+               <p>Users may experience delays or intermittent failures when accessing services due to unusually high traffic volumes. Please retry the request if you have experienced errors.</p>
+             </div>
+           
+             <div>
+               <p><strong>Sun, 30 Mar 2025 19:00:00 GMT</strong></p>
+               <h3>Normal Operation Restored</h3>
+               <p>Error rate returned to normal. We apologize for the inconvenience caused.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Mar 2025 15:22:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Increased Error Rates for Grok 3 and DeepSearch</title>
+      <link>https://status.x.ai/ios-app/INC174cff45</link>
+      <guid isPermaLink="false">INC174cff45</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 27 Mar 2025 17:24:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 14:05:00 GMT</strong></p>
+               <h3>Increased Error Rate for Grok 3 and DeepSearch</h3>
+               <p>We are experiencing increased error rates for Grok 3 and DeepSearch function. Your may encounter more error responses at the moment. Our team is investigating the situation and working on a fix.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 17:24:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>Grok 3 and DeepSearch functionalities are operating normally.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Mar 2025 14:05:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Increased Error Rates for Grok 3 and DeepSearch</title>
+      <link>https://status.x.ai/android-app/INC327f67</link>
+      <guid isPermaLink="false">INC327f67</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 27 Mar 2025 17:24:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 14:05:00 GMT</strong></p>
+               <h3>Increased Error Rate for Grok 3 and DeepSearch</h3>
+               <p>We are experiencing increased error rates for Grok 3 and DeepSearch function. Your may encounter more error responses at the moment. Our team is investigating the situation and working on a fix.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 17:24:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>Grok 3 and DeepSearch functionalities are operating normally.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Mar 2025 14:05:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Increased Error Rates for Grok 3 and DeepSearch</title>
+      <link>https://status.x.ai/grok-com/INC31d94aa1</link>
+      <guid isPermaLink="false">INC31d94aa1</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 27 Mar 2025 17:24:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 14:05:00 GMT</strong></p>
+               <h3>Increased Error Rates for Grok 3 and DeepSearch</h3>
+               <p>We are experiencing increased error rates for Grok 3 and DeepSearch function. Your may encounter more error responses at the moment. Our team is investigating the situation and working on a fix.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 27 Mar 2025 17:24:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>Grok 3 and DeepSearch functionalities are operating normally.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Mar 2025 14:05:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (iOS)] Partial Outage of Grok iOS App</title>
+      <link>https://status.x.ai/ios-app/INC6833ae77</link>
+      <guid isPermaLink="false">INC6833ae77</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 10 Mar 2025 20:30:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 10 Mar 2025 09:40:00 GMT</strong></p>
+               <h3>Partial Outage of Grok iOS App</h3>
+               <p>We are currently experiencing elevated latencies and error rates in the Grok iOS app. Users may notice Grok responding more slowly than usual or failing to respond entirely. Our team has identified the issue and is actively working on a resolution.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 10 Mar 2025 20:30:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>All services are now operating normally, and users should no longer experience delays or errors.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 10 Mar 2025 09:40:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Android)] Partial Outage of Grok Android App</title>
+      <link>https://status.x.ai/android-app/INC17f20ae9</link>
+      <guid isPermaLink="false">INC17f20ae9</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 10 Mar 2025 20:30:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 10 Mar 2025 09:40:00 GMT</strong></p>
+               <h3>Partial Outage of Grok Android App</h3>
+               <p>We are currently experiencing elevated latencies and error rates in the Grok Android app. Users may notice Grok responding more slowly than usual or failing to respond entirely. Our team has identified the issue and is actively working on a resolution.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 10 Mar 2025 20:30:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>All services are now operating normally, and users should no longer experience delays or errors.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 10 Mar 2025 09:40:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Grok (Web)] Partial Outage of grok.com</title>
+      <link>https://status.x.ai/grok-com/INC6d5dfde</link>
+      <guid isPermaLink="false">INC6d5dfde</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Mon, 10 Mar 2025 20:30:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Mon, 10 Mar 2025 09:40:00 GMT</strong></p>
+               <h3>Partial Outage of grok.com</h3>
+               <p>We are currently experiencing elevated latencies and error rates on grok.com. Users may notice Grok responding more slowly than usual or failing to respond entirely. Our team has identified the issue and is actively working on a resolution.</p>
+             </div>
+           
+             <div>
+               <p><strong>Mon, 10 Mar 2025 20:30:00 GMT</strong></p>
+               <h3>Issue Resolved</h3>
+               <p>All services are now operating normally, and users should no longer experience delays or errors.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Mon, 10 Mar 2025 09:40:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API Console] Unable to Retrieve Billing Information</title>
+      <link>https://status.x.ai/api-console/INC305008b0</link>
+      <guid isPermaLink="false">INC305008b0</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Thu, 27 Feb 2025 17:29:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Feb 2025 17:25:00 GMT</strong></p>
+               <h3>Billing Information Unavailable on API Console</h3>
+               <p>Billing information is temporarily unavailable on xAI API Console. Our team is investigating the situation and working on a fix.</p>
+             </div>
+           
+             <div>
+               <p><strong>Thu, 27 Feb 2025 17:29:00 GMT</strong></p>
+               <h3>Restored Billing Information on API Console</h3>
+               <p>Billing information is available again on API Console.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Feb 2025 17:25:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[Single Sign-On] Email Sending: Partial Outage</title>
+      <link>https://status.x.ai/single-sign-on/INC7a12e6d3</link>
+      <guid isPermaLink="false">INC7a12e6d3</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Fri, 28 Feb 2025 13:07:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Thu, 27 Feb 2025 12:00:00 GMT</strong></p>
+               <h3>Some Email not Being Sent</h3>
+               <p> Our platform does not correctly send some emails. This includes email verification, password reset, and download of user data. We are currently working on a fix.</p>
+             </div>
+           
+             <div>
+               <p><strong>Fri, 28 Feb 2025 13:07:00 GMT</strong></p>
+               <h3>Email Sending Restored</h3>
+               <p>We have deployed a fix to address the email sending error.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Thu, 27 Feb 2025 12:00:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Structured Output Unavailable on grok-2-1212</title>
+      <link>https://status.x.ai/api-us-east-1/INC37e86c9b</link>
+      <guid isPermaLink="false">INC37e86c9b</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Tue, 21 Jan 2025 18:30:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Fri, 17 Jan 2025 22:09:00 GMT</strong></p>
+               <h3>Structured Output Unavailable on grok-2-1212</h3>
+               <p>Structured output is temporarily unavailable on grok-2-1212. Our team is investigating the situation and working on a fix.</p>
+             </div>
+           
+             <div>
+               <p><strong>Tue, 21 Jan 2025 18:30:00 GMT</strong></p>
+               <h3>Systems Fully Restored</h3>
+               <p>All systems have been restored. Our team has identified the cause and fixed the issue.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Fri, 17 Jan 2025 21:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+
+    <item>
+      <title>[API (us-east-1.api.x.ai)] Time Out on grok-2-1212</title>
+      <link>https://status.x.ai/api-us-east-1/INC1bc684df</link>
+      <guid isPermaLink="false">INC1bc684df</guid>
+      <description><![CDATA[
+           <h3>Status: RESOLVED</h3>
+           <p>Severity: available</p>
+           <p>Resolved: Wed, 15 Jan 2025 23:40:00 GMT</p>
+           <hr />
+           <h4>Updates:</h4>
+           
+             <div>
+               <p><strong>Wed, 15 Jan 2025 20:30:00 GMT</strong></p>
+               <h3>Redirection to grok-beta</h3>
+               <p>The usage of grok-2-1212 is redirected to grok-beta during the incident. A fix is currently being deployed.</p>
+             </div>
+           
+             <div>
+               <p><strong>Wed, 15 Jan 2025 23:40:00 GMT</strong></p>
+               <h3>Redirection to grok-beta</h3>
+               <p>All systems have been restored.</p>
+             </div>
+           
+      ]]></description>
+      <pubDate>Wed, 15 Jan 2025 20:30:00 GMT</pubDate>
+      <category>available</category>
+      <category>resolved</category>
+    </item>
+  </channel>
+</rss>

@@ -11,7 +11,8 @@ struct VibeNotification: Sendable, Hashable, Identifiable {
     let title: String
     let body: String
     let service: ServiceID
-    let playsSound: Bool
+    /// nil when the user has sound switched off.
+    let sound: AlertSound?
     /// The worst state this notification is about, so a burst can be ordered
     /// worst-first. Notification Centre stacks in arrival order, so posting an
     /// outage after a recovery buries the thing that matters.
@@ -57,7 +58,12 @@ struct SystemNotificationPresenter: NotificationPresenting {
         let content = UNMutableNotificationContent()
         content.title = notification.title
         content.body = notification.body
-        content.sound = notification.playsSound ? .default : nil
+        content.sound = notification.sound.map { choice in
+            guard let name = choice.systemName else { return UNNotificationSound.default }
+            // The extension is required: UNNotificationSound resolves the name
+            // as a file name, not as an NSSound name.
+            return UNNotificationSound(named: UNNotificationSoundName("\(name).aiff"))
+        }
         content.userInfo = [Self.serviceKey: notification.service.rawValue]
         content.interruptionLevel = .active
 

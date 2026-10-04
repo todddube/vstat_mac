@@ -8,13 +8,18 @@ final class FixtureAnchor {}
 enum Fixture {
     static let bundle = Bundle(for: FixtureAnchor.self)
 
-    static func data(_ name: String) throws -> Data {
-        guard let url = bundle.url(forResource: name, withExtension: "json", subdirectory: "Fixtures")
-                ?? bundle.url(forResource: name, withExtension: "json")
+    static func data(_ name: String, extension ext: String = "json") throws -> Data {
+        guard let url = bundle.url(forResource: name, withExtension: ext, subdirectory: "Fixtures")
+                ?? bundle.url(forResource: name, withExtension: ext)
         else {
             throw FixtureError.missing(name)
         }
         return try Data(contentsOf: url)
+    }
+
+    /// Edit a text fixture (the RSS feed) by string substitution.
+    static func text(_ name: String, extension ext: String, _ transform: (String) -> String) throws -> Data {
+        Data(transform(String(decoding: try data(name, extension: ext), as: UTF8.self)).utf8)
     }
 
     /// Load a fixture and edit the decoded JSON before re-encoding. Builds the
@@ -34,7 +39,7 @@ enum Fixture {
 
         var description: String {
             switch self {
-            case .missing(let name):     return "fixture \(name).json is not in the test bundle"
+            case .missing(let name):     return "fixture \(name) is not in the test bundle"
             case .notAnObject(let name): return "fixture \(name).json is not a JSON object"
             }
         }

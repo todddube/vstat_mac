@@ -42,13 +42,11 @@ enum Palette {
     // Accents mark WHOSE card this is. They never encode status — mixing the
     // two is how a status grid turns into confetti.
 
+    // The hex values live in Services.json beside the rest of a service's
+    // definition, so adding a service never means editing this file.
     static func accent(for service: ServiceID) -> NSColor {
-        switch service {
-        case .claude: return dynamic(dark: 0xE08C3C, light: 0xD97706)
-        case .github: return dynamic(dark: 0xA78BFA, light: 0x7C3AED)
-        case .openai: return dynamic(dark: 0x34D399, light: 0x059669)
-        case .gemini: return dynamic(dark: 0x60A5FA, light: 0x2563EB)
-        }
+        guard let accent = ServiceRegistry.definition(for: service)?.accent else { return unknown }
+        return dynamic(dark: accent.dark, light: accent.light)
     }
 
     // MARK: -

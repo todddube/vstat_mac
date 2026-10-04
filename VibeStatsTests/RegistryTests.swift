@@ -5,23 +5,24 @@ import Testing
 @Suite("ServiceRegistry integrity")
 struct RegistryTests {
 
-    @Test("Every ServiceID has exactly one definition, in registry order")
+    @Test("Services.json loads, in the documented order, with every id tests rely on")
     func coverage() {
-        #expect(ServiceRegistry.all.count == ServiceID.allCases.count)
-        #expect(ServiceRegistry.all.map(\.id) == ServiceID.allCases)
-        for id in ServiceID.allCases {
-            #expect(ServiceRegistry.definition(for: id).id == id)
+        #expect(ServiceRegistry.ids == ServiceID.known)
+        for id in ServiceRegistry.ids {
+            #expect(ServiceRegistry.definition(for: id)?.id == id)
         }
+        #expect(ServiceRegistry.definition(for: "not-a-service") == nil)
     }
 
     @Test("The registry matches the extension's shape", arguments: [
         (ServiceID.claude, "Claude AI", "Anthropic", 5, 4),
         (.github, "GitHub Copilot", "GitHub", 5, 4),
         (.openai, "OpenAI", "OpenAI", 6, 4),
-        (.gemini, "Gemini", "Google", 3, 3)
+        (.gemini, "Gemini", "Google", 3, 3),
+        (.grok, "Grok", "xAI", 6, 4)
     ])
     func shape(id: ServiceID, name: String, vendor: String, components: Int, primary: Int) {
-        let definition = ServiceRegistry.definition(for: id)
+        let definition = ServiceRegistry.definition(id)
         #expect(definition.name == name)
         #expect(definition.vendor == vendor)
         #expect(definition.components.count == components)
@@ -89,16 +90,20 @@ struct RegistryTests {
         }
     }
 
-    @Test("Statuspage services carry an api/v2 base; Gemini carries an incident feed")
+    @Test("Statuspage services carry an api/v2 base; the rest carry their feeds")
     func endpoints() {
         for service in ServiceRegistry.all {
             switch service.api {
             case .statuspage(let base):
                 #expect(base.absoluteString.hasSuffix("/api/v2"))
                 #expect(base.scheme == "https")
-            case .googleCloud(let incidents):
+            case .googleCloud(let incidents, let keywords):
                 #expect(service.id == .gemini)
                 #expect(incidents.absoluteString.hasSuffix("incidents.json"))
+                #expect(!keywords.isEmpty)
+            case .rssFeed(let feed):
+                #expect(service.id == .grok)
+                #expect(feed.scheme == "https")
             }
             #expect(service.statusURL.scheme == "https")
         }
@@ -110,5 +115,36 @@ struct RegistryTests {
             #expect(component.exactMatches.isEmpty)
             #expect(!component.patterns.isEmpty)
         }
+    }
+
+    @Test("Every service has its own accent")
+    func distinctAccents() {
+        let accents = ServiceRegistry.all.map(\.accent)
+        #expect(Set(accents).count == accents.count)
+    }
+
+    @Test("A malformed registry fails with a sentence, not a crash", arguments: [
+        // Unknown api type.
+        ##"{"services":[{"id":"x","name":"X","vendor":"X","statusURL":"https://x.test","accent":{"dark":"#000000","light":"#FFFFFF"},"api":{"type":"carrierPigeon"},"components":[{"id":"a","label":"A"}]}]}"##,
+        // Bad hex.
+        ##"{"services":[{"id":"x","name":"X","vendor":"X","statusURL":"https://x.test","accent":{"dark":"black","light":"#FFFFFF"},"api":{"type":"rssFeed","feed":"https://x.test/feed.xml"},"components":[{"id":"a","label":"A"}]}]}"##,
+        // Uncompilable pattern.
+        ##"{"services":[{"id":"x","name":"X","vendor":"X","statusURL":"https://x.test","accent":{"dark":"#000000","light":"#FFFFFF"},"api":{"type":"rssFeed","feed":"https://x.test/feed.xml"},"components":[{"id":"a","label":"A","patterns":["("]}]}]}"##,
+        // No components.
+        ##"{"services":[{"id":"x","name":"X","vendor":"X","statusURL":"https://x.test","accent":{"dark":"#000000","light":"#FFFFFF"},"api":{"type":"rssFeed","feed":"https://x.test/feed.xml"},"components":[]}]}"##
+    ])
+    func rejectsMalformed(json: String) {
+        #expect(throws: ServiceRegistry.RegistryError.self) {
+            try ServiceRegistry.decode(Data(json.utf8))
+        }
+    }
+
+    @Test("A minimal new service is just JSON")
+    func addingAServiceIsJustJSON() throws {
+        let json = ##"{"services":[{"id":"acme","name":"Acme AI","vendor":"Acme","statusURL":"https://status.acme.test","accent":{"dark":"#112233","light":"#445566"},"api":{"type":"statuspage","base":"https://status.acme.test/api/v2"},"components":[{"id":"acme-api","label":"API","exactMatches":["Acme API"],"isPrimary":true}]}]}"##
+        let services = try ServiceRegistry.decode(Data(json.utf8))
+        #expect(services.map(\.id) == ["acme"])
+        #expect(services[0].accent == AccentColor(dark: 0x112233, light: 0x445566))
+        #expect(services[0].components[0].exactMatches == ["acme api"])
     }
 }

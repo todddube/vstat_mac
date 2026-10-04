@@ -53,6 +53,12 @@ struct SettingsSnapshotTests {
         try render(ServicesSettingsView(), appearance: .darkAqua, to: "settings-services-dark.png")
     }
 
+    @Test("Notifications tab")
+    func notifications() throws {
+        try render(NotificationSettingsView(), appearance: .darkAqua,
+                   size: NSSize(width: 520, height: 560), to: "settings-notifications-dark.png")
+    }
+
     @Test("About window")
     func about() throws {
         try render(AboutView(), appearance: .darkAqua,

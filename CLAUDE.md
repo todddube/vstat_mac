@@ -4,7 +4,7 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 ## Project overview
 
-**Vibe Stats for macOS** is a native menu bar app that monitors **Claude AI, GitHub Copilot, OpenAI and Google Gemini**, reporting **per-component** health rather than each vendor's global page indicator.
+**Vibe Stats for macOS** is a native menu bar app that monitors **Claude AI, GitHub Copilot, OpenAI, Google Gemini and Grok (xAI)**, reporting **per-component** health rather than each vendor's global page indicator.
 
 It is a pure-Swift reimplementation of the [Vibe Stats browser extension](https://github.com/todddube/vstat) (`~/Documents/Github/vstat`), which remains a separate product. The two share **one contract — the service registry** — and nothing else. There is no shared code.
 
@@ -27,7 +27,7 @@ Two corollaries that keep getting re-derived, so they are stated once here:
 ```bash
 make generate   # project.yml -> VibeStats.xcodeproj (the project is GENERATED)
 make build      # universal Debug build, ad-hoc signed WITH the sandbox live
-make test       # 152 tests in 22 suites
+make test       # 173 tests in 25 suites
 make run        # build, kill any running copy, launch
 make icon       # redraw the app icon at every size from Scripts/make-appicon.swift
 make fixtures   # re-capture live vendor payloads into VibeStatsTests/Fixtures
@@ -58,7 +58,11 @@ This mirrors the extension's own layering (`services.js` / `status-monitor.js` /
 
 ### The file to edit first
 
-`VibeStats/Domain/ServiceRegistry.swift` — every service, every component, every match pattern. Adding or changing a monitored component is a change to that file alone. **Registry order is significant**: it decides who claims a contested component via the `claimed` set in `ComponentMatcher`.
+`VibeStats/Resources/Services.json` — every service, every component, every match pattern, endpoint and accent colour. Adding or changing a monitored service is a change to that file alone; `ServiceID` is a string, not an enum, and nothing in Swift lists the services. `ServiceRegistry.swift` loads and validates it. **Registry order is significant**: it is the card order, the hub-glyph node order, and it decides who claims a contested component via the `claimed` set in `ComponentMatcher`.
+
+Three source types (`api.type`): `statuspage`, `googleCloud` (keyword-filtered incident feed), and `rssFeed` — an RSS incident feed whose item titles open with `[Component]`. Grok uses `rssFeed` because status.x.ai's Cloudflare rule blocks every endpoint except `/feed.xml`. Component health from both feed types is *derived* from open incidents (`.derivedFromIncidents`), and an open incident is never `operational` whatever its severity text says.
+
+The hub glyph has one node per **enabled** service, spaced evenly clockwise from upper-left; four services land exactly on the original diagonal mark.
 
 ### Key invariants
 
@@ -105,12 +109,12 @@ These all cost real time to discover. Read before debugging something that "shou
 
 ## Testing
 
-`make test` — 152 tests, 22 suites, Swift Testing (`import Testing`, not XCTest).
+`make test` — 173 tests, 25 suites, Swift Testing (`import Testing`, not XCTest).
 
 **The test host is the sandboxed app itself.** Consequences:
 
 - **Fixtures travel inside the test bundle** (`project.yml` copies `VibeStatsTests/Fixtures` as a resource). They cannot be read from the source tree by path.
-- Recorded live payloads from all four vendors drive `EngineTests`; `Fixture.mutated(_:_:)` edits decoded JSON in-memory to build the "vendor changed something" variants rather than checking in a dozen near-identical files.
+- Recorded live payloads from all five vendors drive `EngineTests`; `Fixture.mutated(_:_:)` edits decoded JSON in-memory to build the "vendor changed something" variants rather than checking in a dozen near-identical files.
 
 **Rendering views for visual review:**
 

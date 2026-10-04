@@ -4,6 +4,7 @@ import SwiftUI
 
 struct NotificationSettingsView: View {
     @Bindable private var preferences = AppServices.shared.preferences
+    private let soundPlayer: any AlertSoundPlaying = SystemAlertSoundPlayer()
 
     var body: some View {
         Form {
@@ -18,11 +19,24 @@ struct NotificationSettingsView: View {
                 }
 
                 Toggle("Only for components shown on the cards", isOn: $preferences.notifyPrimaryOnly)
-                Toggle("Play a sound", isOn: $preferences.notifySound)
+                Toggle("Play a sound", isOn: soundEnabled)
+
+                // Deliberately NOT nested under "Play a sound": the chime is
+                // about the app starting, not about an outage, and someone can
+                // reasonably want one without the other.
+                Toggle("Chime when Vibe Stats starts", isOn: launchChimeEnabled)
+
+                Picker("Sound", selection: alertSound) {
+                    ForEach(AlertSound.allCases) { sound in
+                        Text(sound.title).tag(sound)
+                    }
+                }
+                .disabled(!usesSound)
+                .opacity(usesSound ? 1 : 0.5)
             } header: {
                 Text("Notify me")
             } footer: {
-                Text("A component that stops being measurable is never announced as an outage — “we can no longer see this” is not the same as “this is broken”.")
+                Text("The start-up chime is silent during quiet hours. A component that stops being measurable is never announced as an outage — “we can no longer see this” is not the same as “this is broken”.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -54,6 +68,42 @@ struct NotificationSettingsView: View {
         }
         .formStyle(.grouped)
         .frame(minHeight: 430)
+    }
+
+    /// Switching sound on plays the chosen alert, so the choice is audible at
+    /// the moment it is made. Switching it off stays silent — a chime to
+    /// confirm you asked for silence is a contradiction.
+    private var soundEnabled: Binding<Bool> {
+        Binding(
+            get: { preferences.notifySound },
+            set: { enabled in
+                preferences.notifySound = enabled
+                if enabled { soundPlayer.play(preferences.notifyAlertSound) }
+            }
+        )
+    }
+
+    /// The sound choice serves both switches, so it stays live while either is on.
+    private var usesSound: Bool { preferences.notifySound || preferences.launchSound }
+
+    private var launchChimeEnabled: Binding<Bool> {
+        Binding(
+            get: { preferences.launchSound },
+            set: { enabled in
+                preferences.launchSound = enabled
+                if enabled { soundPlayer.play(preferences.notifyAlertSound) }
+            }
+        )
+    }
+
+    private var alertSound: Binding<AlertSound> {
+        Binding(
+            get: { preferences.notifyAlertSound },
+            set: {
+                preferences.notifyAlertSound = $0
+                soundPlayer.play($0)
+            }
+        )
     }
 
     private var cooldownBinding: Binding<Int> {

@@ -14,12 +14,21 @@ enum VibeIconRenderer {
     static let canvas: CGFloat = 18
     static let badgeCanvas: CGFloat = 29
 
-    static func image(for state: IconState, phase: CGFloat = 0) -> NSImage {
+    /// `scale` draws the same 18-point geometry into a larger canvas rather
+    /// than resampling a bitmap, so a settings preview can be big and crisp
+    /// without the drawing code learning a second set of sizes.
+    static func image(for state: IconState, phase: CGFloat = 0, scale: CGFloat = 1) -> NSImage {
         let width = state.badgeText == nil ? canvas : badgeCanvas
-        let size = NSSize(width: width, height: canvas)
+        let base = NSSize(width: width, height: canvas)
+        let size = NSSize(width: base.width * scale, height: base.height * scale)
 
         let image = NSImage(size: size, flipped: false) { rect in
-            draw(state, phase: phase, in: rect)
+            guard let context = NSGraphicsContext.current?.cgContext else { return true }
+            context.saveGState()
+            context.translateBy(x: rect.minX, y: rect.minY)
+            context.scaleBy(x: scale, y: scale)
+            draw(state, phase: phase, in: CGRect(origin: .zero, size: base))
+            context.restoreGState()
             return true
         }
 
@@ -93,8 +102,9 @@ enum VibeIconRenderer {
         context.setLineWidth(VibeHubGeometry.spokeWidth * side)
         context.setStrokeColor(ink.withAlphaComponent(state.isOffline ? 0.4 : 1).cgColor)
 
-        for index in 0..<4 {
-            let node = VibeHubGeometry.node(index, in: rect)
+        let nodes = state.nodes
+        for index in nodes.indices {
+            let node = VibeHubGeometry.node(index, of: nodes.count, in: rect)
             let vector = CGVector(dx: node.x - centre.x, dy: node.y - centre.y)
             let length = max(hypot(vector.dx, vector.dy), 0.0001)
             let unit = CGVector(dx: vector.dx / length, dy: vector.dy / length)
@@ -109,8 +119,8 @@ enum VibeIconRenderer {
 
         // Nodes, in fixed service order.
         let nodeRadius = VibeHubGeometry.nodeRadius * side
-        for (index, service) in ServiceID.allCases.enumerated() {
-            let point = VibeHubGeometry.node(index, in: rect)
+        for (index, service) in nodes.enumerated() {
+            let point = VibeHubGeometry.node(index, of: nodes.count, in: rect)
             let color = nodeColor(state, service: service, fallback: ink)
             // Nodes are ~3 pt across, far too small to hollow out legibly, so
             // an unmeasured node fades instead. The hollow CORE carries the

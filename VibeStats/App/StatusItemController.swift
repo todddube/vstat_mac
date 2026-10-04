@@ -18,6 +18,9 @@ final class StatusItemController {
     private var currentState = IconState()
     private var phase: CGFloat = 0
     private var ticker: Timer?
+    /// The period the live ticker was built for. It is baked into the closure
+    /// at creation, so anything that changes it has to rebuild the timer.
+    private var tickerPeriod: Duration?
     private var displayAsleep = false
     private var sleepObservers: [any NSObjectProtocol] = []
     /// Frames for the handful of static states, so a steady app draws nothing.
@@ -81,6 +84,7 @@ final class StatusItemController {
         var state = IconState()
         state.indicator = coordinator.combined.indicator
         state.services = services
+        state.nodes = preferences.enabledServices.map(\.id)
         state.affectedCount = coordinator.combined.affectedCount
         state.isOffline = coordinator.isOffline
         state.isChecking = coordinator.isChecking
@@ -88,6 +92,17 @@ final class StatusItemController {
         state.renderMode = preferences.iconRenderMode
         state.showBadge = preferences.showBadgeCount
         state.motion = Motion.effectiveLevel(preferences.motionLevel)
+
+        // "Test in menu bar" overrides the data, never the appearance: a style
+        // change made mid-demo shows up on the very next step.
+        if let demo = IconDemo.shared.current {
+            state.indicator = demo.indicator
+            state.services = demo.services
+            state.affectedCount = demo.affectedCount
+            state.isOffline = demo.isOffline
+            state.isChecking = demo.isChecking
+        }
+
         state.titleText = titleText(for: state)
         return state
     }
@@ -124,10 +139,19 @@ final class StatusItemController {
         guard state.animation != .none else {
             ticker?.invalidate()
             ticker = nil
+            tickerPeriod = nil
             phase = 0
             return
         }
-        guard ticker == nil else { return }
+        // Retime whenever the period changes, not only when the animation
+        // stops: `period` is captured once, so a ticker built for the 6 s
+        // breath went on driving the 1.4 s outage pulse at a quarter speed —
+        // an outage that crawled, and a Motion Full→Subtle change during one
+        // (2.5 s vs 1.4 s) that appeared to do nothing at all.
+        guard ticker == nil || tickerPeriod != state.animationPeriod else { return }
+        ticker?.invalidate()
+        phase = 0
+        tickerPeriod = state.animationPeriod
 
         let period = Double(state.animationPeriod.components.seconds)
             + Double(state.animationPeriod.components.attoseconds) / 1e18

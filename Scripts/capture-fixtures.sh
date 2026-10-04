@@ -36,4 +36,11 @@ done
 echo "Capturing Google Cloud fixture…"
 fetch "https://status.cloud.google.com/incidents.json" "gemini-incidents.json"
 
+# status.x.ai blocks everything but its RSS feed (Cloudflare), so the feed is
+# the whole contract. Kept verbatim: XML has no cheap trim like the JSON above.
+echo "Capturing Grok (xAI) feed…"
+echo "  → grok-feed.xml"
+curl -sSfL --max-time 20 -A "VibeStats/dev (macOS; +https://github.com/todddube/vstat)" \
+  "https://status.x.ai/feed.xml" > "$DIR/grok-feed.xml"
+
 echo "Done. Review the diff before committing."

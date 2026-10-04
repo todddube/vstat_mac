@@ -1,10 +1,13 @@
 //  VibeHubGeometry.swift
 //  The mark, defined once on a unit square and scaled everywhere.
 //
-//  The extension's icon is a six-spoke hub. Here it is reduced to FOUR spokes,
-//  each permanently assigned to one monitored service, so the glyph stops being
-//  decoration and becomes a readout: at a glance you can see not just that
-//  something is degraded but which corner of your toolchain it is.
+//  The extension's icon is a six-spoke hub. Here it has ONE spoke per enabled
+//  service, each assigned to that service in registry order, so the glyph stops
+//  being decoration and becomes a readout: at a glance you can see not just
+//  that something is degraded but which corner of your toolchain it is.
+//
+//  Nodes are spaced evenly, clockwise from upper-left. With four services that
+//  lands exactly on the original diagonal mark:
 //
 //      Claude ◆         ◆ GitHub
 //            ╲         ╱
@@ -33,20 +36,15 @@ enum VibeHubGeometry {
     /// crisp at 16 pt.
     static let gap: CGFloat            = 0.022
 
-    /// Fixed positions, always, regardless of card ordering in the popover.
-    /// Order matches `ServiceID.allCases`.
-    static let nodeOffsets: [CGPoint] = [
-        CGPoint(x: -1, y:  1),   // claude — upper-left
-        CGPoint(x:  1, y:  1),   // github — upper-right
-        CGPoint(x:  1, y: -1),   // openai — lower-right
-        CGPoint(x: -1, y: -1)    // gemini — lower-left
-    ]
-
-    private static let diagonal: CGFloat = 0.70710678
-
-    static func node(_ index: Int, in rect: CGRect) -> CGPoint {
-        let offset = nodeOffsets[index % nodeOffsets.count]
-        let radius = nodeRingRadius * rect.width * diagonal
-        return CGPoint(x: rect.midX + offset.x * radius, y: rect.midY + offset.y * radius)
+    /// Evenly spaced, clockwise from the upper-left diagonal (135°), so four
+    /// nodes reproduce the original X exactly and a fifth service slots in
+    /// without a special case. Positions depend only on the enabled set — card
+    /// ordering in the popover never moves them.
+    static func node(_ index: Int, of count: Int, in rect: CGRect) -> CGPoint {
+        let count = max(count, 1)
+        let angle = (135.0 - 360.0 * Double(index) / Double(count)) * .pi / 180
+        let radius = nodeRingRadius * rect.width
+        return CGPoint(x: rect.midX + radius * CGFloat(cos(angle)),
+                       y: rect.midY + radius * CGFloat(sin(angle)))
     }
 }

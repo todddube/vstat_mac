@@ -113,7 +113,8 @@ struct PopoverView: View {
 
     private var header: some View {
         HStack(spacing: 9) {
-            HubMark(indicator: coordinator.combined.indicator, motion: motion)
+            HubMark(indicator: coordinator.combined.indicator, motion: motion,
+                    nodeCount: preferences.enabledServices.count)
                 .frame(width: 20, height: 20)
 
             VStack(alignment: .leading, spacing: -1) {
@@ -317,11 +318,12 @@ struct PopoverContentView: View {
 
 }
 
-/// The header mark: the same four-spoke hub as the menu bar glyph, with the
-/// core coloured by the combined verdict.
+/// The header mark: the same hub as the menu bar glyph, with the core
+/// coloured by the combined verdict.
 struct HubMark: View {
     let indicator: StatusIndicator
     let motion: MotionLevel
+    var nodeCount: Int = ServiceRegistry.all.count
 
     @State private var breathing = false
 
@@ -332,8 +334,8 @@ struct HubMark: View {
             let centre = CGPoint(x: rect.midX, y: rect.midY)
 
             var spokes = Path()
-            for index in 0..<4 {
-                let node = VibeHubGeometry.node(index, in: rect)
+            for index in 0..<nodeCount {
+                let node = VibeHubGeometry.node(index, of: nodeCount, in: rect)
                 let vector = CGVector(dx: node.x - centre.x, dy: node.y - centre.y)
                 let length = max(hypot(vector.dx, vector.dy), 0.0001)
                 let unit = CGVector(dx: vector.dx / length, dy: vector.dy / length)
@@ -349,8 +351,8 @@ struct HubMark: View {
                 style: StrokeStyle(lineWidth: VibeHubGeometry.spokeWidth * side, lineCap: .round)
             )
 
-            for index in 0..<4 {
-                let node = VibeHubGeometry.node(index, in: rect)
+            for index in 0..<nodeCount {
+                let node = VibeHubGeometry.node(index, of: nodeCount, in: rect)
                 let radius = VibeHubGeometry.nodeRadius * side
                 context.fill(
                     Path(ellipseIn: CGRect(x: node.x - radius, y: node.y - radius,
